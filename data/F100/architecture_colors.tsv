@@ -1,16 +1,20 @@
-alpha arrays	#0000ff
-alpha bundles	#00a3cd
-alpha complex topology	#95c6f5
-alpha superhelices	#05058e
-beta barrels	#b22222
-beta duplicates or obligate multimers	#ff0000
-beta sandwiches	#8b0000
-a/b barrels	#006600
-a/b three-layered sandwiches	#87ed87
-a+b two layers	#ff9d00
-a+b three layers	#ffd500
-a+b four layers	#f8de7e
-a+b complex topology	#f5deb3
-a+b duplicates or obligate multimers	#00bf30
-mixed a+b and a/b	#67d9ae
-few secondary structure elements	#ff9c9c
+alpha arrays	#00008B
+alpha superhelices	#4545FF
+alpha duplicates or obligate multimers	#95c6f5
+alpha bundles	#01A2CD
+alpha complex topology	#CBE1F5
+beta duplicates or obligate multimers	#610000
+beta sandwiches	#CD0000
+beta barrels	#FF3987
+beta meanders	#a45a52
+beta complex topology	#ff0000
+few secondary structure elements	#F5CBCB
+a/b three-layered sandwiches	#01611E
+a/b barrels	#04CD1B
+mixed a+b and a/b	#37FF5D
+a+b duplicates or obligate multimers	#CBF5DA
+a+b complex topology	#947D34
+a+b four layers	#CEAB00
+a+b two layers	#DFE834
+a+b three layers	#F5EAB3
+extended segments	#a020f0
