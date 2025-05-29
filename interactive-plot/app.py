@@ -13,8 +13,8 @@ ecod_redundancy = 'F100'
 # ecod_redundancy = 'F40'
 
 # === File Paths ===
-data_path = f'../data/{ecod_redundancy}'
-output_path = '../outputs'
+data_path = os.path.join('../data', ecod_redundancy)
+output_path = os.path.join('../outputs', ecod_redundancy)
 
 dataset_path = os.path.join(output_path, 'tsne_results.pkl')
 folds_dataset_path = os.path.join(data_path, 'xfolds.csv')
