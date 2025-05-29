@@ -11,6 +11,8 @@ from matplotlib.colors import to_rgb, to_hex
 import colorsys
 import matplotlib.pyplot as plt
 
+# -------- You need to unzip data/F100/domains.zip before running this --------
+
 ecod_redundancy = 'F100' # ----> We still need to populate the h_name, t_name, f_name columns in its domain.csv with real data
 # ecod_redundancy = 'F40'  ----> This doesn't work correctly currently, we need to add the x_name, h_name, t_name, f_name columns to its domains.csv
 
