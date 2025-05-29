@@ -9,13 +9,16 @@ import plotly.graph_objects as go
 from matplotlib.colors import to_rgb, to_hex
 import colorsys
 
+ecod_redundancy = 'F100'
+# ecod_redundancy = 'F40'
+
 # === File Paths ===
-data_path = '../data'
+data_path = f'../data/{ecod_redundancy}'
 output_path = '../outputs'
 
 dataset_path = os.path.join(output_path, 'tsne_results.pkl')
-folds_dataset_path = os.path.join(data_path, 'list_of_xfolds_more_than_50_ECOD291_F40.csv')
-domain_dataset_path = os.path.join(data_path, 'list_of_domains_in_Xfolds_more_than_50_ECOD289_F40.csv')
+folds_dataset_path = os.path.join(data_path, 'xfolds.csv')
+domain_dataset_path = os.path.join(data_path, 'domains.csv')
 architecture_color_dataset_path = os.path.join(data_path, 'architecture_colors.tsv')
 
 # === Load Data ===

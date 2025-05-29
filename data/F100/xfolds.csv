@@ -1,0 +1,2458 @@
+xfold,architecture,fold_desc
+314,a+b three layers,Class II aaRS and biotin synthetases
+816,a+b complex topology,Conserved core of transcriptional regulatory protein vp16
+896,a+b two layers,SRP9/14-like
+101,alpha arrays,HTH
+2007,a/b three-layered sandwiches,Flavodoxin-like
+206,a+b complex topology,Protein kinase/SAICAR synthase/ATP-grasp
+105,alpha duplicates or obligate multimers,HLH-like
+2002,a/b barrels,TIM beta/alpha-barrel
+2,beta barrels,OB-fold
+186,alpha arrays,lambda integrase-N-like
+5084,beta barrels,Outer membrane meander beta-barrels
+5,beta duplicates or obligate multimers,beta-propeller-like
+109,alpha superhelices,Repetitive alpha hairpins
+386,few secondary structure elements,beta-beta-alpha zinc fingers
+5101,alpha arrays,C-terminal helical domain of RNA helicase
+2004,a/b three-layered sandwiches,P-loop domains-like
+58,beta barrels,Oncogene product-like
+11,beta sandwiches,Immunoglobulin-like beta-sandwich
+616,alpha arrays,S15/NS1 RNA-binding domain
+10,beta sandwiches,jelly-roll
+311,a+b three layers,Phoshotransferase/anion transport protein
+7573,a/b three-layered sandwiches,PRTase-like
+7518,a/b three-layered sandwiches,PK C-terminal domain-like
+2003,a/b three-layered sandwiches,Rossmann-like
+932,few secondary structure elements,Zn-binding domain in DNA polymerase III subunits
+138,alpha arrays,"DNA polymerase III clamp loader subunits, C-terminal domain"
+148,alpha arrays,Histone-like
+279,a+b complex topology,LDH C-terminal domain-like
+130,alpha arrays,LEM/SAP HeH motif-like
+396,few secondary structure elements,CCHC-type 1 zinc finger
+212,a+b two layers,Ribosomal protein S5 domain 2-like
+106,alpha arrays,Globin-like
+210,a+b four layers,Ntn/PP2C
+612,alpha arrays,Retroviral matrix proteins
+378,few secondary structure elements,His-Me finger endonucleases
+102,alpha arrays,HhH/H2TH
+242,a+b two layers,Homing endonucleases-like
+2008,a/b three-layered sandwiches,Restriction endonuclease-like
+1,beta barrels,cradle loop barrel
+5000,alpha arrays,Toxins' membrane translocation domains
+5105,a+b two layers,N-terminal domain of colicin N
+6,beta duplicates or obligate multimers,beta-Trefoil
+2485,a+b three layers,Thioredoxin-like
+170,alpha bundles,Retrovirus capsid protein
+7514,a/b three-layered sandwiches,"Ferredoxin reductase-like, C-terminal NADP-linked domain"
+7579,a/b three-layered sandwiches,alpha/beta-Hydrolases
+230,a+b two layers,T-fold
+3156,beta sandwiches,Cupredoxin-like
+7523,a/b three-layered sandwiches,Periplasmic binding protein-like II
+207,beta duplicates or obligate multimers,Single-stranded right-handed beta-helix
+7543,a/b three-layered sandwiches,Methylglyoxal synthase-like
+2487,a/b three-layered sandwiches,"The ""swivelling"" beta/beta/alpha domains"
+554,alpha complex topology,Influenza virus matrix protein M1
+563,alpha bundles,ATPD N-terminal domain-like
+5099,beta sandwiches,Ig-like domain in anthrax protective antigen
+5095,beta sandwiches,N-terminal beta-sandwich domain in anthrax protective antigen
+5097,beta sandwiches,Middle beta-sandwich domain in anthrax protective antigen
+5098,a+b two layers,beta-grasp domain in anthrax protective antigen
+5096,few secondary structure elements,Ca-binding domain in anthrax protective antigen
+7542,a/b three-layered sandwiches,Aconitase iron-sulfur domain
+898,a+b two layers,a+b domain in Ribosomal protein L1
+7524,a/b three-layered sandwiches,ALDH-like
+510,alpha bundles,"Domain of early E2A DNA-binding protein, ADDBP"
+375,few secondary structure elements,Rubredoxin-like
+601,alpha bundles,Four-helical up-and-down bundle
+518,alpha arrays,"Chemotaxis receptor methyltransferase CheR, N-terminal domain"
+150,alpha bundles,Ferritin/Heme oxygenase/4-helical cytokines
+7581,a/b three-layered sandwiches,Thiolase-like
+387,few secondary structure elements,omega toxin-like
+372,a+b complex topology,RNase A-like
+385,few secondary structure elements,Cystine-knot cytokines
+196,alpha bundles,"Regulator of G-protein signaling, RGS"
+177,alpha bundles,Phospholipase C/P1 nuclease
+383,few secondary structure elements,Defensin-like
+567,alpha duplicates or obligate multimers,p53 tetramerization domain
+331,a+b two layers,TBP-like
+64,beta meanders,WW domain-like
+3016,a+b two layers,C-terminal domain in some PLP-dependent transferases
+7577,a/b three-layered sandwiches,PLP-dependent transferases
+246,a+b four layers,Carbon-nitrogen hydrolase-like
+3657,a+b complex topology,Scaffolding protein GPB
+2492,a+b three layers,Cytidine deaminase-like
+4019,alpha complex topology,alpha-helical domain in beta-lactamase/transpeptidase-like proteins
+223,a+b three layers,Profilin-like
+108,alpha arrays,EF-hand
+69,beta complex topology,Hedgehog/intein
+235,a+b complex topology,Lysozyme-like
+4011,beta barrels,beta-barrel domain in acetyl-CoA synthetase-like proteins
+327,a+b two layers,Alpha-lytic protease prodomain-like
+7584,a/b three-layered sandwiches,Rossmann-like domain in Acetyl-CoA synthetase-like proteins
+4108,few secondary structure elements,Neurotoxin III (ATX III)
+193,alpha bundles,CH domain-like
+7501,a/b three-layered sandwiches,Dihydrofolate reductases
+712,beta sandwiches,"ENV polyprotein, receptor-binding domain"
+304,a+b two layers,Alpha-beta plaits
+296,a+b three layers,"Sulfite reductase hemoprotein (SiRHP), domains 2 and 4"
+169,alpha complex topology,Aldehyde ferredoxin oxidoreductase-C
+317,a+b two layers,Translation initiation factor eIF4e and phosphothreonine lyase
+370,few secondary structure elements,TB module/8-cys domain
+220,beta barrels,PH domain-like
+139,few secondary structure elements,Multiheme cytochromes
+56,beta sandwiches,Epsilon subunit of F1F0-ATP synthase-N
+192,alpha bundles,Long alpha-hairpin
+4,beta barrels,SH3
+4059,a+b complex topology,Serpins
+2498,mixed a+b and a/b,Zincin-like
+50,beta barrels,"Herpes virus serine proteinase, assemblin"
+389,few secondary structure elements,EGF-like
+7502,a/b three-layered sandwiches,Anticodon-binding domain of Class II aaRS
+5041,extended segments,F1F0 ATP synthase subunit C
+2006,a/b three-layered sandwiches,HAD domain-like
+103,alpha arrays,RuvA-C
+2496,a/b three-layered sandwiches,SpoIIaa-like
+7515,a/b three-layered sandwiches,Alkaline phosphatase-like
+9,beta barrels,Lipocalins/Streptavidin
+2489,a/b three-layered sandwiches,Barstar (barnase inhibitor)
+135,alpha arrays,"Transducin (alpha subunit), insertion domain"
+165,alpha duplicates or obligate multimers,Dimerisation interlock
+806,a+b four layers,"Aldehyde ferredoxin oxidoreductase, N-terminal domain"
+807,a+b two layers,Allophycocyanin linker chain (domain)
+1170,beta barrels,IL8-related
+282,a+b duplicates or obligate multimers,CBS-domain
+605,alpha duplicates or obligate multimers,ROP-like
+557,alpha arrays,LigA-like domain
+2012,a/b three-layered sandwiches,LigB-like
+266,a+b two layers,Thymidylate synthase/dCMP hydroxymethylase
+244,a+b two layers,"FAD-linked reductases, C-terminal domain-like"
+225,a+b two layers,ATPase domain of HSP90 chaperone/DNA topoisomerase II/histidine kinase-like
+231,a+b two layers,MocoBD/DmpA-related
+283,a+b duplicates or obligate multimers,Creatinase/aminopeptidase-like
+227,a+b two layers,DNA clamp
+507,alpha arrays,DnaB helicase N-terminal domain-related
+2484,mixed a+b and a/b,Ribonuclease H-like
+377,few secondary structure elements,Glucocorticoid receptor-like
+221,a+b two layers,beta-Grasp
+252,a+b two layers,DNA-binding domain
+72,beta sandwiches,gamma-Crystallin-like
+305,a+b two layers,DCoH-like
+240,a+b complex topology,Ribosomal protein TL5/L25 C-terminal domain-like
+325,a+b complex topology,alpha/beta-Hammerhead/Barrel-sandwich hybrid
+185,alpha superhelices,Bifunctional inhibitor/lipid-transfer protein/seed storage 2S albumin-like
+3009,alpha arrays,Insertion subdomain in DsbA-like
+12,beta sandwiches,Glycosyl hydrolase domain-like
+603,alpha bundles,STAT-like
+214,a+b two layers,SH2
+5073,alpha bundles,Calcium ATPase transmembrane domain-related
+129,alpha arrays,6-phosphogluconate dehydrogenase C-terminal domain-like
+515,alpha arrays,Transcription factor STAT-4 N-domain
+354,few secondary structure elements,Sea anemone toxin k-like
+7525,a/b three-layered sandwiches,Phosphoglycerate mutase-like
+384,few secondary structure elements,BPTI-like
+4012,a+b two layers,SSHS domain
+4014,a+b two layers,a+b domain in type II DNA topoisomerase
+4016,alpha bundles,alpha-helical domain in type II DNA topoisomerase
+213,a+b three layers,Nat/Ivy
+176,alpha arrays,Annexin
+280,a+b two layers,Ribonuclease Rh-like
+367,few secondary structure elements,Insulin-like
+376,few secondary structure elements,RING/U-box-like
+184,alpha arrays,Nucleoside phosphorylase/phosphoribosyltransferase-N
+7544,a/b three-layered sandwiches,Nucleoside phosphorylase/phosphoribosyltransferase catalytic domain
+146,alpha arrays,Di-copper centre-containing domain
+382,few secondary structure elements,Snake toxin-like
+398,few secondary structure elements,Btk/CHORD zinc fingers
+226,a+b two layers,POZ domain
+617,alpha bundles,A virus capsid protein alpha-helical domain
+232,a+b duplicates or obligate multimers,Pentein
+302,a+b two layers,Reverse ferredoxin
+388,few secondary structure elements,Huristasin-like
+887,a+b two layers,Ribosomal protein L30p/L7e
+133,alpha bundles,DH domain-like
+358,a+b complex topology,SRCR-like
+3070,a+b complex topology,N0 domain in phage tail proteins and secretins-like
+209,a+b complex topology,C-type lectin-like
+300,a+b three layers,Phospholipase D/nuclease
+329,a+b two layers,"Prokaryotic AspRS, insert domain"
+5045,alpha bundles,F1F0 ATP synthase subunit A
+546,alpha complex topology,gene 59 helicase assembly protein
+602,alpha arrays,L-aspartase middle domain-like
+4953,beta barrels,L-aspartase C-terminal domain-like
+4952,alpha arrays,L-aspartase N-terminal domain-like
+67,beta sandwiches,HSP40/DnaJ peptide-binding domain
+76,beta duplicates or obligate multimers,beta-Prism I
+268,a+b two layers,Sterol carrier protein-like
+275,a+b two layers,MoeA-I/Ornithine decarboxylase-C/Reverse ferredoxin-like domain in RNA-polymerase
+261,a+b complex topology,"Hect, E3 ligase catalytic domain"
+107,alpha arrays,Cytochrome c-like
+529,few secondary structure elements,Anaphylotoxins (complement system)
+70,beta barrels,beta-clip
+2011,a/b three-layered sandwiches,Phosphorylase/hydrolase-like
+222,a+b two layers,Thioesterase/thiol ester dehydrase-isomerase-like
+844,beta barrels,"Transcriptional factor tubby, C-terminal domain"
+1137,a+b two layers,Tetrapyrrole methylase C-terminal domain-like
+7550,a/b three-layered sandwiches,Tetrapyrrole methylase N-terminal domain
+858,a+b three layers,CytB endotoxin-like (Pfam 01338)
+4046,beta meanders,all-beta domain in nickel-iron hydrogenase large subunit
+4025,alpha complex topology,"alpha-helical domain in nickel-iron hydrogenase, large subunit"
+7568,a/b three-layered sandwiches,BRCT domain
+298,a+b two layers,FwdE/GAPDH domain-like
+273,a+b three layers,PR-1-like
+224,a+b three layers,Gelsolin-like
+7548,a/b three-layered sandwiches,"Methylesterase CheB, C-terminal domain"
+604,alpha bundles,Spectrin repeat-like
+278,a+b complex topology,"Succinate dehydrogenase/fumarate reductase flavoprotein, catalytic domain"
+211,a+b two layers,Glyoxalase/Bleomycin resistance protein/Dihydroxybiphenyl dioxygenase
+190,alpha arrays,HMG-box-like
+301,a+b three layers,Bacillus chorismate mutase-like
+322,a+b two layers,HPr-like
+219,a+b complex topology,Cysteine proteinases-like
+7510,a/b three-layered sandwiches,Isocitrate/Isopropylmalate dehydrogenase-like
+924,few secondary structure elements,Zinc domain conserved in yeast copper-regulated transcription factors
+228,a+b three layers,"Fe,Mn superoxide dismutase (SOD)-C"
+2005,a/b three-layered sandwiches,HUP domain-like
+149,alpha arrays,Cytochrome P450
+527,beta sandwiches,"Soluble secreted chemokine inhibitor, VCCI"
+229,a+b two layers,Cdc48 domain 2-like
+321,a+b two layers,Glutamine synthetase-like
+3998,alpha arrays,Peptidase inhibitors family I29
+294,a+b two layers,CI-2 family of serine protease inhibitors-like
+172,alpha complex topology,Citrate synthase-like
+308,a+b two layers,ClpS-like
+7575,a/b three-layered sandwiches,Caspase-like
+7576,a/b three-layered sandwiches,Gingipain R extra N-terminal alpha/beta domain
+136,alpha complex topology,Heme-dependent peroxidases
+243,a+b two layers,Cystatin-like
+264,beta barrels,LigT-like
+110,alpha arrays,DEATH domain
+3567,a+b duplicates or obligate multimers,MPER trimer
+306,a+b two layers,Glucose permease domain IIB-like
+180,alpha bundles,Acid phosphatase/Vanadium-dependent haloperoxidase
+4027,beta barrels,all-beta domain in DNA topoisomerase IV alpha subunit
+886,a+b duplicates or obligate multimers,Probable bacterial effector-binding domain
+292,a+b two layers,RIP/Polo-box domain
+909,few secondary structure elements,"Cholecystokinin A receptor, N-domain"
+241,a+b two layers,Type III secretory system chaperone-like
+868,a+b complex topology,mRNA triphosphatase CET1-related
+4045,a+b two layers,barrel domain in D-aminoacid aminotransferase-like PLP-dependent enzymes
+4020,a+b two layers,a+b domain in D-aminoacid aminotransferase-like PLP-dependent enzymes
+299,a+b complex topology,YbaK/ProRS associated domain
+2486,a/b three-layered sandwiches,ClpP/crotonase
+328,a+b two layers,IF3-like
+310,a+b two layers,RRF/tRNA synthetase additional domain-like
+4973,alpha bundles,helical domain in DNA primase DnaG catalytic core
+4023,a+b two layers,N-terminal a+b domain in DNA primase core
+3687,alpha bundles,NADPH-cytochrome p450 reductase helical insertion domain
+4126,a/b three-layered sandwiches,beta-carbonic anhydrase-like
+233,a+b two layers,MHC antigen-recognition domain
+611,alpha bundles,N-cbl like
+351,few secondary structure elements,Leech antihemostatic protein
+239,beta barrels,Ribosomal protein L25-like
+141,alpha bundles,Terpenoid synthases
+330,a+b two layers,dsRBD-like
+7541,a/b three-layered sandwiches,Molybdenum cofactor biosynthesis proteins
+523,a+b two layers,Ribosomal protein L9 C-domain
+824,a+b two layers,Heme-binding protein A (HasA)
+706,beta complex topology,Head domain of nucleotide exchange factor GrpE
+3999,a+b two layers,Peptidase inhibitors family I69
+511,beta sandwiches,"Heat shock protein 70kD (HSP70), peptide-binding domain"
+632,alpha bundles,immunoglobulin/albumin-binding domain-like
+931,few secondary structure elements,Metallothionein
+7559,a/b three-layered sandwiches,Ribosomal protein L4
+73,beta sandwiches,SMAD/FHA domain
+323,a+b complex topology,CoA-dependent acyltransferases
+4153,extended segments,Proteinase A inhibitor IA3
+315,a+b two layers,Tautomerase/MIF-like
+394,few secondary structure elements,Invertebrate chitin-binding proteins
+832,a+b three layers,"N-terminal domain of eukaryotic peptide chain release factor subunit 1, ERF1"
+905,few secondary structure elements,Carboxypeptidase inhibitor
+3484,a+b two layers,"Laminaripentaose-producing beta-1,3-glucanase insertion domain"
+132,alpha bundles,ACP-like
+544,alpha bundles,Functional domain of the splicing factor Prp18
+505,alpha arrays,Repressor of bacterial conjugation FinO
+812,a+b duplicates or obligate multimers,MinE-like
+265,a+b two layers,RNA bacteriophage capsid protein
+840,a+b two layers,RPB5-like RNA polymerase subunit
+5001,alpha bundles,Family A G protein-coupled receptor-like
+7531,a/b three-layered sandwiches,Carbamate kinase-like
+245,a+b two layers,Ribonuclease PH domain 2-like
+506,beta meanders,Colicin E3 ribonuclease domain-like
+281,a+b three layers,AraD-like aldolase/epimerase
+517,beta barrels,CBF-like
+247,a+b four layers,Metallo-hydrolase/oxidoreductase
+7516,a/b three-layered sandwiches,Nucleotide-diphospho-sugar transferases
+6174,alpha arrays,C-terminal helical domain of proline 3-hydroxylase
+633,alpha bundles,Bromodomain-like
+391,few secondary structure elements,Fibronectin type I module-like
+7570,a/b three-layered sandwiches,"MurD-like peptide ligases, peptide-binding domain"
+2493,a/b three-layered sandwiches,MurF and HprK N-domain-like
+908,few secondary structure elements,"Cellulose docking domain, dockering"
+923,few secondary structure elements,"Type X cellulose binding domain, CBDX"
+55,beta barrels,Urease metallochperone UreE-N
+357,few secondary structure elements,Ectatomin/elicitin
+164,alpha bundles,Chorismate mutase II
+4034,a+b complex topology,Sandwich domain in replication terminator protein (Tus)
+4053,a+b complex topology,Insertion domain in replication terminator protein (Tus)
+284,a+b two layers,FKBP-like
+3504,beta barrels,MutM N-terminal domain-like
+7521,a/b three-layered sandwiches,B12-dependent dehydratase associated subunit
+623,alpha bundles,"Diol dehydratase, gamma subunit"
+583,extended segments,Moesin tail domain
+836,a+b three layers,Regulatory factor Nef
+609,alpha bundles,Domain of poly(ADP-ribose) polymerase
+237,a+b complex topology,ADP-ribosylation
+263,a+b three layers,SRF-like
+397,few secondary structure elements,Toxic hairpin
+577,alpha arrays,CRIB domain
+3332,a+b two layers,ferredoxin-like domain in VP1
+4064,a+b complex topology,Inner layer core protein p3-related
+319,beta sandwiches,HSP20-like
+365,few secondary structure elements,Crambin-like
+5085,a+b duplicates or obligate multimers,Outer membrane efflux proteins (OEP)
+3019,beta sandwiches,gp11/flagellar cap protein FliD insertion domain
+877,a+b duplicates or obligate multimers,gp11/gp12 receptor-binding domain
+7557,a/b three-layered sandwiches,DNA polymerase III psi subunit
+3695,few secondary structure elements,Dihydroorotate dehydrogenase B PyrK subunit 2Fe-2S cluster-binding domain
+4015,alpha complex topology,alpha-helical domain in sec1/munc18-like (SM) proteins
+7585,a/b three-layered sandwiches,Rossmann-like domains in Sec1/munc18-like proteins
+369,few secondary structure elements,Protozoan pheromone proteins
+54,beta barrels,EV matrix protein
+1001,a+b two layers,"Formate dehydrogenase/DMSO reductase, domain 1"
+883,a+b complex topology,Aha1/BPI domain-like
+270,beta barrels,FMT C-terminal domain-like
+7504,a/b three-layered sandwiches,ITPase-like
+361,few secondary structure elements,DnaJ/Hsp40 cysteine-rich domain
+195,alpha complex topology,NusB-like
+901,few secondary structure elements,ADA_N-like domain
+813,a+b two layers,Chalcone isomerase
+5002,extended segments,"Photosystem II reaction centre subunit H, transmembrane region"
+7512,a/b three-layered sandwiches,UDP-Glycosyltransferase/glycogen phosphorylase
+217,a+b complex topology,FAD-binding domain-like
+833,a+b duplicates or obligate multimers,Pepsin inhibitor-3
+59,beta complex topology,triple barrel
+621,alpha bundles,"Interferon-induced guanylate-binding protein 1 (GBP1), C-terminal domain"
+5054,alpha complex topology,Voltage-gated ion channels
+591,alpha bundles,C-terminal domain of B transposition protein
+7534,a/b three-layered sandwiches,Undecaprenyl diphosphate synthase
+189,alpha bundles,"GTPase activation domain, GAP"
+140,alpha bundles,Anticodon-binding domain of a subclass of class I aminoacyl-tRNA synthetases
+364,few secondary structure elements,TAZ domain
+236,beta barrels,GroES-like
+650,alpha bundles,Chaperone J-domain
+7,beta barrels,PDZ domain
+3694,alpha bundles,Tail specific protease helical domain
+188,alpha arrays,Nuclear receptor ligand-binding domain
+3405,alpha duplicates or obligate multimers,FkpA dimerization domain-like
+205,a+b two layers,4Fe-4S ferredoxin
+5038,alpha superhelices,Cytochrome c oxidase subunit I-like
+5040,extended segments,"Cytochrome c oxidase subunit II-like, transmembrane region"
+5039,alpha bundles,Cytochrome c oxidase subunit III-like
+3008,a+b three layers,A subdomain in the anticodon-binding domain of a subclass of class I aminoacyl-tRNA synthetases
+269,a+b complex topology,Fibrinogen C-terminal domain-like
+312,a+b three layers,HIT-like
+524,alpha arrays,Ypt/Rab-GAP domain of gyp1p-like
+927,few secondary structure elements,Elafin-like
+7571,a/b three-layered sandwiches,Formyltransferase
+856,a+b complex topology,Outer capsid protein sigma 3-related
+622,alpha bundles,YvfG-like
+66,beta sandwiches,ISP domain
+4294,few secondary structure elements,Trm112p-like
+904,few secondary structure elements,B-box zinc-binding domain-like
+7519,a/b three-layered sandwiches,"ATP synthase (F1-ATPase), gamma subunit"
+145,alpha arrays,F-box domain
+7532,a/b three-layered sandwiches,Phosphoglycerate kinase domain 1
+7533,a/b three-layered sandwiches,Phosphoglycerate kinase domain 2
+65,beta sandwiches,Composite domain of metallo-dependent hydrolases
+4138,few secondary structure elements,Granulin repeat
+5048,alpha complex topology,Aquaporin-like
+208,beta duplicates or obligate multimers,Single-stranded left-handed beta-helix
+392,beta meanders,N-terminal domains of the minor coat protein g3p
+371,few secondary structure elements,"Phospholipase A2, PLA2"
+5055,extended segments,Small-conductance potassium channel
+5093,a+b complex topology,Head and neck region of the ectodomain of paramyxoviruses fusion glycoprotein
+7564,a/b three-layered sandwiches,"Homo-oligomeric flavin-containing Cys decarboxylases, HFCD"
+610,alpha arrays,ERP29 C domain-like
+7526,a/b three-layered sandwiches,"Initiation factor IF2/eIF5b, domain 3"
+3052,a+b complex topology,MoeA domain II
+576,few secondary structure elements,Tetraspanin extracellular domain
+143,alpha arrays,PABP domain-like
+2499,a/b three-layered sandwiches,Subtilisin-like
+163,alpha arrays,Fertilization protein
+218,a+b two layers,Enolase-N/ribosomal protein
+153,extended segments,"Transducin (heterotrimeric G protein), gamma chain"
+197,alpha bundles,Acyl-CoA binding protein-like
+271,beta barrels,GFP-like
+356,few secondary structure elements,PMP inhibitors
+4044,alpha bundles,Helical bundle domain in prismane-like proteins
+4017,few secondary structure elements,Fe-binding domain in prismane-like proteins
+7586,a/b three-layered sandwiches,Rossmann-like domain in prismane-like proteins
+872,a+b two layers,Dodecin subunit-like
+859,a+b two layers,The spindle assembly checkpoint protein mad2
+63,beta barrels,Mannose 6-phosphate receptor domain
+547,alpha duplicates or obligate multimers,Glutamyl tRNA-reductase dimerization domain
+7522,a/b three-layered sandwiches,TK C-terminal domain-like
+4006,alpha bundles,Release factor (Pfam 00472) N-terminal alpha helical domain
+187,alpha arrays,alpha-helical ferredoxin-like
+8002,alpha bundles,Zn-binding domain in glutaminyl-tRNA synthetase
+4028,beta barrels,Barrel domain in heme-dependent catalases
+4047,alpha bundles,First alpha-helical domain in heme-dependent catalases
+4048,alpha bundles,Second alpha-helical domain in heme-dependent catalases
+4967,alpha bundles,helical bundle domain in reverse transcriptase-like polymerases
+874,a+b duplicates or obligate multimers,Smc hinge domain
+7529,a/b three-layered sandwiches,Macro domain-like
+2488,a/b three-layered sandwiches,alpha/beta knot
+636,alpha arrays,SopE-like GEF domain
+379,few secondary structure elements,Kazal-type serine protease inhibitors-like
+2500,a/b barrels,Ten stranded beta/alpha barrel
+7090,extended segments,Glycyl radical domain
+5043,extended segments,Sensor proteins transmembrane domains
+142,alpha complex topology,Sigma2 domain-like
+4056,beta barrels,Barrel domain in upper collar protein
+4038,alpha bundles,Alpha-helical domain in upper collar protein
+277,a+b two layers,PX domain
+5092,beta sandwiches,Domain in virus attachment proteins
+380,few secondary structure elements,Kringle-like
+162,alpha bundles,"PTS-regulatory domain, PRD"
+918,few secondary structure elements,Pheromone ER-23
+154,alpha bundles,Methyl-coenzyme M reductase alpha and beta chain-C
+151,alpha bundles,Hemocyanin-N
+2495,a/b three-layered sandwiches,"Cell-division inhibitor MinC, N-terminal domain"
+581,extended segments,Fe-only hydrogenase smaller subunit
+885,a+b complex topology,"Transcription factor NusA, N-terminal domain"
+362,few secondary structure elements,P-domain of calnexin/calreticulin
+7535,a/b three-layered sandwiches,Dipeptide transport protein
+390,few secondary structure elements,Hairpin loop containing domain-like
+374,few secondary structure elements,HIPIP (high potential iron protein)
+903,few secondary structure elements,Apical membrane antigen 1
+560,few secondary structure elements,"H-NS histone-like proteins, C-terminal domain"
+288,a+b four layers,CNF1/YfiH-like putative cysteine hydrolases
+309,a+b two layers,"LuxS, MPP, ThrRS/AlaRS common domain"
+297,a+b complex topology,YrdC/RibB
+4230,alpha arrays,DnaD domain
+313,a+b complex topology,"Uridine diphospho-N-Acetylenolpyruvylglucosamine reductase, MurB, C-terminal domain"
+628,alpha bundles,"Fatty acid responsive transcription factor FadR, C-terminal domain"
+848,a+b complex topology,Hsp33 domain
+708,beta complex topology,ETN0001 domain-like
+823,a+b two layers,"Head-to-tail joining protein W, gpW"
+234,a+b two layers,Microbial ribonucleases-like
+254,a+b two layers,Prion-like
+6131,few secondary structure elements,Zinc finger domain in intron-associated endonuclease 1
+381,few secondary structure elements,Inhibitor of apoptosis (IAP) repeat
+4177,alpha duplicates or obligate multimers,BAR/IMD domain-like
+320,a+b two layers,R3H domain-like
+4988,a+b two layers,"Ribosomal protein S8, C-terminal domain"
+216,a+b two layers,UBC-like
+880,a+b duplicates or obligate multimers,ADC synthase
+3860,alpha bundles,Myosin VI lever arm
+363,few secondary structure elements,Thyroglobulin type-1 domain
+7562,a/b three-layered sandwiches,"Thiamin pyrophosphokinase, catalytic domain"
+4970,alpha bundles,"""fingers"" domain in bacteriophage RB69-like DNA polymerase I"
+4969,alpha bundles,"""thumb"" domain in bacteriophage RB69-like DNA polymerase I"
+3979,a+b four layers,Mre11 nuclease C-terminal domain
+538,alpha duplicates or obligate multimers,Class II MHC-associated invariant chain ectoplasmic trimerization domain
+3683,alpha arrays,Calcium binding protein 40 (CBP40) N-terminal domain
+543,few secondary structure elements,Frizzled cysteine-rich domain-related
+719,beta barrels,"XRCC4, N-terminal domain-like"
+3939,alpha duplicates or obligate multimers,XRCC4 C-terminal oligomerization domain
+7561,a/b three-layered sandwiches,Isochorismatase-like hydrolases
+3699,beta meanders,Spermidine synthase tetramerisation domain
+4018,a+b two layers,a+b domain in carbohydrate phosphatases
+7587,a/b three-layered sandwiches,Rossmann-like domain in carbohydrate phosphatases
+4032,beta complex topology,barrel domains in phase 1 flagellin
+882,a+b two layers,Ribosomal protein L5
+801,a+b three layers,Hypothetical protein MTH1880
+167,alpha arrays,Ribosomal protein S7
+5104,a+b three layers,C-terminal domain in DHH phosphoesterases
+7558,a/b three-layered sandwiches,Glycerol-3-phosphate (1)-acyltransferase
+4052,beta complex topology,Acyl-CoA dehydrogenase middle domain-like
+4033,alpha arrays,Acyl-CoA dehydrogenase N-terminal domain-like
+5067,alpha bundles,Multidrug efflux transporter AcrB transmembrane domain
+71,beta meanders,Lipoprotein localization factors LolAB
+537,alpha arrays,BRCA2 helical domain
+4196,alpha complex topology,BRCA2 tower domain
+5075,alpha bundles,Photosystem II antenna protein-like
+635,alpha arrays,YgfB-like
+4030,alpha bundles,alpha-helical domain in subunits of heterodimeric actin filament capping protein Capz
+4051,a+b two layers,a+b domain in Capz
+4050,few secondary structure elements,beta-barrel domain in Capz
+539,few secondary structure elements,Crustacean Hyperglycemic Hormone (CHH)-like
+366,few secondary structure elements,Blood coagulation inhibitor (disintegrin)
+561,alpha bundles,"Myosin phosphatase inhibitor 17kDa protein, CPI-17"
+7553,a/b three-layered sandwiches,"Nicotinate mononucleotide:5,6-dimethylbenzimidazole phosphoribosyltransferase (CobT)"
+393,few secondary structure elements,GLA-domain
+2490,a/b three-layered sandwiches,Ribosomal protein L13/L15p/L18e/L32e
+285,a+b three layers,N-acetylmuramoyl-L-alanine amidase-like
+256,a+b two layers,MTH1598-like
+258,a+b complex topology,Methionine synthase activation domain-like
+257,a+b complex topology,"Aromatic aminoacid monoxygenases, catalytic and oligomerization domains"
+181,alpha bundles,Domain of the SRP/SRP receptor G proteins-like
+7527,a/b three-layered sandwiches,SurE-like/CoA-transferase family III (CaiB/BaiF)
+5037,alpha bundles,Bacterial photosystem II reaction centre L and M subunits-like
+834,a+b two layers,Photosystem I subunit PsaD
+5019,extended segments,"Subunit III of photosystem I reaction centre, PsaF"
+5020,extended segments,"Subunit VIII of photosystem I reaction centre, PsaI"
+5021,extended segments,"Subunit IX of photosystem I reaction centre, PsaJ"
+5063,alpha bundles,"Photosystem I reaction center subunit X, PsaK"
+5064,alpha bundles,"Photosystem I reaction center subunit XI, PsaL"
+5022,extended segments,"Subunit XII of photosystem I reaction centre, PsaM"
+3465,extended segments,Subunit PsaX of photosystem I reaction centre
+255,a+b complex topology,LCCL domain
+62,beta meanders,Carbonic anhydrase
+60,beta barrels,SPOC domain-like
+881,a+b three layers,Mog1p/PsbP-like
+850,a+b three layers,Hypothetical protein Ta1206-like
+637,alpha arrays,Ribosomal protein L19 (L19e) N-terminal domain
+3050,alpha bundles,Ribosomal protein L19 (L19e) C-terminal domain
+865,beta complex topology,PheT/TilS domain
+709,beta sandwiches,Neurophysin II
+2494,a/b three-layered sandwiches,DTD-like
+316,a+b three layers,Nucleotidyltransferase-like
+4063,a+b complex topology,a+b domain in membrane penetration protein mu1
+4062,alpha arrays,Alpha-helical domain in membrane penetration protein mu1
+5074,extended segments,Bacterial light-harvesting complex subunits
+191,alpha bundles,"Tetracyclin repressor-like, C-terminal domain"
+827,a+b two layers,Integrin beta tail domain
+639,alpha arrays,HHA-like
+7545,a/b three-layered sandwiches,YchN-like
+853,extended segments,Virulence effector SptP domain
+534,alpha duplicates or obligate multimers,Bcr-Abl oncoprotein oligomerization domain
+137,alpha bundles,A DNA-binding domain in eukaryotic transcription factors
+79,beta duplicates or obligate multimers,Phage tail fiber protein trimerization domain
+3071,a+b complex topology,C-terminal insertion domain in phage tail proteins
+847,a+b complex topology,YopH tyrosine phosphatase N-terminal domain
+533,alpha bundles,Arp2/3 complex 21 kDa subunit ARPC3
+4054,alpha bundles,Alpha-helical domain in adenylylcyclase toxin
+4036,a+b two layers,Insertion domain in adenylylcyclase toxin (the edema factor)
+4035,a+b three layers,N-terminal a+b domain in adenylylcyclase toxin
+253,a+b complex topology,Argininosuccinate synthetase-C
+588,alpha arrays,Nuclear receptor coactivator ACTR
+5069,alpha bundles,Transmembrane heme-binding four-helical bundle
+916,few secondary structure elements,"Necrosis inducing protein 1, NIP1"
+7517,a/b three-layered sandwiches,Nucleoside hydrolase
+53,beta duplicates or obligate multimers,Triple beta-spiral
+608,alpha arrays,AhpD-like
+4060,a+b duplicates or obligate multimers,NSP3 homodimer
+593,alpha bundles,GroEL equatorial domain-like
+3887,a+b two layers,Yeast killer toxin-like
+4002,alpha bundles,alpha-helical domain in dehydroquinate synthase-like enzymes
+5023,extended segments,"Iron-sulfur subunit of formate dehydrogenase N, transmembrane anchor"
+168,alpha arrays,Sec7 domain
+194,alpha complex topology,Serum albumin-like
+4049,alpha superhelices,alpha-helical domain in siroheme synthase middle domains-like
+4029,a+b duplicates or obligate multimers,SSH domain in siroheme synthase middle domains-like
+1074,alpha arrays,Alpha helical domain of ribonucleotide reductases
+3005,a+b three layers,"B12-dependent (class II) ribonucleotide reductase, insertion domain"
+5046,extended segments,F-type ATP synthase subunit b
+854,extended segments,Outer membrane virulence protein yopE
+295,a+b two layers,ssDNA-binding transcriptional regulator domain-like
+705,beta duplicates or obligate multimers,Cyanovirin-N
+144,alpha arrays,PGBD-like
+3012,a+b two layers,Cof C2 cap domain
+5065,alpha bundles,Type II ABC importer transmembrane domain fold
+624,alpha arrays,Variable surface antigen VlsE
+198,alpha arrays,Saposin-like
+4246,a+b complex topology,N-terminal domain in RNA-polymerase beta-prime subunit
+4951,alpha arrays,inserted helical subdomain in bacterial RNA-polymerase beta-prime subunit
+4959,a+b complex topology,first helical domain in RNA-polymerase beta-prime subunit
+4958,a+b complex topology,second helical domain in RNA-polymerase beta-prime subunit
+4954,a+b complex topology,central helical domain in RNA-polymerase beta-prime subunit
+307,a+b two layers,Hedgehog/DD-peptidase
+4001,a+b duplicates or obligate multimers,a+b domain in cullin-like proteins
+4003,alpha arrays,Helical bundle domain in YebC-like proteins
+4007,a+b two layers,a+b domain in YebC-like proteins
+845,a+b complex topology,VSV matrix protein
+3857,beta sandwiches,Head-binding domain of phage P22 tailspike protein
+531,alpha arrays,Domains of FliG
+289,a+b complex topology,Peptide deformylase
+260,a+b duplicates or obligate multimers,beta-hairpin-alpha-hairpin repeat
+4215,alpha arrays,SOCS box-like
+910,few secondary structure elements,"Cysteine-rich DNA binding domain, (DM domain)"
+324,a+b two layers,OsmC-like
+272,a+b two layers,TolA/TonB C-terminal domain
+5087,beta meanders,Lipovitellin-phosvitin complex
+922,few secondary structure elements,TSP-1 type 1 repeat
+3003,a+b complex topology,N-terminal subdomain in DNA replication initiator (cdc21/cdc54)
+199,alpha arrays,Guanido kinase-N
+4065,a+b complex topology,L-A virus major coat protein-related
+536,alpha arrays,beta-catenin-interacting protein ICAT
+714,beta sandwiches,"N-utilization substance G protein NusG, insert domain"
+642,a+b three layers,"Suppressor of Fused, N-terminal domain"
+7552,a/b three-layered sandwiches,Amidase signature (AS) enzymes
+5010,extended segments,Bacterial aa3 type cytochrome c oxidase subunit IV
+3006,a+b two layers,"Sm-Like archaeal protein Smap3, C-terminal domain"
+589,alpha arrays,Triger factor/SurA peptide-binding domain-like
+262,a+b complex topology,Nitric oxide (NO) synthase oxygenase domain
+3788,alpha bundles,Viral accessory protein x (Vpx) / viral protein r (Vpr)
+2010,a/b three-layered sandwiches,EDD domain
+267,a+b complex topology,"Metal cation-transporting ATPase, ATP-binding domain"
+131,alpha complex topology,PDEase-like
+821,a+b three layers,GIY-YIG endonuclease
+395,few secondary structure elements,Midkine-related
+3358,few secondary structure elements,Zn3Cys9 preSET domain-related
+592,alpha arrays,PWI domain-like
+4964,alpha arrays,helical bundle in Bacillus stearothermophilus-like DNA polymerase I
+4966,alpha arrays,inserted helical bundle subdomain in T7 RNA polymerase
+77,beta meanders,open-sided beta-meander
+640,alpha arrays,Methane monooxygenase hydrolase gamma subunit-like
+7569,a/b three-layered sandwiches,Uracil-DNA glycosylase-like
+4963,alpha complex topology,N-terminal additional helical subdomain in reovirus polymerase lambda3
+4962,alpha complex topology,C-terminal additional helical subdomain in reovirus polymerase lambda3
+619,a+b complex topology,Hypothetical protein HI1480
+303,a+b four layers,Pyruvoyl-dependent histidine and arginine decarboxylases
+629,alpha bundles,TorD-like (Pfam 06192)
+179,alpha bundles,CO dehydrogenase ISP C-domain like
+870,a+b two layers,Hypothetical protein Yml108w
+3002,beta complex topology,"Adsorption protein p2, insertion domain"
+3899,beta complex topology,Baseplate structural protein gp8
+545,alpha bundles,Gametocyte protein Pfg27-related
+530,alpha arrays,Chemosensory protein Csp2
+566,alpha complex topology,P40 nucleoprotein-like
+803,a+b duplicates or obligate multimers,Hypothetical protein YoaG
+573,alpha duplicates or obligate multimers,Soluble domain of poliovirus core protein 3a
+4040,alpha bundles,Fic-like
+4058,a+b three layers,a+b domain in antivirulence factor
+104,alpha duplicates or obligate multimers,"TFIIA, alpha-helical domain"
+74,beta duplicates or obligate multimers,"Transcription factor IIA (TFIIA), beta-barrel domain"
+3018,a+b two layers,MesJ substrate recognition domain-like
+884,a+b two layers,"Hypothetical protein YjiA, C-terminal domain"
+161,alpha complex topology,Helical scaffold and wing domains of SecA
+7509,a/b three-layered sandwiches,NIF3 (NGG1p interacting factor 3)-like
+571,alpha arrays,Replisome organizer (g39p helicase loader/inhibitor protein)
+4066,a+b complex topology,Major capsid protein VP5
+182,alpha complex topology,Cryptochrome/photolyase FAD-binding domain-related
+819,a+b two layers,DNA-binding protein Tfx
+7537,a/b three-layered sandwiches,PTS IIb component
+606,alpha complex topology,Nop N-terminal domain
+852,extended segments,Ubiquinol-cytochrome c reductase 8 kDa protein
+6056,alpha arrays,SP1917-like
+80,beta complex topology,HesB-like domain
+643,alpha arrays,Hypothetical protein MTH393
+276,a+b three layers,L-sulfolactate dehydrogenase-like
+532,alpha arrays,Type III secretion system domain-like
+251,a+b two layers,FYSH domain
+7073,alpha arrays,C-terminal domain of Malic enzyme
+171,alpha arrays,RNase III catalytic domain-like
+7560,a/b three-layered sandwiches,Ribose/Galactose isomerase RpiB/AlsB
+508,a+b three layers,Protein interacting with HSP90 1 (Pih1) N-terminal domain
+842,a+b two layers,Thymidylate synthase-complementing protein Thy1
+711,a+b two layers,Tp47 lipoprotein N-terminal domain
+7546,a/b three-layered sandwiches,Glutaminase/Asparaginase N-terminal domain
+7507,a/b three-layered sandwiches,Glutaminase/Asparaginase C-terminal domain
+835,a+b complex topology,Proguanylin
+7554,a/b three-layered sandwiches,"2,3-Bisphosphoglycerate-independent phosphoglycerate mutase, substrate-binding domain"
+4223,a+b complex topology,first a+b domain in acetyl-CoA synthase
+4971,a+b complex topology,second a+b domain in acetyl-CoA synthase
+920,few secondary structure elements,Somatomedin B domain
+5057,alpha bundles,Neurotransmitter-gated ion-channel transmembrane pore
+549,alpha arrays,HAND domain of the nucleosome remodeling ATPase ISWI
+159,alpha bundles,all-alpha NTP pyrophosphatases
+6176,beta sandwiches,Insertion domain in tetravirus coat protein
+4985,few secondary structure elements,DPY module
+4039,beta complex topology,"Beta-strand domain in eukaryotic DNA topoisomerase I, N-terminal DNA-binding fragment"
+4057,alpha arrays,"Alpha-helical domain in eukaryotic DNA topoisomerase I, N-terminal DNA-binding fragment"
+562,alpha duplicates or obligate multimers,NblA-like (Pfam 04485)
+701,beta sandwiches,alpha-Amylase inhibitor tendamistat
+5076,alpha complex topology,Mitochondrial ADP/ATP carrier-like
+355,few secondary structure elements,Trefoil/Plexin domain-like
+3692,a+b two layers,Ornithine cyclodeaminase-like enzymes dimerization domain
+274,a+b two layers,Pili subunits
+564,alpha arrays,"N-terminal, cytoplasmic domain of anti-sigma factors"
+5053,alpha complex topology,Clc chloride channel
+559,alpha duplicates or obligate multimers,"H-NS histone-like proteins, N-terminal domain"
+7574,a/b three-layered sandwiches,Thiamin diphosphate-binding fold (THDP-binding)
+353,few secondary structure elements,Plant proteinase inhibitors
+897,a+b two layers,Acidic mitochondrial matrix protein p32-like
+4081,beta sandwiches,Baculovirus p35 protein-related
+7528,a/b three-layered sandwiches,"Phosphoglucomutase, first 3 domains"
+808,a+b duplicates or obligate multimers,Arterivirus nucleocapsid protein
+3512,beta duplicates or obligate multimers,Trimeric autotransporter adhesin GIN domain
+917,few secondary structure elements,Lin12/Notch repeat
+584,alpha arrays,Quinohemoprotein amine dehydrogenase C chain
+829,a+b duplicates or obligate multimers,NinB
+7572,a/b three-layered sandwiches,Phosphofructokinase C-terminal domain
+5089,beta complex topology,Membrane attack complex/perforin (MACPF) and cholesterol-dependent cytolysin (CDC) domains
+3691,alpha arrays,Phosphomannose isomerase helical insertion domain
+5068,alpha bundles,a domain/subunit of cytochrome bc1 complex (Ubiquinol-cytochrome c reductase)
+5013,extended segments,cytochrome c1 transmembrane anchor
+5014,extended segments,iron-sulfur subunit (ISP) transmembrane anchor
+5070,alpha arrays,14 kDa protein of cytochrome bc1 complex (Ubiquinol-cytochrome c reductase)
+5016,extended segments,Ubiquinone-binding protein QP-C of cytochrome bc1 complex (Ubiquinol-cytochrome c reductase)
+5071,alpha bundles,cytochrome bc1 complex 11 kDa protein-like
+5017,extended segments,Subunit X (non-heme 7 kDa protein) of cytochrome bc1 complex (Ubiquinol-cytochrome c reductase)
+569,alpha bundles,Peridinin-chlorophyll protein
+878,a+b two layers,Hypothetical protein MTH677
+811,a+b complex topology,Cell cycle regulatory proteins
+516,alpha arrays,"YgfY-like (DUP399, Pfam03937)"
+804,a+b four layers,Hypothetical protein YwqG
+5050,alpha complex topology,Major facilitator superfamily (MFS) general substrate transporter
+907,few secondary structure elements,CCHHC domain
+373,few secondary structure elements,Zn2/Cys6 DNA-binding domain
+3702,beta complex topology,Penicillin binding protein dimerisation domain
+6051,alpha duplicates or obligate multimers,Docking domains in modular polyketide synthases
+166,alpha superhelices,1-deoxy-D-xylulose-5-phosphate reductoisomerase-C
+555,alpha arrays,"Invasion protein A (SipA) , C-terminal actin binding domain"
+4305,a+b two layers,GTF2I-like repeat
+7567,a/b three-layered sandwiches,LmbE-like
+5024,extended segments,"Cytochrome f subunit of the cytochrome b6f complex, transmembrane anchor"
+5106,extended segments,PetG subunit of the cytochrome b6f complex
+5025,extended segments,PetL subunit of the cytochrome b6f complex
+5015,extended segments,PetM subunit of the cytochrome b6f complex
+5026,extended segments,PetN subunit of the cytochrome b6f complex
+520,beta sandwiches,gp9 N-terminal domain-like
+3386,beta sandwiches,gp9 C-terminal domain-like
+625,alpha arrays,Hepatitis B viral capsid (hbcag)
+4076,a+b two layers,L9 N-domain-like
+152,alpha arrays,RPB6/omega subunit-like
+869,a+b complex topology,Methenyltetrahydromethanopterin cyclohydrolase
+3758,alpha bundles,Bacterial hemolysins-like
+3787,alpha bundles,HAD superfamily helical bundle insertion domain
+52,beta sandwiches,"E2 regulatory, transactivation domain"
+290,beta barrels,Sortase
+875,a+b two layers,"Chorismate synthase, AroC"
+286,a+b complex topology,Diaminopimelate epimerase-like
+504,a+b two layers,Bacterial protein-export protein SecB
+3051,alpha arrays,Superantigen MAM C-terminal domain
+5083,extended segments,Connexin43
+4037,alpha superhelices,Alpha-helical domain in virulence-associated V antigen
+4055,a+b complex topology,a+b domain in virulence-associated V antigen
+157,alpha duplicates or obligate multimers,Flavivirus capsid protein C
+3317,alpha arrays,KorB C-terminal domain-like
+843,a+b two layers,"Tombusvirus P19 core protein, VP19"
+7563,a/b three-layered sandwiches,MCP/YpsA-related
+542,alpha arrays,"Eukaryotic initiation factor 4f subunit eIF4g, eIF4e-binding domain"
+929,beta duplicates or obligate multimers,Resistin
+906,few secondary structure elements,CCCH zinc finger
+57,beta complex topology,Cloacin translocation domain
+5061,alpha complex topology,Preprotein translocase SecY subunit
+5027,extended segments,Preprotein translocase SecE subunit
+5028,extended segments,Sec-beta subunit
+3696,a+b two layers,DNA helicase UvsW N-terminal a+b domain-related
+613,alpha complex topology,Putative anticodon-binding domain of alanyl-tRNA synthetase (AlaRS)
+861,a+b two layers,Mago nashi protein
+4143,a+b two layers,THUMP domain-like
+5029,extended segments,Oligosaccharyltransferase subunit ost4p
+318,a+b two layers,Ribosomal protein L6
+1109,few secondary structure elements,Fe-S cluster binding domain in some xanthine oxidase family enzymes
+862,a+b complex topology,Prim-pol domain
+7555,a/b three-layered sandwiches,"Alpha-2,3/8-sialyltransferase CstII-related"
+579,extended segments,Anti-sigma factor FlgM
+526,alpha bundles,ERO1-like
+7540,a/b three-layered sandwiches,"Bacterial fluorinating enzyme, N-terminal domain"
+156,alpha duplicates or obligate multimers,"Ribosomal protein L7/12, oligomerisation (N-terminal) domain"
+3014,alpha duplicates or obligate multimers,Middle operon regulator dimerization domain
+3010,a/b three-layered sandwiches,C-terminal subdomain in Lon-related proteases catalytic domains
+641,alpha bundles,Glycogen synthesis protein GlgS
+614,alpha duplicates or obligate multimers,L27 domain
+5077,extended segments,Chlorophyll a-b binding protein
+620,alpha bundles,YfiT-like putative metal-dependent hydrolases
+618,a+b complex topology,DNA mimic protein DMP12-like
+509,alpha bundles,PAH2 domain
+4187,a+b two layers,NosL/MerB-like
+716,beta duplicates or obligate multimers,Trimeric autotransporter adhesin Trp ring domain
+586,extended segments,Stathmin
+578,alpha arrays,YcfC-like
+3004,alpha bundles,"Hypothetical protein YfhH, N-terminal domain"
+5094,a+b duplicates or obligate multimers,OmpH-like
+4084,alpha bundles,ChaB-like
+5091,beta sandwiches,VP4 membrane interaction domain
+521,beta sandwiches,"Ecotin, trypsin inhibitor"
+4042,a+b complex topology,barrel domain in beta subunit of DNA dependent RNA-polymerase
+4010,a+b complex topology,N-terminal domain in beta subunit of DNA dependent RNA-polymerase
+4041,a+b complex topology,insertion domain in beta subunit of DNA dependent RNA-polymerase
+4043,a+b complex topology,C-terminal domain in beta subunit of DNA dependent RNA-polymerase
+4277,few secondary structure elements,"Mini-collagen I, C-terminal domain"
+4008,a+b two layers,CbiD-like (Pfam 01888) N-terminal domain
+7582,a/b three-layered sandwiches,Rossmann-like domain in CbiD
+4026,a+b three layers,a+b domain in Rap/Ran-GAP (Pfam 02145)
+831,a+b two layers,"NSFL1 (p97 ATPase) cofactor p47, SEP domain"
+3786,alpha arrays,YAP1 redox domain
+704,beta complex topology,Coronavirus RNA-binding domain (N-terminal part of Pfam 00937)
+1114,alpha arrays,Serine acetyltransferase N-terminal domain
+5090,beta complex topology,"Viral glycoprotein, central and dimerisation domains-like"
+4271,alpha complex topology,PriB N-terminal domain-like
+8001,alpha arrays,N-terminal domain of large tumor antigen
+631,alpha arrays,"Glycolipid transfer protein, GLTP"
+822,a+b two layers,GYF/BRK domain-like
+550,alpha complex topology,Her-1
+4021,alpha arrays,alpha-helical domain in 2-methylcitrate dehydratase PrpD
+1056,a+b two layers,tRNA pseudouridine synthase TruD insertion domain
+815,a+b two layers,Chromosomal protein MC1
+4313,beta duplicates or obligate multimers,CsrA-like
+857,a+b duplicates or obligate multimers,Cell division protein ZapA-like
+915,few secondary structure elements,Mollusk pheromone
+5086,alpha bundles,helical hairpin of HlyD-like secretion proteins
+528,alpha bundles,ADP-ribosylglycohydrolase
+3651,alpha bundles,Translation initiation factor eIF-2B delta subunit N-terminal helical domain
+352,a+b complex topology,Noncollagenous (NC1) domain of collagen IV
+535,alpha arrays,BEACH domain
+575,alpha arrays,TAF(II)230 TBP-binding fragment
+4979,alpha arrays,C-terminal domain of Hypothetical protein MPN330-like
+4270,alpha bundles,N-terminal domain of Hypothetical protein MPN330
+4980,alpha superhelices,Middle domain of Hypothetical protein MPN330
+570,alpha arrays,Pre-protein crosslinking domain of SecA
+4077,beta sandwiches,"Beta-galactosidase LacA, domain 3"
+871,a+b two layers,SSo0622-like (Pfam 02676)
+553,alpha arrays,Hypothetical protein MG354
+7500,a/b three-layered sandwiches,Glycerate kinase I (Pfam 02595) domain II
+814,a+b two layers,Chorismate lyase
+51,beta sandwiches,Penicillin-binding protein associated domain
+4957,a+b complex topology,helical domain in yeast RNA-polymerases
+4956,a+b two layers,ferredoxin-like domain in yeast RNA-polymerase beta-prime subunit
+4955,a+b two layers,permuted ferredoxin-like domain in yeast RNA-polymerase beta-prime subunit
+4961,a+b complex topology,inserted a+b domain in yeast RNA polymerase beta subunit
+572,alpha arrays,Scaffolding protein gpD of bacteriophage procapsid
+867,a+b three layers,Coproporphyrinogen III oxidase
+7590,a/b three-layered sandwiches,Middle domain in Argonaute homologs
+4004,beta sandwiches,NAD kinase beta sandwich domain-like
+913,few secondary structure elements,"Hormone receptor domain (HRM, Pfam 02793)"
+873,a+b complex topology,H-NOX domain
+5049,alpha complex topology,Ammonium transporter-related
+4323,alpha bundles,helical bundle domain in vacuolar ATP synthase subunit C
+502,a+b two layers,Anti-LPS factor/recA domain
+568,few secondary structure elements,p8-MTCP1-related
+4216,a+b duplicates or obligate multimers,Heme iron utilization protein-like
+4024,few secondary structure elements,Fe-S cluster-binding domain in nickel-iron hydrogenase small subunit
+710,beta complex topology,Obg GTP-binding protein N-terminal domain
+513,a+b two layers,Obg GTP-binding protein C-terminal domain-like
+3686,alpha arrays,Nitrile hydratase subunit beta N-termial domain
+178,alpha arrays,SWIB/MDM2 domain
+4357,beta barrels,WWE domain
+155,alpha arrays,"VHP, Villin headpiece domain"
+590,alpha bundles,Citrobacter dihydroxyacetone kinase extra ATP-binding domain
+928,few secondary structure elements,Bubble protein
+548,alpha duplicates or obligate multimers,GRIP domain
+4174,a+b complex topology,N-terminal domain in viral ssDNA binding protein
+1012,alpha arrays,Hsp90 co-chaperone CDC37 C-terminal domain
+551,alpha arrays,Hsp90 co-chaperone CDC37 middle domain
+805,a+b complex topology,"5'-nucleotidase (syn. UDP-sugar hydrolase), C-terminal domain"
+3703,a/b three-layered sandwiches,HSP90 C-terminal a/b domain
+173,alpha arrays,Uteroglobin-like
+703,beta sandwiches,BTV NS2-like ssRNA-binding domain (N-terminal half of Pfam 04514)
+558,alpha duplicates or obligate multimers,Lis-homology dimerization domain
+4022,a+b two layers,N-terminal a+b domain in urocanase (Pfam 01175)
+1192,a+b two layers,RumA insert domain
+626,alpha complex topology,Formin homology 2 domain (FH2 domain)
+921,few secondary structure elements,TSP type-3 repeat
+825,beta complex topology,Aerolysin family of pore-forming toxins
+4133,alpha arrays,Emsy N terminal (ENT) domain-like
+4982,alpha arrays,KaiA/RbsU domain-like
+810,a+b two layers,BtrG-like (Pfam 03674)
+3054,alpha arrays,Insert all-alpha domain in prim-pol
+5003,extended segments,Mitochondrial cytochrome c oxidase subunit IV
+5004,extended segments,Mitochondrial cytochrome c oxidase subunit VIa
+540,few secondary structure elements,Cytochrome c oxidase subunit h
+5005,extended segments,Mitochondrial cytochrome c oxidase subunit VIc
+5006,extended segments,Mitochondrial cytochrome c oxidase subunit VIIa
+5007,extended segments,Mitochondrial cytochrome c oxidase subunit VIIb
+5008,extended segments,Mitochondrial cytochrome c oxidase subunit VIIc (aka VIIIa)
+5009,extended segments,Mitochondrial cytochrome c oxidase subunit VIIIb (aka IX)
+556,alpha arrays,"KRAB domain (Kruppel-associated box, Pfam 01352)"
+7539,a/b three-layered sandwiches,Creatininase
+7547,a/b three-layered sandwiches,Hypothetical protein TT1679
+5060,alpha bundles,V-type ATP synthase subunit C
+75,beta barrels,Cyclophilin-like
+4139,a+b two layers,AMMECR1-like
+818,a+b two layers,DNA topoisomerase I domain
+4261,a+b two layers,TrkA C-terminal domain-like
+4330,few secondary structure elements,Vanabin-like
+802,a+b two layers,Hypothetical protein TM0160
+876,a+b complex topology,ParB/Sulfiredoxin
+5103,a/b three-layered sandwiches,Insert domain in hypothetical protein PF0380
+552,alpha arrays,Hypothetical protein At3g22680
+7549,a/b three-layered sandwiches,Indigoidine synthase A-like (Pfam 04227)
+4013,a/b three-layered sandwiches,a/b domain in QueA-like proteins (Pfam 02547)
+3053,beta barrels,"barrel domain in putative modulator of DNA gyrase, PmbA/TldD"
+512,a+b two layers,"a+b domain in putative modulator of DNA gyrase, PmbA/TldD (Pfam 01523)"
+519,a+b two layers,mRNA decapping enzyme DcpS N-terminal domain
+846,a+b two layers,YjbQ-like (Pfam 01894)
+912,few secondary structure elements,HIV-1 VPU cytoplasmic domain
+585,extended segments,Ribosomal protein L39e
+3174,beta barrels,Ribosomal protein L14-like
+259,a+b two layers,Ribosomal protein L31e-like
+7551,a/b three-layered sandwiches,ComB-like
+3117,a+b two layers,C-terminal domain of OAT (ornithine acetyltransferase)
+1189,a+b complex topology,VSG (variant surface glycoprotein) N-terminal domain
+4275,alpha arrays,Hypothetical protein YqbG-like
+4232,few secondary structure elements,Ribosomal protein bL28-related
+4069,alpha arrays,Phosphoprotein C-terminal domain
+4203,few secondary structure elements,HSP33 redox switch-like
+6004,extended segments,FATC domain
+3620,alpha bundles,Factor H-binding protein BbCRASP-1
+582,extended segments,Methanol dehydrogenase subunit
+4309,a+b complex topology,"DUSP, domain in ubiquitin-specific proteases"
+4334,beta complex topology,Inserted beta sandwich domain in Dac-like proteins
+147,alpha arrays,Peripheral subunit-binding domain of 2-oxo acid dehydrogenase complex
+6003,few secondary structure elements,Protein P30
+6002,few secondary structure elements,Protein P16
+3781,a+b two layers,Ribosomal protein L11/L12e N-terminal domain-like
+4996,alpha arrays,DNA-binding domain of EIN3-like
+3760,alpha arrays,Protein arginine N-methyltransferase 3 helical domain
+4998,beta sandwiches,Flagellar hook protein flgE D2 domain-like
+4167,beta complex topology,Flagellar hook protein flgE D1 domain
+4312,a+b two layers,RelE-like
+4992,extended segments,RelB-like
+4263,a+b two layers,TTHA1528-like
+3930,alpha bundles,Helical bundle insertion in helicase domains
+4981,alpha arrays,"YfbU-like, C-terminal subdomain"
+4359,alpha duplicates or obligate multimers,"YfbU-like, N-terminal subdomain"
+849,a+b three layers,Hut operon positive regulatory protein HutP
+6007,extended segments,NHR2 domain-like
+7027,few secondary structure elements,Conotoxin F14
+4307,alpha duplicates or obligate multimers,EB1 dimerisation domain-like
+4100,a+b duplicates or obligate multimers,TTHA1013/TTHA0281-like
+7000,alpha arrays,inserted region in the C-terminal domain of the archeal LeuRS
+7588,a/b three-layered sandwiches,NadA-like/4-hydroxy-3-methylbut-2-enyl diphosphate reductase
+4075,a+b complex topology,RGC domain
+4299,alpha arrays,BSD domain
+574,alpha bundles,Surp module (SWAP domain)
+4095,alpha bundles,ATP-dependent DNA ligase DNA-binding domain
+6009,a+b complex topology,Insertion domain in Adenovirus penton base protein
+4337,a+b two layers,DNA mismatch repair protein MutL dimerization subdomain
+4111,a+b two layers,AF0104/ALDC/Ptd012-like
+4114,a+b two layers,PHP14-like
+6081,a+b two layers,Pro-domain of Hemolysin hlyA
+4009,alpha bundles,alpha-helical domain in AF1104-like proteins
+7583,a/b three-layered sandwiches,Rossmann-like domain in AF1104-like proteins
+851,extended segments,Phycoerythrin 545 alpha-subunits
+866,a+b duplicates or obligate multimers,CheC-like
+5011,extended segments,Bacterial ba3 type cytochrome c oxidase subunit IIa
+7592,a/b three-layered sandwiches,CARF (CRISPR-associated Rossmann fold) domains
+4268,alpha duplicates or obligate multimers,EspA/CesA-like
+3269,alpha arrays,D-ornithine aminomutase S component-related
+4986,few secondary structure elements,"Variant surface glycoprotein MITAT 1.2, VSG 221, C-terminal domain"
+4137,a+b three layers,YehU-like
+3601,alpha complex topology,Class III adenylyl cyclases regulatory domain
+4091,beta complex topology,"L,D-transpeptidase catalytic domain-like"
+6076,alpha arrays,Catalytic cysteine domain in ubiquitin-activating enzyme
+514,alpha bundles,YutG-like
+4340,a+b complex topology,TFB5-related
+4286,beta complex topology,At5g01610-like
+4333,a+b complex topology,DNA methylase specificity domain
+3746,alpha bundles,Membrane-integrating protein Mistic
+4207,alpha duplicates or obligate multimers,Mediator hinge subcomplex-like
+4204,alpha bundles,AF0941-like
+3607,alpha bundles,Poxvirus L1 protein
+4978,a/b three-layered sandwiches,a/b domain in AF0625-like proteins
+6020,a+b two layers,Beta domain of  DivIB/FtsQ
+4166,beta sandwiches,Lactophage receptor-binding protein N-terminal domain-like
+3761,beta duplicates or obligate multimers,Major tropism determinant (Mtd) trimerization domain-related
+3815,beta sandwiches,C protein alpha-antigen beta-sandwich domain
+7589,a/b three-layered sandwiches,YgbK-like
+4304,alpha arrays,GUN4-like
+3569,extended segments,Epidermal growth factor receptor transmembrane-juxtamembrane segment-like
+3669,a+b complex topology,conserved hypothetical protein MTH0776
+4228,a+b complex topology,"L,D-transpeptidase pre-catalytic domain-like"
+4329,a+b complex topology,ORC1-binding domain
+3236,alpha complex topology,Cation-proton antiporter
+4194,a+b duplicates or obligate multimers,Prenyltransferase-like
+4229,alpha bundles,"Indolic compounds 2,3-dioxygenase-like"
+4983,alpha superhelices,"Indoleamine 2,3-dioxygenase N-terminal subdomain"
+4291,beta barrels,Oxysterol-binding protein
+4160,beta complex topology,Barrel domain in thermophilic metalloproteases (M29)
+3732,few secondary structure elements,Anosmin 1 N-terminal cysteine-rich domain
+4188,a+b complex topology,BB1717-like
+587,alpha arrays,Nuclear receptor coactivator CBP/p300 ibid domain
+4250,alpha bundles,"Duffy-binding-like domain, N-terminal subdomain"
+4984,alpha bundles,"Duffy-binding-like domain, C-terminal subdomain"
+4135,beta duplicates or obligate multimers,MAL13P1.257-like
+3741,extended segments,Myeloma immunoglobulin D delta linker region
+3812,alpha bundles,Type III secretion protein YscE
+3433,a+b duplicates or obligate multimers,ParB dimerization domain
+607,alpha arrays,Enzyme I of the PEP:sugar phosphotransferase system HPr-binding (sub)domain
+5051,alpha complex topology,Sodium:neurotransmitter symporter family (SNF)-like
+4267,a+b duplicates or obligate multimers,YefM-like
+7520,a/b three-layered sandwiches,CinA-like
+359,few secondary structure elements,"Bowman-Birk inhibitor, BBI-like"
+3428,a+b two layers,hypothetical protein TA0743
+4315,beta barrels,Coronavirus NSP8-like
+4071,beta barrels,BH3618-like
+3660,alpha bundles,Protein-export membrane protein secG
+4199,alpha arrays,PG0816-like
+3962,alpha arrays,N-terminal helical domain in restriction-modification system methylation subunit-like
+3270,a+b two layers,a+b domain in heme oxygenase
+4285,alpha arrays,EF2947-like
+3744,a+b two layers,Photosystem II antenna protein PsbB insertion domain
+5036,extended segments,Cytochrome b559 subunits
+5032,extended segments,Photosystem II 10 kDa phosphoprotein PsbH
+5035,extended segments,"Photosystem II reaction center protein I, PsbI"
+5031,extended segments,"Photosystem II reaction center protein J, PsbJ"
+5034,extended segments,"Photosystem II reaction center protein K, PsbK"
+5030,extended segments,"Photosystem II reaction center protein L, PsbL"
+5033,extended segments,"Photosystem II reaction center protein M, PsbM"
+3390,extended segments,"Photosystem II reaction center protein T, PsbT"
+5044,extended segments,PsbZ-like
+4096,a+b two layers,NAP-like
+4154,beta duplicates or obligate multimers,E2F-DP heterodimerization region
+4150,beta duplicates or obligate multimers,Atu1913-like
+3422,a+b two layers,TEN domain of telomerase reverse transcriptase
+4308,a+b complex topology,YbiA-like
+3423,a+b three layers,Nonstructural protein V
+7536,a/b three-layered sandwiches,GckA/TtuD-like domain 1
+707,beta complex topology,Hydrophobin
+4123,few secondary structure elements,E7 C-terminal domain-like
+6012,few secondary structure elements,Antimicrobial peptide LCI
+6039,few secondary structure elements,CLIP domain
+4238,few secondary structure elements,Viral leader polypeptide zinc finger
+902,few secondary structure elements,Amb V allergen
+4121,a+b three layers,CorA soluble domain-like
+914,few secondary structure elements,"Methylamine dehydrogenase, L chain"
+6006,extended segments,Voltage gated calcium channel IQ domain
+702,beta duplicates or obligate multimers,beta-hairpin stack
+6011,few secondary structure elements,Phytotoxic protein PcF
+4184,beta barrels,MFPT repeat
+6005,few secondary structure elements,PSI AB box domain
+6086,extended segments,N-terminal domain of small heat shock protein Tsp36
+4120,few secondary structure elements,Tim10/DDP
+6019,a+b two layers,"C-terminal domain of  bypass of forespore C, BofC"
+4202,alpha duplicates or obligate multimers,Hermes dimerisation domain
+3617,a+b three layers,Thioredoxin-like domain in RNase E
+7580,a/b three-layered sandwiches,RibA-like
+4321,a+b two layers,Peptidoglycan deacetylase N-terminal noncatalytic region
+4298,alpha arrays,Phage replication organizer domain
+3614,alpha arrays,T4 RNA ligase
+4266,alpha bundles,Hyaluronidase domain-like
+4182,beta sandwiches,Agglutinin HPA-like
+4070,alpha arrays,FtsH protease domain-like
+5047,extended segments,ATP synthase D chain-like
+5072,extended segments,Mitochondrial ATP synthase coupling factor 6
+4293,beta duplicates or obligate multimers,SARS ORF9b-like
+4210,a+b two layers,WGR domain
+4348,alpha bundles,Topoisomerase V catalytic domain-like
+1057,a+b two layers,Endonuclease PI-TkoII domain IV
+3580,alpha arrays,RNA silencing suppressor p21 C-terminal domain
+4193,alpha arrays,RUN domain
+7538,a/b three-layered sandwiches,Hypothetical protein MT938 (MTH938)
+4977,a+b complex topology,TBP-interacting protein C-terminal domain-like
+1112,alpha arrays,MshE c-di-GMP-binding domain
+6008,few secondary structure elements,N-terminal A Domain of voltage-gated Ca2+ channel beta4a subunit
+3943,beta sandwiches,Flagellar hook-associated protein 1 beta-sandwich domains
+3430,a+b complex topology,Primosome assembly protein PriA 3' DNA-binding domain
+4082,alpha duplicates or obligate multimers,Hairy Orange domain
+4247,a+b duplicates or obligate multimers,TTHC002-like
+4224,few secondary structure elements,CHY zinc finger
+4106,few secondary structure elements,Zinc hairpin stack
+4098,a+b duplicates or obligate multimers,YopT-like
+6001,alpha arrays,"Coronavirus main proteinase (3Cl-pro, putative coronavirus nsp2) C-terminal domain"
+6023,beta barrels,Restriction endonuclease PabI
+3431,alpha bundles,Helical domain in autophagy protein 5
+6046,few secondary structure elements,Diapausin
+6026,alpha duplicates or obligate multimers,cwf21 domain
+6053,a+b two layers,TT1592-like
+4163,alpha bundles,GINS helical bundle-like
+4311,alpha complex topology,PMT central region-like
+4244,a/b three-layered sandwiches,EreA/ChaN-like
+4242,beta sandwiches,WSSV envelope protein-like
+3922,alpha bundles,Helical domain in structural maintenance of chromosomes protein 3
+3805,alpha bundles,Hypothetical protein TTHB059
+615,alpha arrays,T4 endonuclease V
+3654,alpha arrays,Insertion region of FTHFS domain
+4990,alpha arrays,Lipase chaperone LifO-like
+4254,alpha arrays,YoaC-like
+4119,alpha bundles,YfmB-like
+183,alpha duplicates or obligate multimers,"Iron-dependent repressor protein, dimerization domain"
+4113,beta barrels,VC0467-like
+4192,alpha bundles,DNA terminal protein C-terminal domain
+4161,beta complex topology,MOSC N-terminal domain-like
+4354,a+b two layers,TRCF domain
+541,alpha duplicates or obligate multimers,Dimerization-anchoring domain of cAMP-dependent type II PK regulatory subunit
+4993,extended segments,Glu-tRNAGln amidotransferase C subunit
+4178,beta sandwiches,"Putative glucosidase YicI, C-terminal domain"
+3685,a+b two layers,Putative acetamidase tm0119 C-terminal domain
+3424,alpha arrays,Virion protein UL25
+3426,beta meanders,Telethonin
+4279,a+b three layers,DisA nucleotide-binding domain
+4102,a+b duplicates or obligate multimers,AF2331-like
+4079,alpha bundles,PA2201 C-terminal domain-like
+4221,a+b two layers,YkuJ-like
+3767,a+b two layers,Giardia Dicer N-terminal domain
+3766,alpha arrays,Giardia Dicer helical domain bridging RNase IIIa and RNase IIIb
+4105,extended segments,TSP9-like
+3425,a+b three layers,Two-component system yycF/yycG regulatory protein yycH-like
+3806,alpha complex topology,Carboxysomal shell beta carbonic anhydrase N-terminal domain
+4159,alpha arrays,SP0561-like
+4222,a+b two layers,ImmE5-like
+3429,a+b three layers,Late genes activator p4
+4067,alpha bundles,FdhE-like
+4255,few secondary structure elements,E6 C-terminal domain-like
+4080,alpha bundles,SipA N-terminal domain-like
+4991,extended segments,Lag-3 N-terminal region
+6015,a+b two layers,Hypothetical protein TA0938
+4172,a+b duplicates or obligate multimers,Phosphoprotein oligomerization domain-like
+7578,a/b three-layered sandwiches,PhnH-like
+4099,a+b two layers,Kinetochore globular domain-like
+4335,a/b three-layered sandwiches,Nqo1 FMN-binding domain-like
+3697,alpha bundles,NQO2 helical bundle domain
+5100,extended segments,iron-sulfur center-binding helical hairpin
+4272,a+b two layers,Nqo5-like
+4136,few secondary structure elements,Coronavirus NSP10-like
+3698,beta sandwiches,Arginine methyltransferase oligomerization subdomain
+5018,extended segments,Subunit XI (6.4 kDa protein) of cytochrome bc1 complex (Ubiquinol-cytochrome c reductase)
+4347,a+b complex topology,USP8 interacting domain
+3718,alpha bundles,Flagellar protein fliT
+809,a+b two layers,BLIP-like
+3434,alpha bundles,CAG pathogenicity island protein 13
+4353,a/b three-layered sandwiches,C-terminal domain in CAC2185-like proteins
+4288,alpha duplicates or obligate multimers,TraM-like
+4339,alpha arrays,N-terminal helical domain in Poxvirus poly(A) polymerase catalytic subunit
+4945,a+b complex topology,C-terminal a+b domain in Poly(A) polymerase catalytic subunit
+2501,a/b three-layered sandwiches,Peptidyl-tRNA hydrolase II
+4994,alpha duplicates or obligate multimers,EF2458-like
+4356,beta complex topology,Coronavirus nsp1
+4169,a+b three layers,Coronavirus spike protein receptor-binding domain
+4269,a+b two layers,NMB0488-like
+4303,alpha arrays,lvD/EDD N-terminal domain-like
+4152,a+b two layers,Shew3726-like
+4155,alpha arrays,RPA2825-like
+3953,a+b two layers,Csd3 N-terminal domain
+4300,beta complex topology,Viral glycoprotein ectodomain-like
+1058,extended segments,Herpes DNA polymerase N-terminal domain
+4258,mixed a+b and a/b,Ns1 effector domain-like
+630,a+b complex topology,"RuBisCo LSMT C-terminal, substrate-binding domain"
+3538,extended segments,MerF
+4302,a+b duplicates or obligate multimers,BLRF2-like
+4319,a+b duplicates or obligate multimers,Yonk-like
+4198,alpha arrays,TerB-like
+4943,a+b two layers,YcgL/NE1680-like
+3807,alpha bundles,Yersinia protein kinase A (YpkA) Rho-GTPase binding domain
+6066,alpha duplicates or obligate multimers,Transmembrane domain of CD3 zeta chain
+4292,a+b two layers,FlaG-like
+3427,beta barrels,Catalytic domain of hepatitis C virus NS2-3 protease
+4164,a+b complex topology,PA1123-like
+4989,a+b two layers,XkdW-like
+4125,alpha superhelices,BH3980-like
+3826,alpha bundles,Copper-sensitive operon repressor (CsoR)
+4317,a+b duplicates or obligate multimers,YdfO-like
+3584,alpha arrays,DNA polymerase III finger domain
+3585,a+b two layers,DNA polymerase III C-terminal domain
+4089,a+b two layers,PH1570-like
+7503,a/b three-layered sandwiches,"TolB, N-terminal domain"
+6024,few secondary structure elements,2Fe-2S binding domain in CopZ
+5102,alpha arrays,C-terminal helical domain in Atu1540-like proteins
+1075,alpha bundles,Type II ABC exporter transmembrane domain fold
+7513,a/b three-layered sandwiches,CofD-like
+4130,alpha arrays,MG296-like
+4999,beta barrels,"YopX, C-terminal domain-like"
+4112,beta duplicates or obligate multimers,"YopX, N-terminal domain-like"
+5059,alpha bundles,Drug/Metabolite transporter
+3432,alpha bundles,Minor nucleoprotein VP30 C-terminal domain
+4236,few secondary structure elements,Sec-C motif
+4180,a+b two layers,SpoVG-like
+4090,a+b two layers,BH3703-like
+4097,a+b two layers,Lp2179-like
+4336,alpha duplicates or obligate multimers,YheA/YmcA-like
+4205,a+b two layers,SMI1/KNR4-like
+4252,beta barrels,AttH-like
+3688,a+b two layers,N-terminal subdomain in UbiD middle domain
+4239,alpha arrays,DNA polymerase III theta subunit-like
+4314,alpha arrays,helical domain in Api92-like proteins
+4200,beta barrels,YmcC-like
+4944,alpha bundles,Helical bundle in flu nucleocapsid protein
+4322,a+b complex topology,Flu NP-like
+5042,extended segments,"Magnesium transport protein CorA, transmembrane region"
+3454,beta barrels,GspC HR domain/PilP-like
+6088,alpha arrays,Helical bundle domain in elongation factor 3A
+3340,extended segments,Helical region in REST corepressor 1
+4273,alpha arrays,PTPA-like
+4132,alpha bundles,IpaD-like
+4987,few secondary structure elements,Ribosomal protein L31p
+4281,a+b two layers,Ribosomal protein L35p
+4186,beta barrels,Ribosomal protein L21p
+3628,a+b complex topology,Transcription factor tau 60 kDa subunit
+4320,alpha superhelices,Taf5 N-terminal domain-like
+6016,a+b two layers,Domain 1 of outer membrane lipoprotein Wza
+6017,extended segments,Transmembrane helix of outer membrane lipoprotein Wza
+6063,alpha duplicates or obligate multimers,BNIP3 transmembrane domain
+3615,alpha bundles,Bacterial dynamin-like protein helical domain
+4259,a+b complex topology,STIV B116-like
+3589,a+b complex topology,RNAi polymerase N-terminal domain
+3588,alpha complex topology,RNAi polymerase helical domain
+6013,alpha arrays,C-terminal domains of CstF-64
+160,alpha superhelices,C-terminal domain of alpha and beta subunits of F1 ATP synthase
+4264,a+b two layers,PB2 C-terminal domain-like
+3437,a+b two layers,Cytochrome P460
+4240,alpha arrays,Rv1873-like
+6094,a+b two layers,KS-MAT linker domain in fatty acid synthase
+6030,a+b two layers,Middle domain of ribosomal protein S2-related protein
+6031,alpha arrays,C-terminal 4Fe-4S binding domain of ribosomal protein S2-related protein
+3436,alpha bundles,VP4 GT domain
+4087,beta barrels,NifT/FixU
+3525,alpha arrays,Bromodomain-containing protein 4 ET domain
+6033,extended segments,FXYD family
+3527,alpha complex topology,adhesion protein Bd37
+4142,a+b two layers,YehR-like
+6059,alpha bundles,X8 domain
+4328,beta sandwiches,CPE0013-like
+6068,alpha arrays,T4 Bacteriophage Helicase Uvsw.1
+3522,extended segments,Apolipoprotein C-III
+4144,alpha duplicates or obligate multimers,YejL-like
+6029,beta meanders,Hemin uptake protein hemP
+6028,alpha bundles,Ribosome modulation factor
+6041,a+b two layers,DUF1107-like
+3533,few secondary structure elements,I-superfamily conotoxin r11a
+6032,a+b two layers,DUF3222-like
+6054,alpha arrays,C-terminus of TFIIE alpha
+3557,extended segments,cGMP phosphodiesterase gamma subunit
+6114,beta barrels,Internal protein I
+3505,alpha arrays,Calcium-binding protein
+3115,a+b two layers,GP2-like
+6060,alpha arrays,Yst0336-like
+3556,a+b two layers,Uncharacterized Protein Rru_A0810
+3793,alpha complex topology,Potassium channel modulator KCNE1
+3072,a+b complex topology,Hypothetical protein TA0956
+3503,alpha bundles,Mechanosensory ion channel subunit mec-4 cytosolic domain
+3519,beta complex topology,Myoferlin inner DysF domain
+3510,extended segments,Chlorosome Protein A
+3545,alpha complex topology,Helical integral membrane protein Rv1761c
+3640,alpha duplicates or obligate multimers,Minor ampullate fibroin 1 C-terminal domain
+4325,mixed a+b and a/b,YegP-like
+6065,extended segments,Cytoplasmic domain of CD3 epsilon chain
+3514,a+b two layers,uncharacterized protein PA1076
+3550,extended segments,uncharacterized protein RhR2
+3655,extended segments,Methanogenic A1A0 ATP synthase stalk subunit H dimerization domain
+3498,alpha arrays,RNA polymerase sigma factor rpoD N-terminal domain
+3067,few secondary structure elements,N-terminal domain of helicase-loading protein DnaI
+3508,a/b three-layered sandwiches,Nucleic acid-binding domain of nonstructural protein 3
+3462,extended segments,V-type proton ATPase subunit G
+3075,a+b two layers,ubiquitin-binding domain from PLAA
+3163,extended segments,p53 transactivation domain
+3495,alpha bundles,Integrin alpha-L cytoplasmic domain
+4000,a+b two layers,Escherichia coli HybE
+3086,alpha bundles,Diacylglycerol kinase (DAGK)
+3674,a+b duplicates or obligate multimers,Borealin C-terminal dimerization domain
+3656,extended segments,UIM domain
+3122,a+b complex topology,MESD
+3261,a+b two layers,amino-terminal domain of OmpATb
+3313,a+b two layers,Uncharacterized protein VC_A0919
+3171,alpha arrays,Nitrogenase gamma subunit N-terminal domain
+3808,alpha arrays,Archaeal protein SSO6904
+3093,extended segments,inhibitory phosphorylation domain of myosin phosphatase targeting subunit 1
+3464,extended segments,Helical region in V-type proton ATPase subunit E
+3109,few secondary structure elements,CXXC domain-like
+3092,alpha arrays,yeast protein YOR252W
+3141,few secondary structure elements,SCA7 zinc finger domain
+3244,extended segments,Alpha-synuclein
+3085,a+b complex topology,Uncharacterized protein yutD
+3119,few secondary structure elements,CopK
+3476,alpha arrays,RecQL4 helicase N-terminal domain
+3090,few secondary structure elements,Microplusin
+3098,a+b two layers,Uncharacterized protein ATC0905
+3128,alpha arrays,Nogo-66
+3094,alpha arrays,Uncharacterized protein yihD
+3100,extended segments,Synaptobrevin
+3099,alpha arrays,Uncharacterized protein CV0237
+3470,extended segments,Glycophorin-A transmembrane domain
+3414,beta sandwiches,A putative surface protein
+3108,a+b two layers,Uncharacterized protein Atu1219
+3105,a+b three layers,thylakoid acid phosphatase domain-related
+3238,alpha superhelices,Mitochondrial mTERF-like
+1089,a+b two layers,Asparaginal-tRNA synthetase N-terminal domain
+3206,alpha arrays,C-terminal domain of hRpn13
+3107,few secondary structure elements,Amino-terminal Zn-finger of Ube3a ligase (AZUL)
+3542,alpha arrays,Presenilin family intramembrane aspartate proteases
+3250,extended segments,C-terminal region of sodium/hydrogen exchange regulatory factor 1
+3480,a+b duplicates or obligate multimers,Lipoprotein-associated type-17-domain
+3125,alpha arrays,Asl3597
+3112,beta barrels,Uncharacterized protein Dsy0195
+3478,extended segments,Histidine kinase receptor ArcB membrane domain
+3479,extended segments,Histidine kinase receptor QseC membrane domain
+3134,a+b two layers,N-terminal domain of DC-UbP
+3114,beta sandwiches,Mucin-binding protein domain
+3116,a+b two layers,Probable 30S ribosomal protein PSRP-3
+3142,alpha arrays,a domain of protein A6KY75
+3129,few secondary structure elements,PBZ domain
+3716,alpha arrays,DUF3349
+3459,beta sandwiches,Fas apoptotic inhibitory molecule
+3159,extended segments,N-terminal domain of RFX5
+3475,extended segments,Regulatory factor X-associated protein C-terminal domain
+3717,alpha bundles,Cyclin-dependent kinase 2-associated protein 1 C-terminal domain
+3469,extended segments,Ubiquitin-binding motif (UBM)
+3144,alpha arrays,PBS linker domain of phycobilisome linker polypeptide
+3809,alpha bundles,Uncharacterized protein CV0426
+3810,alpha duplicates or obligate multimers,Uncharacterized protein YP_510488.1
+3164,few secondary structure elements,Zinc-binding domain in Junin virus envelope glycoprotein
+3473,extended segments,Twin-arginine transport (Tat) system component TatA
+3154,alpha bundles,YP_399305.1
+3155,a+b two layers,Uncharacterized protein yohN
+3178,extended segments,Telomere length regulator taz1
+3242,alpha arrays,Uncharacterized protein BVU_3817 C-terminal domain
+3170,a+b two layers,uncharacterized protein YP_926445.1
+4168,alpha duplicates or obligate multimers,HAMP domain
+3179,alpha arrays,Uncharacterized protein CD1104.2
+3458,a+b two layers,Nonstructural protein 7 alpha
+3673,alpha duplicates or obligate multimers,Pathogenicity island 1 protein gp6
+3184,alpha bundles,mRNA 3'-end-processing protein Rna15p hinge domain
+3418,alpha arrays,Matrix protein 2-1 core domain
+3189,extended segments,small heat shock protein (Hsp12)
+3446,alpha bundles,Avirulence protein ATR13
+3455,alpha arrays,WY-domain in RXLR effectors
+3441,alpha bundles,Bc28.1
+3204,extended segments,N-terminal regulatory segment of carnitine palmitoyltransferase 1A
+3197,a+b two layers,N-terminal domain of effector protein PipB2
+3331,a+b two layers,Uncharacterized protein yibL
+3193,alpha arrays,HopAB effectors Pto-binding domain-related
+3879,extended segments,Anti sigma factor NepR-related
+3370,beta sandwiches,Lactococcin 972
+3442,alpha duplicates or obligate multimers,N-terminal homodimeric region of Rtt106
+3373,few secondary structure elements,Cellophane-induced 1 (cin1) repeats
+3450,alpha arrays,Myosin-binding motif (m-domain) C-terminal subdomain
+3364,few secondary structure elements,Epidermal patterning factor-like protein 9
+3203,a+b two layers,Putative oxidoreductase
+3202,a+b two layers,Alr2454 protein
+3444,alpha arrays,DP domain
+3354,extended segments,C-terminal domain of VP7
+3645,few secondary structure elements,Pheromone ESP1
+3411,few secondary structure elements,Conotoxin im17a
+3445,beta barrels,Uncharacterized protein from gene locus rrnAC0354
+3443,alpha duplicates or obligate multimers,Get5 carboxyl domain
+3396,extended segments,HIG1 domain family member 1A
+3395,extended segments,Transmembrane protein 14A
+3440,extended segments,Interferon alpha-inducible protein 27-like protein 1
+3394,extended segments,Transmembrane protein 141
+3416,a+b complex topology,Mediator co-activator domain 1 of Gal11/med15
+3602,alpha bundles,Kinase suppressor of Ras 1 helical hairpin domain
+3811,alpha bundles,Decorin-binding protein A
+3399,alpha arrays,Acanthaporin
+6062,beta barrels,Target recognition domain of zoocin A
+3731,a+b two layers,Uncharacterized protein PA1075
+3363,beta sandwiches,avirulence protein AvrPiz-t homologs
+3361,alpha bundles,C-terminal Pdr1-activating domain of J-protein Zuo1
+3357,extended segments,DCP1-binding motif
+3774,extended segments,Fibroblast growth factor receptor 3 transmembrane domain
+3568,extended segments,Splicing factor 1 N-terminal domain
+3246,few secondary structure elements,Disulfide-rich domain in A Disintegrin And Metalloprotease (ADAM) domain-containing proteins
+6099,alpha arrays,Uncharacterized protein VV2_0175
+3639,alpha arrays,Virus VPg protein
+6128,alpha duplicates or obligate multimers,P7 channel of Hepatitis C virus
+3885,few secondary structure elements,Type AII lantibiotic bovicin HJ50
+3065,alpha bundles,Fatty acid- and retinoid-binding proteins
+3795,extended segments,Norovirus NS1/2 N-terminal domain
+6149,a+b two layers,Uncharacterized protein TGAM_1934
+3784,a+b two layers,Putative lipoprotein CPF_1278-related
+6169,extended segments,Transmembrane segment of lysosome-associated membrane glycoprotein 2
+3861,alpha bundles,Mitochondrial translocator protein (TSPO)
+3797,beta meanders,Uncharacterized protein PA5494
+3874,extended segments,Agnoprotein
+6153,alpha arrays,DP domain
+3918,a+b duplicates or obligate multimers,AbrB C-terminal domain
+3947,few secondary structure elements,PSCD domain of pleuralin-1
+6160,extended segments,Toll-like receptor 3 transmembrane domain
+3862,extended segments,Envelope small membrane protein
+3875,alpha arrays,Uncharacterized protein ABAYE3142
+3891,a+b two layers,Archaea-specific ribosomal protein L46a
+3928,alpha bundles,Cell division protein CrgA
+3956,a+b two layers,Hypothetical protein Q4D059
+3951,a+b two layers,BPSL1050
+3895,extended segments,YgaP transmembrane domain
+6150,a+b two layers,hypotheical protein Lreu_0056
+3898,a+b two layers,Uncharacterized protein BTH I2711
+3958,extended segments,Cell division factor MciZ
+3963,extended segments,Stage V sporulation protein M
+3982,a+b complex topology,lantibiotic self-resistance lipoprotein MlbQ
+3935,extended segments,4E-BP2
+3938,alpha arrays,Heterogeneous nuclear ribonucleoprotein Q acidic domain
+3964,beta meanders,OCRE domain of RBM10
+3972,alpha bundles,Amylase-binding protein AbpA
+3952,few secondary structure elements,Pre-mRNA-splicing factor BUD31
+3974,beta duplicates or obligate multimers,EBNA-2 N-terminal dimerization (END) domain
+1067,few secondary structure elements,pheromone Ep-1
+1034,a+b two layers,Meiosis-expressed gene 1 protein
+3277,alpha arrays,Thymine dioxygenase JBP1 DNA-binding domain-like
+1079,alpha complex topology,Transmembrane reductase CcdA
+1102,a+b complex topology,Hemolysin II
+1145,few secondary structure elements,nigellin-1.1
+1072,alpha bundles,Hsp90 co-chaperone Cdc37 N-terminal domain
+1098,a+b three layers,Mid-cell-anchored protein Z (MapZ) extracellular domain 2
+4276,a+b two layers,XisI-like
+4326,a+b two layers,ERH-like
+4146,alpha bundles,YqgQ-like
+3017,alpha bundles,Alpha-helical subdomain in E2 regularoty transactivation domain
+3407,mixed a+b and a/b,Nop N-terminal domain
+3613,beta barrels,Protein CLP1 C-terminal domain
+5081,alpha bundles,Rhomboid-like
+6014,extended segments,Intrinsic membrane protein pufX
+5052,alpha complex topology,Proton glutamate symport protein
+1061,a+b two layers,gp120 inner domain
+6037,extended segments,Subunit VI of Photosystem I reaction centre
+6036,extended segments,Subunit N of Photosystem I reaction centre
+4245,alpha duplicates or obligate multimers,SMc04008-like
+4972,beta barrels,barrel domain in CV3147-like proteins
+4176,a/b three-layered sandwiches,a/b domain in CV3147-like proteins
+6096,a+b two layers,Dimerization domain of erythronate-4-phosphate dehydrogenase PdxB
+4110,alpha arrays,UraD-like
+4083,alpha arrays,AGR C 984p-like
+5056,extended segments,Gated mechanosensitive channel
+6050,a+b two layers,Phage tail assembly chaperone
+4287,beta sandwiches,beta sandwich domain in YacF-like proteins
+4946,alpha bundles,helical domain in YacF-like proteins
+627,alpha complex topology,VPS9 domain
+6018,extended segments,Apolipoprotein A-II
+3768,alpha bundles,Hypothetical protein RHA1_ro05818 N-terminal helical domain
+3435,a+b two layers,Recombination-associated protein rdgC
+4296,alpha arrays,BH2638-like
+6021,alpha bundles,Hexameric cytochrome HTHP
+158,alpha bundles,Lipoxygenase
+4338,alpha complex topology,PSPTO4464 N-terminal domain-like
+3684,alpha complex topology,PSPTO4464 C-terminal domain-like
+4237,beta barrels,FomD-like
+4350,a+b two layers,PG1388-like
+4092,alpha arrays,Helical domain in PH0156-like proteins
+4156,alpha arrays,Sec63 N-terminal subdomain-like
+4218,alpha bundles,TAFH domain-like
+6049,alpha bundles,PH0832-like
+6092,alpha bundles,Helical extension domain in Regulator of G-protein signaling 9
+4085,alpha arrays,RbcX-like
+3603,alpha arrays,Uncharacterized protein AF_2093 N-terminal domain
+4093,a+b three layers,CofE-like
+4162,few secondary structure elements,T-antigen specific domain-like
+3623,a+b two layers,Uncharacterized protein VC_0899
+4976,beta sandwiches,C-terminal domain in YerB-like proteins
+4280,mixed a+b and a/b,N-terminal domain in YerB-like proteins
+911,few secondary structure elements,"Ferredoxin thioredoxin reductase (FTR), catalytic beta chain"
+4968,a+b complex topology,insertion domain in bacteriophage phi29 DNA polymerase
+4201,alpha arrays,Jann4075-like
+6034,a/b three-layered sandwiches,Core protein P7
+6038,extended segments,Toxofilin
+3813,alpha bundles,DUF416
+6058,alpha arrays,C-terminal alpha domain in Alpha-Glycerophosphate Oxidase
+830,alpha arrays,LigA-like domain
+5082,alpha bundles,Cation efflux protein transmembrane domain-like
+3438,alpha arrays,Unknown function protein VPA0580
+4310,alpha arrays,Dcp2 box A domain
+4086,a+b two layers,AMPKBI-like
+3448,beta duplicates or obligate multimers,Multivesicular body subunit 12B MABP domain
+6126,alpha bundles,Helical domain in EHD2
+3609,alpha arrays,DNA repair protein RAD4 beta-hairpin domain
+6025,few secondary structure elements,Scytovirin
+3535,a+b two layers,Sex pheromone staph-cAM373
+3581,a+b complex topology,E3 ubiquitin-protein ligase SopA catalytic domain
+6043,a+b two layers,yfeY-like
+6044,a+b three layers,DUF1827-like
+3529,beta sandwiches,Major vault protein (MVP) structural repeat domain
+3526,alpha arrays,Capsid assembly protein VP3
+3523,beta meanders,Periplasmic lipopolysaccharide transport protein LptA (YhbN)
+3536,a+b complex topology,Lmo1499 protein N-terminal domains
+4351,alpha arrays,ATP12-like
+6048,a+b two layers,DUF960-like
+3532,alpha arrays,RNA-binding domain of telomerase
+3325,a+b two layers,UvrB-binding domain of UvrA
+3326,alpha arrays,DNA-binding domain in UvrA
+4948,a+b complex topology,linker domain in MalF N-terminal region
+4947,a+b complex topology,barrel domain in MalF N-terminal region
+4274,extended segments,Transmembrane helices in MalF N-terminal region
+839,a+b complex topology,"Rotavirus NSP2 fragment, N-terminal domain"
+3814,alpha bundles,Uncharacterized protein GSU0061
+6055,extended segments,Preprotein translocase subunit YajC
+3534,beta barrels,Pfam PF06938 (DUF1285)
+3816,beta barrels,Polymyxin B resistance protein
+3187,alpha bundles,Microtubule-Binding Domain of Flagellar Dynein
+3186,a+b two layers,C-terminal domain of FliK
+7565,a/b three-layered sandwiches,Resolvase-like
+3876,few secondary structure elements,Embryo surrounding factor (ESF) peptides
+3483,beta sandwiches,P2X purinoceptor
+841,a+b two layers,Subtilisin inhibitor
+837,a+b two layers,Ribosomal protein S16
+6027,alpha arrays,Host-nuclease inhibitor protein Gam
+3587,alpha arrays,Protelomerase muzzle domain
+3586,alpha arrays,Protelomerase stirrup domain
+580,extended segments,Epsilon subunit of mitochondrial F1F0-ATP synthase
+3513,a+b two layers,Putative lipoprotein LppA
+3297,extended segments,Helical hairpin in Ndc80
+3549,a+b complex topology,Capsid protein
+501,few secondary structure elements,Heparin-binding domain from vascular endothelial growth factor
+3121,a+b duplicates or obligate multimers,Polypeptide transport-associated (POTRA) domain
+3531,alpha bundles,Ranasmurfin
+3636,a+b two layers,XPD arch domain
+3520,alpha arrays,Porin B (PorB)
+3521,a+b three layers,Polymerase basic protein 2 cap-binding domain
+4104,beta sandwiches,EscU C-terminal domain-like
+5058,alpha bundles,"Mechanosensitive channel protein MscS (YggB), transmembrane region"
+3553,alpha arrays,Nucleophosmin DNA-binding domain
+3558,alpha arrays,HSDR subunit helical domain
+3506,extended segments,Viral membrane protein P3
+3507,extended segments,Viral membrane protein P6
+4950,alpha complex topology,Botulinum neurotoxin A heavy chain
+3818,alpha arrays,PHAX RNA-binding domain
+3152,a+b two layers,Hypothetical Protein Vc0508
+4262,a/b three-layered sandwiches,CobE/CbiG C-terminal domain-like
+3489,a+b complex topology,ArdA
+3066,a+b two layers,AFV1-102
+3336,alpha complex topology,plant-specific ROP nucleotide exchanger (PRONE) domain
+3074,extended segments,50S ribosomal protein L34
+3268,a+b two layers,N-terminal domain in xanthine dehydrogenase
+3081,a+b complex topology,Envelope glycoprotein GP1
+3822,alpha complex topology,Intergenic-region protein
+3082,extended segments,C-terminal region of nonsense mediated decay factor UPF2
+3817,alpha bundles,Peroxisomal biogenesis factor 19
+3333,a+b two layers,Barrel domain in dedicator of cytokinesis protein 9
+3823,a/b three-layered sandwiches,a/b domain in family 98 glycoside hydrolases
+3327,alpha bundles,HET-S N-terminal domain
+3482,extended segments,mRNA-decapping enzyme 1A trimerization domain
+3296,alpha bundles,N-terminal domain in glucosyltransferase (Lgt1)
+3131,a+b two layers,FYR domain
+3264,a+b two layers,N-terminal domain of alcaligin biosynthesis protein C
+3275,alpha complex topology,Hypothetical protein ORF239
+3827,alpha duplicates or obligate multimers,Hypothetical protein PA0856
+3253,a+b two layers,ferredoxin-like domain in flagellar biosynthesis protein flhA
+3149,a+b complex topology,Hypothetical protein ORF126
+3824,alpha bundles,HIV Rev
+3652,alpha duplicates or obligate multimers,Qua1
+1021,a+b two layers,C-terminal domain in RNA helicases
+3151,alpha arrays,SPP1 phage GP23.1
+3153,a+b two layers,PipX
+3324,extended segments,Helical arch in Ski2-like helicases
+3678,alpha arrays,Pilus-presented adhesin helical insertion domain
+3650,alpha arrays,C-terminal domain of Lmo2642 protein
+3173,a+b complex topology,Colicin M-related
+3145,beta sandwiches,C-terminal domain of envelope glycoprotein H
+3146,a+b complex topology,gH main domain
+3201,alpha arrays,HP0721
+3285,alpha duplicates or obligate multimers,Alix V domain
+6171,alpha bundles,C-terminal helical domain in  Jumonji domain-containing histone demethylases
+3198,alpha bundles,ABA-1 repeat unit
+3720,alpha bundles,Receptor activity-modifying protein (RAMP)
+3345,alpha arrays,MRG domain
+3279,alpha arrays,Helical domain in 5'->3' exoribonucleases
+7102,a+b three layers,C-terminal segment in 5'->3' exoribonucleases
+3711,alpha bundles,LTXXQ motif family protein
+3633,alpha duplicates or obligate multimers,Haptoglobin-hemoglobin receptor
+7593,a/b three-layered sandwiches,Peroxisome assembly protein 22
+3220,alpha complex topology,ISWI one complex protein 3
+3417,a+b three layers,Surfactant protein C BRICHOS domain
+3583,few secondary structure elements,FusB family Zn-binding domain
+3858,few secondary structure elements,Fe-S cluster binding domain in carbon monoxide dehydrogenase corrinoid/iron-sulfur protein gamma subunit
+7595,a/b three-layered sandwiches,B12 binding domain in carbon monoxide dehydrogenase corrinoid/iron-sulfur protein gamma subunit
+3393,extended segments,CAA3-type cytochrome c oxidase subunit IV
+6074,extended segments,Transmembrane helix of E1 envelope glycoprotein
+3406,alpha duplicates or obligate multimers,Oligomerisation domain of C4b-binding protein
+3599,alpha superhelices,Mitochondrial malonyl-CoA decarboxylase helical domain
+3192,extended segments,RPEL domain
+7601,a/b three-layered sandwiches,Lactate racemase N-terminal domain
+7602,a/b three-layered sandwiches,Lactate racemase C-terminal domain
+6127,beta meanders,Beta meander domain in PfEMP1 protein
+3421,a+b complex topology,Yos9 dimerization domain
+3570,a+b two layers,FAM3 superfamily
+3739,beta sandwiches,TraO N-terminal domain
+3539,beta sandwiches,N-terminal domain in envelope glycoprotein E2
+3540,beta sandwiches,C-terminal region of envelope glycoprotein E2
+3670,alpha complex topology,NCD2 domain
+5079,alpha duplicates or obligate multimers,Magnesium transporter MgtE membrane domain
+3986,a+b two layers,GTP-binding protein lepA C-terminal domain-like
+3664,alpha arrays,"Small, acid-soluble spore protein C"
+3662,a+b two layers,Proteasome assembling chaperone 3 (PAC3)-related
+3110,a/b three-layered sandwiches,STT3/PglB/AglB core domain
+3111,beta barrels,STT3/PglB/AglB beta-barrel domain
+3663,alpha bundles,CRISPR-associated protein Cse2
+3665,beta barrels,hypothetical protein TTMA177
+3659,a+b two layers,MotY N-terminal domain
+919,few secondary structure elements,Ribosomal protein L36
+3671,alpha duplicates or obligate multimers,Translocated intimin receptor Tir extracellular domain
+3530,extended segments,Major vault protein (MVP) helical domain
+3937,alpha bundles,Connexin 26
+3265,alpha arrays,C-terminal helical domain in tRNA modifying enzyme GidA
+7511,a/b three-layered sandwiches,Single-stranded-DNA-specific exonuclease RecJ C-terminal domain
+6091,alpha bundles,Helical bundle domain in Endo-alpha-N-acetylgalactosaminidase
+3078,extended segments,RNA polymerase PB1 C-terminal fragment
+3079,extended segments,RNA polymerase PB2 N-terminal fragment
+1091,alpha arrays,60S acidic ribosomal protein P1/P2
+3278,extended segments,Transmembrane helix in sodium-potassium ATPase beta subunit
+3254,alpha arrays,helical domain in flagellar biosynthesis protein flhA
+3255,a/b three-layered sandwiches,a/b domain in flagellar biosynthesis protein flhA
+4031,a+b three layers,Nigritoxin middle domain
+3825,alpha arrays,Non-structural protein 3
+3755,alpha bundles,YscO-like
+3175,few secondary structure elements,zinc-finger domain of Nanos
+1045,alpha bundles,Rad50-binding domain of Mre11
+3497,beta barrels,Replication foci-targeting sequence N-terminal domain
+3225,alpha complex topology,Serrate RNA effector molecule
+6040,alpha bundles,DUF3235
+3803,alpha bundles,PH domain-containing bacterial protein oligomerization domain
+1051,alpha superhelices,Putative 3-oxoacyl-(acyl-carrier-protein) synthase N-terminal domain
+6061,alpha arrays,Eukaryotic translation initiation factor 3 subunit 1
+3931,alpha bundles,MtlR-like
+3515,a+b two layers,ssDNA binding protein VirE2
+1093,a+b two layers,DUF4479
+4995,alpha arrays,Methionine synthase domain-like
+4212,beta barrels,FimD N-terminal domain-like
+3493,extended segments,Photosystem II PsbX protein
+4342,alpha complex topology,Tex N-terminal region-like
+6115,a+b three layers,AF1514-like
+3604,a+b two layers,Uncharacterized protein MK0293 C-terminal domain
+6075,alpha bundles,DisA helical linker domain
+6073,beta barrels,MMP1218-like
+3524,alpha arrays,Uncharacterized protein encoded by cryptic prophage
+6057,beta sandwiches,Uncharacterized protein BAS0735
+4295,beta barrels,Acetoacetate decarboxylase-like
+7556,a/b three-layered sandwiches,Fe-only hydrogenase
+3554,a+b duplicates or obligate multimers,protein of unknown function (eca1910)
+3517,a+b complex topology,Polymerase acidic protein
+3237,beta complex topology,Mainly beta domain in low-molecular-weight S-layer protein
+3485,alpha arrays,Protein 2b
+6047,beta barrels,N-terminal domain in DUF2118 family
+3073,alpha arrays,ORF12 from Lactococcus lactis phage p2
+3518,a+b two layers,putative RnfG subunit of electron transport complex
+3552,alpha arrays,Pfam family PF09836 N-terminal domain
+3551,alpha arrays,Pfam family PF09836 C-terminal domain
+3509,a+b complex topology,RapA C-terminal domain
+3511,a/b three-layered sandwiches,UPF0302 protein BA_1542/GBAA1542/BAS1430
+3769,a+b three layers,Fibrinogen binding protein a+b domain
+3069,alpha arrays,BART
+3830,alpha bundles,Uncharacterized protein AF_0924
+3606,alpha bundles,uncharacterized putative membrane protein yfdX
+3516,alpha bundles,Putative imidazole glycerol phosphate synthase homolog (eubrec_1070)
+864,a+b two layers,DLC
+6045,a+b complex topology,C-terminal domain of BipA
+3491,a+b two layers,Putative heterocyst differentiation inhibitor NpR1517
+4072,a+b complex topology,BTG domain-like
+3676,alpha duplicates or obligate multimers,RNA helicase Hera dimerization domain
+3180,a+b two layers,LEE-encoded effector EspG N-terminal domain-related
+3667,a+b two layers,LEE-encoded effector EspG C-terminal domain-related
+4975,a/b three-layered sandwiches,CbiG linker domain
+3501,a+b two layers,protein PCC1
+3222,a+b complex topology,Regulatory domain of isocitrate dehydrogenase kinase/phosphatase
+3502,alpha bundles,uncharacterized conserved protein
+4949,alpha complex topology,PsV capsid protein
+3492,a+b two layers,Chromosome partition protein mukE N-terminal domain
+3949,alpha arrays,tRNA delta(2)-isopentenylpyrophosphate transferase helical insertion domain
+3763,alpha bundles,protein of unknown function NP_951600.1 helical domain
+3273,alpha arrays,Filamentous archaeal viruses coat proteins
+3832,alpha bundles,Tumor necrosis factor alpha-induced protein 8-like protein 2
+3083,beta barrels,Micronemal adhesive repeat
+6070,few secondary structure elements,Sortilin C-terminal domain
+3548,a+b complex topology,Mediator of RNA polymerase II transcription submodule Med7N/31
+3496,alpha bundles,alpha-helical protein of unknown function (Pfam01724)
+3318,alpha arrays,Middle domain in transcriptional anti-activator ExsD
+3276,alpha arrays,N-terminal domain in MogR repressor
+3490,extended segments,Colicin S4 translocation domain
+3546,alpha arrays,Peroxisomal biogenesis factor 14 N-terminal domain
+3494,alpha bundles,Putative ECF-type Sigma Factor Negative Effector
+3547,a+b two layers,uncharacterised protein rbstp2171
+3488,a+b three layers,Putative sensor histidine kinase domain
+3087,few secondary structure elements,CDGSH iron-sulfur domains
+4401,a+b complex topology,Domain II in tail sheath protein Gp18
+3113,few secondary structure elements,Evasin-1
+926,few secondary structure elements,HCV NS5A domain I subdomains
+3068,a+b complex topology,Flagellar protein FlgA N-terminal domain-like
+3291,alpha bundles,Charged multivesicular body protein 3 (CHMP3)-related
+6124,extended segments,Ubc7p-binding domain of Cue1p
+3610,a+b complex topology,Tetrahydrodipicolinate N-succinyletransferase N-terminal domain
+3682,alpha duplicates or obligate multimers,IcmQ dimerization domain
+3486,alpha bundles,Integron gene cassette protein HFX_CASS2-like
+3487,a+b three layers,Integron cassette protein VCH_CASS3
+3330,alpha arrays,Novel E3 ligase (NEL)
+3283,a+b two layers,Nitrogen fixation protein
+3661,extended segments,Integrin beta-1D cytoplasmic tail
+3831,alpha bundles,Secreted protein of unknown function DUF1311
+3314,extended segments,IBB domain
+3080,a+b complex topology,Necrosis and ethylene-inducing peptide 1-like proteins
+3239,alpha complex topology,Cas1
+3240,alpha arrays,Intramolecular chaperone domain in virus tail spike protein
+3084,a+b two layers,C-terminal domain of nonstructural protein nsp4
+3312,a+b two layers,Domain 2 in immunoglobulin A protease
+4107,alpha arrays,Jann2411-like
+6035,alpha bundles,Primase helical domain
+3249,beta sandwiches,beta-sandwich domain in YqeH GTPase
+3091,a+b complex topology,Myosin VI cargo binding domain
+3077,beta sandwiches,Heme-binding protein HmuY-related
+6119,alpha bundles,Helical bundle domain in CusB
+3076,alpha arrays,Putative triphosphoribosyl-dephospho-coA synthase
+503,extended segments,N-terminal domain of bifunctional PutA protein
+3794,a+b two layers,Methylcrotonyl-CoA carboxylase alpha-subunit BT domain-related
+6082,beta sandwiches,N-terminal domain of BT_2081-like
+3301,extended segments,Phoptry protein fragment
+3139,a+b complex topology,pathogenicity island 3 ORF9 protein
+3859,alpha arrays,uncharacterized protein BT_1490 C-terminal domain
+3294,alpha complex topology,FAS type I helical domain
+3322,alpha bundles,N-terminal domain in fatty acid synthase subunit beta
+3323,alpha bundles,Inserted helical domain in fatty acid synthase subunit beta
+3321,a+b two layers,Meander beta sheet domain in fatty acid synthase subunit beta
+3335,beta barrels,Handle domain in transferrin-binding protein B
+3307,a+b two layers,Domain in small RNA methyltransferase HEN1
+3629,beta sandwiches,Tail sheath protein beta-sandwich domain
+3619,alpha arrays,Nucleoporin NUP120 helical domain
+3339,alpha bundles,Helical domain in glucansucrase GTF180
+3290,alpha complex topology,Cytosolic helical domain in ferrous iron transport protein B
+3348,a+b duplicates or obligate multimers,Putative pyruvate dehydrogenase
+3096,mixed a+b and a/b,Integron Cassette Protein Hfx_Cass5
+3140,alpha complex topology,Helical domain in ZWILCH
+3095,extended segments,E-cadherin
+3101,a+b two layers,Small outer capsid protein (Soc)
+3123,a+b two layers,Nuclease AFV1-157
+3299,a+b two layers,Heparin lyase I insertion domain
+3089,a+b two layers,Integron cassette protein VCH_CASS14
+3287,alpha duplicates or obligate multimers,Putative transposon-related DNA-binding protein dimerization domain
+3132,alpha complex topology,Core protein VP6
+7009,alpha bundles,Middle domain of hexon-associated protein (IIIa)
+3329,alpha complex topology,Helical domain in outer capsid protein VP4
+3258,a+b complex topology,Reovirus guanylyltransferase (GTase)
+3259,a+b complex topology,Reovirus turret protein bridge domain
+3672,a/b three-layered sandwiches,Small protrusion domain in cytoplasmic polyhedrosis virus capsid shell protein
+3190,alpha arrays,Viral structural protein 5
+3666,extended segments,30S ribosomal protein S21
+1035,extended segments,Alpha-crystallin B chain N-terminal domain
+3215,a+b complex topology,bacteriophage phiKZ gp29PR
+3310,a+b two layers,Insertion domain in 60S ribosomal protein rpP0 (L10P)
+7029,a+b complex topology,Insertion domain of minor capsid protein
+6072,alpha arrays,Transmembrane domain of envelope protein E
+3544,extended segments,Small envelope protein M
+3555,a+b three layers,Major capsid protein GP7
+3780,extended segments,NC100
+3749,extended segments,26S proteasome regulatory subunits C-terminal helices
+6110,alpha superhelices,Linker domain of cytoplasmic dynein heavy chain
+3864,extended segments,Mitochondrial 54S ribosomal protein L28
+3865,extended segments,Mitochondrial 54S ribosomal protein L27
+3866,extended segments,Mitochondrial 54S ribosomal protein L25
+3867,extended segments,Mitochondrial 54S ribosomal protein L31
+3868,a+b three layers,Mitochondrial homologous recombination protein 1
+3869,alpha arrays,Mitochondrial 54S ribosomal protein L2
+3274,extended segments,N-terminal region in 40S ribosomal protein rpS2 (S5p)
+3168,extended segments,40S ribosomal protein S30 (S30e)
+3191,alpha duplicates or obligate multimers,RyR motifs
+3942,alpha bundles,Smallest capsid protein (SCP)
+1027,a+b complex topology,Outer capsid protein VP2 body domain
+3733,a+b complex topology,Orbivirus outer capsid protein VP5
+3970,extended segments,Mitoribosomal protein mS38
+3966,a+b complex topology,Mitoribosomal protein mS22
+3967,extended segments,Mitoribosomal protein mS26
+3968,extended segments,Mitoribosomal protein mS31
+3969,extended segments,Mitoribosomal protein mS33
+1018,mixed a+b and a/b,Viral structural protein 4 N-terminal domain
+3748,extended segments,26S proteasome regulatory subunit RPN8/RPN11 C-terminal domain
+1043,beta complex topology,Beta domain of coronavirus spike glycoprotein
+1042,a+b complex topology,S2 subunit of coronavirus spike glycoprotein
+1084,extended segments,"Photosystem II reaction center W protein, chloroplastic"
+3481,extended segments,TraN protein
+3621,alpha arrays,Dipeptidyl-peptidase 2 helical domain
+3233,beta sandwiches,Ig-like domain in putative lipoprotein BF3042-related proteins
+3714,a+b two layers,Lon-like protease MtaLonC helical domain
+3097,a+b two layers,Ribosome-associated factor Y
+3764,alpha arrays,Repressor activator protein 1 (RAP1) helical bundle domain
+3266,alpha arrays,Rap1 C-terminal domain
+3618,beta complex topology,Flagellin beta sheet domain
+3104,alpha bundles,Putative ubiquinone biosynthesis protein
+3302,alpha arrays,Hypothetical protein
+3251,a+b two layers,C-terminal domain in putative protease YP_001302526.1
+3837,alpha bundles,Uncharacterized conserved protein Dip1984
+3182,mixed a+b and a/b,a+b domains in a putative cell invasion protein
+3103,alpha arrays,Uncharacterized protein yqbN
+3241,alpha arrays,Golgi phosphoprotein 3
+3102,beta sandwiches,hypothetical protein BT_3535
+3288,a+b complex topology,Polymerase cofactor VP35 C-terminal RNA binding domain
+1053,beta barrels,Factor H-binding protein (fHbp) N-terminal beta-barrel domain
+3801,extended segments,ParE2-associated antitoxin 2 (PaaA2)
+7566,a/b three-layered sandwiches,HflX family GTPase N-terminal domain
+3477,extended segments,ExsE
+3838,alpha arrays,SidM Rab1-activation domain
+3839,alpha duplicates or obligate multimers,Viral phosphoprotein dimerization domain
+3130,alpha arrays,DP domain
+3232,alpha arrays,PB2 '627' domain-related
+3120,mixed a+b and a/b,C-terminal domain of a hypothetical protein
+525,a+b two layers,"Urease, gamma-subunit"
+7530,a/b three-layered sandwiches,Replicase polyprotein 1a N-terminal macro-like domain
+7098,alpha arrays,Replicase polyprotein 1a N-terminal helical domain
+3229,alpha bundles,N-terminal domain in adenosine monophosphate-protein transferase vopS
+6108,alpha bundles,Middle and GTPase effector domains in dynamin-related proteins
+3124,beta sandwiches,Nascent polypeptide-associated complex (NAC) dimerization domain
+3267,alpha arrays,N-terminal domain in putative methyltransferase PG_1098
+3118,a+b two layers,C-terminal functional domain of REDD1
+3138,extended segments,Clathrin light chain B
+3257,a+b complex topology,Phosphoinositide phosphatase SAC1 N-terminal domain
+3143,alpha complex topology,Rift Valley fever virus nucleocapsid protein-related
+3127,beta sandwiches,Putative transcription regulator R01717-related
+4344,a+b three layers,DeoB insert domain-like
+3135,a+b two layers,Uncharacterized protein yciN
+3137,extended segments,HIV-1 Tat
+3350,alpha bundles,Peroxisomal biogenesis factor 3
+3136,extended segments,Gle2-binding sequence (GLEBS) of Nup98
+3347,beta meanders,Uncharacterized protein BF3112
+3133,a+b two layers,Nuclease domain of PRRSV nonstructural protein Nsp1
+3248,alpha complex topology,N-terminal domain in Lassa fever virus nucleoprotein
+1054,alpha bundles,Arginine decarboxylase C-terminal helical extension
+3453,a+b two layers,Glycoprotein E3
+3234,a+b two layers,GerBC protein
+3147,a+b two layers,Uncharacterized protein EF_1977
+3293,beta barrels,LARA domain
+3840,a+b two layers,Bacterial conjugation factor PsiB
+3148,a+b two layers,putative secreted protein PA3611
+3292,a+b complex topology,Adenine deaminase 2 C-terminal domain
+3158,beta barrels,uncharacterized protein RUMGNA_01417
+3675,a+b complex topology,DNA gyrase subunit B insertion domain
+6090,alpha arrays,N-terminal domain of lytM
+3162,a+b two layers,a functionally unknown protein from Leptospirillum sp. Group II UBA
+3349,a+b two layers,DNA polymerase D large subunit DP2 N-terminal domain
+3467,extended segments,Stage II sporulation protein SB
+3245,extended segments,Chaotic nuclear migration protein 67
+3308,beta duplicates or obligate multimers,periplasmic lysozyme inhibitor of I-type lysozyme-like
+3286,alpha complex topology,Glypican insertion domain
+3256,a+b two layers,DUF2233 N-terminal domain
+6087,extended segments,N-terminal region of NMB0537
+3472,alpha arrays,Uncharacterized protein
+3461,alpha bundles,Spot 14 protein
+3346,a+b two layers,N-terminal domain in ubiquitin-fold modifier 1 specific protease UfSP2
+3341,beta sandwiches,N-terminal domain in a putative lipoprotein BACOVA_00967
+3342,beta sandwiches,C-terminal domain in a putative lipoprotein BACOVA_00967
+3719,alpha bundles,Imelysin peptidase-like
+3338,a+b two layers,Fragilysin-3 prodomain-like
+3289,alpha complex topology,Nck-associated protein 1/Cytoplasmic FMR1-interacting protein 1
+3235,extended segments,Wiskott-Aldrich syndrome protein family member 1
+3305,alpha bundles,Abl interactor 2
+3315,a+b complex topology,Insertion domain in O-GlcNAc transferase
+3172,a+b two layers,Uncharacterized protein gp49
+6100,alpha bundles,Uncharacterized protein PP-LUZ7_gp033
+3169,a+b two layers,Carboxyl terminal domain of human deltex 3-like
+3280,a/b three-layered sandwiches,C-terminal domain in arabinosyltransferase C
+6132,alpha bundles,Nudix hydrolase N-terminal dimerization domain
+3449,a+b two layers,Cpn0803
+6107,a+b two layers,a+b domain in platelet binding protein GspB
+3176,alpha duplicates or obligate multimers,Head fiber protein gp8.5 fibrous portion
+3420,beta meanders,Colicin-A N-terminal domain
+3226,alpha complex topology,Uracil Transporter UraA
+3227,alpha complex topology,phosphorylation-coupled saccharide transporter ChbC
+3337,a+b duplicates or obligate multimers,Dimerization domain of heterocyst differentiation protein HetR
+3412,a+b two layers,Factor H binding protein B (FhbB)
+3463,extended segments,Holliday junction recognition protein N-terminal domain
+3712,a+b complex topology,Mediator of RNA polymerase II transcription subunit 11
+3559,a+b complex topology,Mediator of RNA polymerase II transcription subunit 22
+3352,alpha bundles,STT3/PglB/AglB transmembrane domain
+3207,alpha bundles,PmoA
+3343,alpha complex topology,gamma-tubulin complex protein 4 (GCP4)
+3561,a+b complex topology,Mediator of RNA polymerase II transcription subunit 17
+3560,a+b complex topology,Mediator of RNA polymerase II transcription subunit 8
+3195,extended segments,Mediator of RNA polymerase II transcription subunit 6
+3456,extended segments,NADH-quinone oxidoreductase subunit A
+3579,extended segments,NADH-quinone oxidoreductase subunit J
+3843,alpha complex topology,NADH-quinone oxidoreductase subunit K
+3281,alpha complex topology,Sodium/proton antiporter subunits-like
+3200,beta complex topology,Read-through domain of A1 protein
+3185,a+b two layers,uncharacterized protein Svir_20580
+3263,alpha arrays,ATR1 N-terminal domain
+3765,alpha arrays,N-terminal domain in some Dicers
+3605,alpha bundles,Polarity suppression protein
+3243,alpha complex topology,VopL dimerization domain
+3457,alpha bundles,GxGD membrane protease
+3304,a+b two layers,Cellular targeting domain in sucrose synthase-1
+3500,alpha bundles,ENOD40 peptide-binding domain in sucrose synthase-1
+3188,beta duplicates or obligate multimers,cyanobacterial Oscillatoria Agardhii Agglutinin (OAA)
+3401,a+b complex topology,Envelope glycoprotein GP1
+3782,a+b duplicates or obligate multimers,Envelope glycoprotein GP2-related
+3298,a+b complex topology,Insertion domain in vaccinia virus scaffolding protein D13
+3844,a+b two layers,hydrogenase expression protein-like
+3704,alpha superhelices,Apoptotic protease-activating factor 1 (Apaf-1) helical domain
+7597,a/b three-layered sandwiches,Endolysin C-terminal domain
+3419,alpha bundles,Antitoxin VbhA
+3710,alpha bundles,Golgi to ER traffic protein 1 cytosolic domain
+3311,alpha arrays,Uncharacterized protein CV_1783
+3705,alpha arrays,Bacterial chaperone lipoprotein (PulS_OutS)
+3571,alpha arrays,Lettuce necrotic yellow virus phosphoprotein C-terminal domain
+6159,extended segments,Nup54 C-terminal interacting domain
+6158,alpha bundles,Nucleoporin p58/p45 helical region
+3208,alpha arrays,RNA polymerase-associated protein Gp33
+3681,a+b complex topology,Helical hairpin insertion in E. coli DNA-directed RNA polymerase beta subunit
+1092,alpha arrays,Mimivirus sulfhydryl oxidase R596 ORFan domain
+3001,alpha arrays,"Tetrahydrodipicolinate-N-succinlytransferase, N-terminal 3-helical domain"
+1203,alpha bundles,Shroom domain 2
+3415,alpha complex topology,Concentrative nucleoside transporter
+1052,alpha bundles,Tas3 N-terminal domain
+7600,a/b three-layered sandwiches,Chromo domain-containing protein 1 (Chp1) domain II
+3282,a+b complex topology,LidA
+6105,few secondary structure elements,Zinc finger domain in hydrogenase maturation protein HypF
+3713,alpha bundles,Small terminase central domain
+6173,beta barrels,V1/V2 domain in HIV gp120
+3574,alpha complex topology,Nucleocapsid protein
+6069,extended segments,Ribosomal protein L41-A
+3706,alpha bundles,Conserved type six secretion component TssL-related
+3408,beta duplicates or obligate multimers,Fibroin heavy chain N-terminal domain
+3622,beta meanders,Surface-exposed lipoprotein adhesin JlpA
+3762,alpha arrays,Poly(ADP-ribose) glycohydrolase helical domain
+3219,extended segments,E3 SUMO-protein ligase RanBP2 fragment
+3578,beta sandwiches,Third domain in metalloprotease StcE
+3624,few secondary structure elements,CRISPR RNA silencing complex Cmr2 subunit Zn-binding domain
+3626,alpha bundles,CRISPR RNA silencing complex Cmr2 subunit first helical domain
+3625,alpha bundles,CRISPR RNA silencing complex Cmr2 subunit second helical domain
+3216,a+b two layers,Uncharacterized protein Q2S0R5
+3543,alpha complex topology,Acid-activated urea channel
+3385,beta barrels,Allergen Alt a 1
+1138,alpha bundles,Effector protein NleF
+3745,alpha bundles,Sodium/Calcium exchanger
+3402,a+b complex topology,DUF2666 family proteins
+3577,alpha arrays,Macrodomain Ter protein MatP
+3668,alpha arrays,Negative regulator RsdA N-terminal domain
+3213,a+b two layers,hypothetical protein TTHB210
+3351,a/b three-layered sandwiches,Atg7 N-terminal domain-like
+3392,a+b two layers,Cytoplasmic domain of BfpC
+7505,a/b three-layered sandwiches,Kinesin-like protein KIF23 C-terminal domain
+3452,a+b complex topology,P9-1
+3410,alpha arrays,DNA mimic protein DMP19
+6111,a+b complex topology,C-terminal domain of cytoplasmic dynein heavy chain
+3590,a+b complex topology,Tomato mosaic virus helicase N-terminal domain
+3400,a+b complex topology,Membrane-associated protein VP24
+3409,a+b duplicates or obligate multimers,Vacuolar protein sorting-associated protein 30 BARA domain
+7594,a/b three-layered sandwiches,Hydrogenase expression/formation protein HypD
+3845,few secondary structure elements,HypD Fe-S cluster binding domain
+6130,alpha complex topology,Selenocysteine synthase N-terminal domain
+3730,alpha arrays,CCM3/GCKIII dimerization domain
+3752,a+b complex topology,L-Lys epsilon-oxidase C-terminal domain
+6140,alpha superhelices,Cdc45-Binding Domain in Sld3/Treslin
+3880,beta barrels,Glycoside hydrolase family 127 C-terminal domain
+3877,alpha bundles,Membrane protein insertase YidC-related
+6151,alpha bundles,Helical bundle domain in S46 peptidase
+1134,alpha bundles,C-terminal helical domain of alanine-tRNA ligase
+7598,a/b three-layered sandwiches,Resistance protein Tm-1 first domain
+3959,alpha duplicates or obligate multimers,Protein Hikeshi dimerization domain
+3980,alpha arrays,Protein C'
+6141,a+b two layers,DNA Mimic Protein Arn
+1014,alpha arrays,AopB
+3983,a/b three-layered sandwiches,CRISPR-associated Csx3
+3572,a+b complex topology,Cascade subunit Csa5
+3715,a+b two layers,Ribosomal protein L22e
+6120,beta barrels,Pestivirus Npro endopeptidase C53
+3740,alpha arrays,F420-reducing hydrogenase subunit beta
+3368,alpha bundles,Rap2b (SMA2266)
+3218,a+b duplicates or obligate multimers,small terminase oligomerization domain
+3252,alpha arrays,SHQ1 C-terminal domain-like
+3377,a+b two layers,Diedel
+3565,alpha bundles,Na/H pumping membrane integral pyrophosphatase
+3447,alpha bundles,Isoprenylcysteine carboxyl methyltransferase (ICMT)
+3360,extended segments,Translation machinery-associated protein 46 DFRP domain
+3792,beta sandwiches,26S proteasome subunit Rpn2 C-terminal domain
+3369,beta meanders,lysosome-associated membrane protein LAMP-3
+3616,alpha bundles,ExoU toxin middle helical domain
+3576,a+b complex topology,Cas8-like
+3356,extended segments,regulatory domain of a plasma-membrane Ca2+-ATPase
+3612,a+b two layers,Pesticin N-terminal domain
+6067,alpha arrays,Dimerization domain of Sgt2
+3439,a+b two layers,PafA/Dop C-terminal domain
+3563,alpha bundles,Twin arginine protein translocation system component TatC
+522,a+b two layers,Bacteriochlorophyll A protein
+6175,a+b two layers,Insertion domain in phosphocholine transferase AnkX
+3870,alpha bundles,Complement regulator-acquiring surface protein 2 (CRASP-2)
+3644,alpha complex topology,Leanyer virus nucleoprotein-related
+3770,alpha arrays,Flax-rust effector AvrM
+3785,a+b three layers,"Suppressor of Fused, C-terminal domain"
+3680,a+b complex topology,Zinc finger FYVE domain-containing protein 9 C-terminal domain
+6129,beta barrels,Repulsive guidance molecule (RGM) family
+3777,alpha bundles,Prolyl 4-hydroxylase alpha subunit dimerization domain
+3738,a+b complex topology,Major inner capsid protein P1
+3751,extended segments,Antiviral helicase Ski2 N-terminal extended region
+3878,extended segments,Multidrug efflux pump accessory protein AcrZ
+1076,alpha bundles,Intramembrane protease Rce1-related
+3819,alpha complex topology,CRISPR-associated endonuclease Cas9 alpha-helical lobe
+3820,a+b complex topology,CRISPR-associated endonuclease Cas9 C-terminal domain
+3881,alpha bundles,CNOT9 binding domain CN9BD (DUF3819)
+3960,alpha arrays,Aminoglycoside adenyltransferase AadA C-terminal domain
+3851,alpha arrays,OrfY
+6162,extended segments,CRY-binding domain of PER
+3863,beta barrels,Virulence associated protein B (Vapb)
+1016,alpha arrays,Dimerization domain in caprin-1 and PAN3
+3944,alpha duplicates or obligate multimers,DNTTIP1 dimerisation domain
+3600,alpha bundles,uncharacterized protein SYNW0670
+6064,few secondary structure elements,EAGR box containing domain in MG200
+3403,alpha bundles,Pre-mRNA-splicing factor PRP9
+3413,alpha bundles,Inositol phosphate phosphatase sopB N-terminal domain
+3592,alpha bundles,Oncogenic effector CagA N-terminal domain
+3593,a+b complex topology,Oncogenic effector CagA meander beta sheet domain
+3594,alpha bundles,Oncogenic effector CagA domain III
+3380,a+b duplicates or obligate multimers,Dimerization domain of Lsr2
+3389,a+b two layers,hypothetical protein SAV0303
+3398,a/b three-layered sandwiches,STING C-terminal domain
+7591,a/b three-layered sandwiches,Tetraacyldisaccharide 4'-kinase C-terminal domain
+3367,beta complex topology,"C-terminal domain in bacteriophage C1 tail knob protein, gp12"
+3397,a+b complex topology,Tic22
+3388,a+b two layers,C-terminal domain in CigR
+3653,a+b two layers,Salmon anemia virus nucleoprotein N-terminal domain
+3375,beta barrels,Single-stranded DNA-binding protein DdrB
+3846,alpha bundles,IcmR
+6080,alpha arrays,Insertion domain in lpg1103-like
+3382,alpha arrays,Protein Wnt-8
+3355,alpha complex topology,dicarboxylate/sodium symporter
+3374,a+b complex topology,spore cortex-lytic enzyme catalytic domain
+3775,beta barrels,Lysosome membrane protein 2 lumenal domain
+3376,a+b three layers,PlyCB
+3372,beta barrels,hypothetical protein PA3229
+3753,few secondary structure elements,hypothetical protein NE1300
+3379,extended segments,Photosystem II reaction center protein ycf12
+3371,few secondary structure elements,Regulator of transcription protein Rtr1
+3381,alpha arrays,C-terminal domain of the type III effector Xcv3220 (XopL)
+3391,a+b two layers,C-terminal domain in a functionally unknown conserved protein
+3597,beta sandwiches,Starch specific carbohydrate-binding modules
+3729,alpha arrays,Legumain prodomain
+3627,alpha bundles,UDP-galactofuranosyl transferase GlfT2 helical domain
+1194,few secondary structure elements,C4H2C2-type zinc finger
+3608,alpha bundles,Surface antigen HP0197 N-terminal domain
+3850,few secondary structure elements,Protein-only RNase P Zn-binding domain
+3366,alpha arrays,C-terminal domain in hypothetical protein lpg2210
+3632,a+b complex topology,Phage G1 gp67
+6089,alpha arrays,Helical domain in EC869 CdiA
+3365,beta barrels,N-terminal domain of minor coat protein pIII
+6071,extended segments,Transmembrane helix of nickel-iron hydrogenase small subunit
+3362,extended segments,Fusion glycoprotein F2
+3359,a+b two layers,hypothetical protein RUMGNA_01148-related
+3757,extended segments,AF1503 pre-HAMP domain
+3596,a+b complex topology,nsP3 zinc-binding domain
+3566,beta sandwiches,hypothetical protein BA_2335
+6103,alpha bundles,Death domain-associated protein 6 histone binding domain
+3789,beta barrels,Rubella virus capsid protein C-terminal domain
+3848,alpha bundles,Uncharacterized protein lpg1851
+3598,a/b three-layered sandwiches,Cellulose Synthase Subunit B a/b domain
+3562,alpha bundles,Calcium release-activated calcium channel protein 1
+3541,beta sandwiches,Atg29-Atg31
+3630,alpha bundles,Nicking enzyme middle helical domain
+3631,alpha bundles,Nicking enzyme C-terminal helical domain
+3646,alpha complex topology,T-component of energy-coupling factor (ECF) transporters
+3634,alpha bundles,LepB GAP domain N-terminal subdomain
+3635,alpha bundles,LepB GAP domain C-terminal subdomain
+3783,alpha bundles,Toxin RnlA C-terminal domain
+6102,alpha arrays,"N-terminal domain of segregation and condensation protein A, ScpA"
+3955,alpha arrays,Sir2 N-terminal domain
+6098,a+b two layers,BACOVA_05496-like
+3735,beta meanders,Rearrangement hotspot (RHS) repeats protein
+3796,alpha arrays,Iron-regulated surface determinant protein H linker domain
+6106,extended segments,"Photosystem II protein Y, psbY"
+6113,alpha duplicates or obligate multimers,Dimerization element domain in modular polyketide synthases
+6109,a+b two layers,N-terminal domain of chitin biosynthesis protein CHS6
+3855,alpha arrays,Serum amyloid A-1 protein
+3637,alpha complex topology,C-terminal domain of the DNA polymerase III subunit tau
+3649,beta sandwiches,Cellulose-binding protein CttA N-terminal domain
+3754,alpha bundles,Bacterial cell wall synthesis membrane enzyme MraY-related
+3728,alpha superhelices,Surface cell antigen Sca2 helical repeats
+3727,alpha arrays,Hsc70-interacting protein dimerization domain
+3700,beta duplicates or obligate multimers,Immunodominant antigen Pgp3 N-terminal domain
+3701,extended segments,Immunodominant antigen Pgp3 helical domain
+6123,alpha bundles,Fluorescence recovery protein
+3771,a+b two layers,Central kinetochore subunit CHL4 C-terminal domain
+3778,alpha arrays,Magnetochrome domain
+3643,a+b complex topology,hypothetical protein BF0379 C-terminal domain
+3871,alpha duplicates or obligate multimers,PHIST
+6122,a+b two layers,N-terminal domain of spumavirus gag protein
+3756,a+b complex topology,Diiron beta-hydroxylase CmlA N-terminal domain
+3737,alpha duplicates or obligate multimers,Major allergen Bla g 1 tandem repeats
+3641,a+b two layers,putative cell adhesion protein BACOVA_01548 insertion domain
+3723,alpha arrays,Phosphoinositide phosphatase insertion helical domain
+3724,alpha arrays,Phosphoinositide phosphatase C-terminal helical domain
+3647,beta sandwiches,Hypothetical Protein lmo2686
+1055,a/b three-layered sandwiches,N-terminal domain in NTD biosynthesis operon protein NtdA
+3852,alpha superhelices,UL37 N-terminal half
+3841,alpha bundles,Lv-ranaspumin (Lv-RSN-1)
+3835,alpha bundles,Type I hyperactive antifreeze protein
+3708,a+b three layers,ESX-1 secretion system protein eccB1 modular domains
+3709,a+b two layers,ESX-1 secretion system protein eccB1 linker domains
+3726,alpha bundles,RILP-like protein 2 N-terminal helical hairpin domain
+3707,a+b two layers,SdbC C-terminal domain
+3736,alpha superhelices,NLRC4 helical domain HD2
+3721,alpha bundles,Protein regulator of cytokinesis 1 (PRC1) dimerization domain
+3722,alpha bundles,Protein regulator of cytokinesis 1 (PRC1) rod domain
+3573,alpha arrays,Histone RNA hairpin-binding protein RNA-binding domain
+3725,a+b complex topology,Hypothetical protein BT3222 N-terminal domain
+3742,a+b two layers,hypothetical protein DESPIG_00776
+6161,a+b two layers,Uncharacterized virus protein A-100
+3773,few secondary structure elements,E3 ligase HOIP C-terminal domain
+3750,beta sandwiches,Surface cell antigen (sca) N-terminal domain
+3743,a+b two layers,"L,D-transpeptidase C-terminal domain"
+3772,beta sandwiches,Putative anti-sigma factor BDI_1681 N-terminal domain
+3901,a+b complex topology,Hypothetical protein lpg2422 after-hydrolase domain
+3886,alpha duplicates or obligate multimers,Virulence factor sHIP
+6152,alpha arrays,Helical domain in Orf11
+3759,alpha arrays,Antitermination protein Q helical domain
+3776,beta sandwiches,DNA-entry nuclease inhibitor
+1083,a+b duplicates or obligate multimers,Phage T4 gp12 N-terminal repeating units
+3790,alpha duplicates or obligate multimers,N-terminal domain of effector protein LegC3
+6148,few secondary structure elements,N-terminal domain of EpCAM
+3800,a+b two layers,Virion infectivity factor Vif
+3924,alpha complex topology,Sterol uptake control protein 2
+3791,alpha arrays,EDS1-PAD4 (EP) domain
+3919,alpha duplicates or obligate multimers,N-terminal domain of COMMD9
+3853,a+b two layers,Oxalate Biosynthetic Component A (ObcA) insertion domains
+3847,alpha bundles,Hemagglutinin HA2 chain
+3223,beta sandwiches,Amiloride-sensitive cation channel 2
+3798,a+b complex topology,Putative lipoprotein BA_2398
+3799,alpha bundles,SabA N-terminal extracellular adhesion domain
+3900,a+b complex topology,Phospholipase effector Tle1 C-terminal domain
+3828,a/b three-layered sandwiches,Flavivirus non-structural protein 1 (NS1) a/b domain
+3829,beta meanders,Flavivirus non-structural protein 1 (NS1) beta-meander domain
+3842,a+b two layers,Uncharacterized protein Rv3902c
+3883,alpha bundles,CDP-alcohol phosphotransferase helical bundle domain
+6167,a+b complex topology,Eukaryal tRNA restriction enzyme PaT
+3854,alpha duplicates or obligate multimers,Spore germination protein GerD
+3892,alpha bundles,Transhydrogeanse domain II
+3833,alpha complex topology,TcA alpha-helical shell domain
+3834,alpha bundles,TcA alpha pore-forming domain
+3946,beta duplicates or obligate multimers,Pleurotolysin B C-terminal domain
+3821,a+b complex topology,CRISPR-associated endonuclease Cas9 beta-hairpin domain
+3856,beta sandwiches,Putative tailspike protein Orf210 N-terminal domain
+3872,alpha arrays,Ribonuclease 3 N-terminal domain
+3836,alpha complex topology,SidC N-terminal domain
+3873,a+b two layers,Serine/threonine-protein kinase GCN2 C-terminal domain
+3882,alpha bundles,Atg17
+3921,alpha complex topology,Na(+)-translocating NADH-quinone reductase subunit D
+6147,alpha arrays,C-terminal domain of Dbr1
+7596,a/b three-layered sandwiches,GT-D type glycosyltransferase
+3890,alpha bundles,Transmembrane Bax inhibitor motif (TMBIM) proteins
+3940,a+b two layers,Spliceosomal helicase Aquarius insert domain
+6165,beta sandwiches,Piezo CTL2 domain
+3894,beta meanders,O-GlcNAc transferase GtfA beta-meander domain
+6146,a+b two layers,Cas3 C-terminal domain
+3896,alpha duplicates or obligate multimers,Intramembrane CDP-DAG synthetase-related
+3884,a+b two layers,Immunity protein NMB0503
+6154,a+b complex topology,C-terminal domain of Ebola nucleoprotein
+3897,alpha bundles,Effector protein VipE
+6155,alpha duplicates or obligate multimers,TOG superfamily
+6166,alpha bundles,"N-terminal domain of Delta(14)-sterol reductase, MaSR1"
+1032,alpha arrays,Toxin A (TcdA) helical domain
+1033,beta duplicates or obligate multimers,Toxin A (TcdA) delivery domain
+6157,alpha bundles,GKAP homology domain 1
+3920,alpha bundles,Synaptonemal complex central element protein SYCE3
+6156,a+b three layers,Sensor domain of histidine kinase VC_A0565
+6163,alpha arrays,Uncharacterized protein lpg1960
+6164,alpha bundles,Bestrophin
+3933,a+b two layers,Uncharacterized protein YPO2434
+3932,alpha bundles,CRISPR/Cas system-associated protein Csm6 6H domain
+3925,a+b two layers,hypothetical protein BPSL2088
+3926,alpha bundles,V-type proton ATPase subunit D
+3950,alpha complex topology,Bacterial vitamin C transporter UlaA/SgaT
+3908,extended segments,Adhesin P1 N-terminal domain
+4290,alpha duplicates or obligate multimers,HP0242-like
+3903,alpha duplicates or obligate multimers,Reticulocyte binding protein 5
+3936,a+b complex topology,Herpesvirus UL21 N-terminal domain
+3904,few secondary structure elements,con-ikot-ikot toxin
+3996,alpha complex topology,Vesicular stomatitis virus L polymerase C-terminal domain
+3991,alpha bundles,Rabin8 C-terminal domain
+3451,extended segments,Suppressor protein STM1
+6170,alpha bundles,Kv7 proximal C-terminal Domain
+6042,beta duplicates or obligate multimers,N-terminal domain of HCV E1
+3961,a+b two layers,Csm1 ferredoxin-like domain
+3923,alpha bundles,Mitotic chromosome determinant-related protein N-terminal domain
+1088,beta duplicates or obligate multimers,Long tail fiber protein gp34 C-terminal domain
+3929,alpha bundles,THO1 C-terminal domain
+3912,extended segments,Intraflagellar transport protein 46 C-terminal domain
+3913,extended segments,Intraflagellar transport protein 52 C-terminal domain
+1011,alpha complex topology,Monotreme lactating protein
+3905,extended segments,Mitoribosomal protein mL42
+3906,extended segments,Mitoribosomal protein mL52
+3907,extended segments,Mitoribosomal protein mL63
+838,a+b two layers,Ribosomal protein S19
+3167,a+b two layers,40S ribosomal protein rpS21 (S21e)
+3166,alpha arrays,60S ribosomal protein rpL36 (L36e)
+3319,extended segments,C-terminal helical region in 60S ribosomal protein L4 (L4p)
+3209,a+b two layers,RPL28
+3212,extended segments,RPL29
+3210,extended segments,RPL13
+3591,extended segments,Helical linker in baseplate protein ORF48
+3934,a+b complex topology,Late protein H7
+3927,few secondary structure elements,Late competence protein ComFB
+3909,alpha bundles,NisB C-terminal helical domain
+3910,extended segments,Exosome complex exonuclease RRP6 N-terminal domain
+3911,extended segments,Exosome complex protein LRP1
+6168,alpha duplicates or obligate multimers,Immediate-early 1 protein
+3914,alpha bundles,TMEM16 lipid scramblase transmembrane domain
+3915,a+b two layers,a+b domain in PB2
+3917,a+b complex topology,Middle domain in PB2
+3916,alpha arrays,Helical domain in PB2
+1025,alpha bundles,Stonustoxin helical domain
+3948,alpha bundles,V(D)J recombination-activating protein 1 helical bundle domain
+3957,a+b two layers,EKC/KEOPS complex subunit GON7
+3954,alpha arrays,Phosphodiesterase 4 upstream conserved regions (UCR)
+1096,alpha arrays,Zinc transporter ZIP4 N-terminal domain
+3994,a+b two layers,C-P lyase subunit PhnG
+3993,few secondary structure elements,C-P lyase subunit PhnJ C-terminal Zn-binding domain
+3965,alpha arrays,Origin recognition complex subunit 3 helical insert domain
+3981,alpha bundles,Mitochondrial distribution and morphology protein 35
+3976,a+b duplicates or obligate multimers,GnsA
+1015,alpha complex topology,Insulin-induced gene (Insig) homologs
+1044,alpha bundles,Phage G20C small terminase C-terminal domain
+1095,extended segments,Copper resistance protein ScsC N-terminal region
+1005,alpha arrays,Cell-shape determining Csd6 N-terminal dimerization domain
+3985,alpha bundles,CFEM domain (contains eight cysteines)
+1050,alpha arrays,BID domain of Bartonella effector protein (Bep)
+3978,alpha complex topology,Integral membrane Acyl-CoA desaturase
+1059,a+b two layers,Omega-3 polyunsaturated fatty acid synthase subunit PfaD N-terminal domain
+3977,alpha duplicates or obligate multimers,ICP27 homology domain
+1010,alpha arrays,AvrRxo1-ORF2
+3987,a+b complex topology,Type III R-M system modification subunit target recognition domain
+3988,a/b three-layered sandwiches,Type III R-M system modification subunit C-terminal domain
+3997,alpha arrays,Helical insertion domain in magnesium chelatase catalytic subunit
+1009,alpha duplicates or obligate multimers,Taz1 dimerization domain
+3989,alpha arrays,SidC C-terminal domain
+3984,beta sandwiches,Herpesvirus nuclear egress complex subunit M50 N-terminal domain
+3995,alpha bundles,Vesicular stomatitis virus L polymerase connector domain
+1002,alpha complex topology,Fluoride ion channel
+1017,a+b two layers,Rrs1
+1028,extended segments,Nicastrin transmembrane helix
+3945,alpha superhelices,N-terminal fragment of dynein heavy chain
+1030,alpha duplicates or obligate multimers,Crispr-associated protein Csm2
+1003,a+b complex topology,CRISPR-associated endonuclease Cas9 wedge domain
+1110,beta sandwiches,Flagellar hook subunit protein FlgE beta sandwich domain
+1037,alpha bundles,Prolipoprotein diacylglyceryl transferase
+1063,alpha complex topology,Tegument protein U14
+1069,alpha arrays,CRISPR-associated endonuclease Cpf1 PI (PAM-interacting) domain
+1068,few secondary structure elements,CRISPR-associated endonuclease Cpf1 nuclease domain
+1070,alpha complex topology,CRISPR-associated endonuclease first helical domain
+1071,alpha complex topology,CRISPR-associated endonuclease Cpf1 second helical domain
+3975,a+b two layers,uncharacterized protein lpg1496 N-terminal domain
+1004,extended segments,RNA polymerase sigma-54 factor N-terminal region
+3990,few secondary structure elements,Zinc finger domain in TOPLESS related protein 2 (TPR2)
+7599,a/b three-layered sandwiches,UPF0246 protein YaaA
+3228,a+b two layers,Baseplate structural protein gp6 C-terminal domain III
+1094,a/b three-layered sandwiches,Polycomb protein Eed insertion domain
+1020,extended segments,Ezh2 N-terminal domain
+1019,few secondary structure elements,Ezh2 MCSS domain
+1041,alpha bundles,PGL dimerization domain
+1007,alpha arrays,SopD C-terminal domain
+1006,alpha bundles,RavZ C-terminal domain
+1013,beta duplicates or obligate multimers,WD repeat-containing protein 48 ancillary domain
+1008,alpha bundles,BRCC36 C-terminal helical domain
+4208,alpha arrays,Monopolin complex subunit MAM1
+1082,alpha bundles,Glycogen debranching enzyme (GDE) middle domain 2
+1081,alpha arrays,Glycogen debranching enzyme (GDE) insertion domain
+1060,alpha duplicates or obligate multimers,STPRs (score and three amino acid peptide repeats)
+1066,alpha bundles,Anti-repressor protein
+1100,beta meanders,TIP41-like protein
+1029,extended segments,Pre-mRNA-splicing helicase BRR2 NC-clamp
+1104,a+b complex topology,Helicase Cch N-terminal domain
+1046,alpha bundles,Lipoprotein signal peptidase
+1108,alpha complex topology,Zuotin homology domain (ZHD)
+1078,extended segments,Bd-type quinol oxidase transmembrane helix subunit
+1024,alpha bundles,CdiI immunity protein
+1022,alpha arrays,4Fe-4S binding domain in Dna2
+1064,alpha complex topology,Tegument protein UL21
+1087,alpha duplicates or obligate multimers,N-terminal domain of Phi ETA orf 56-like protein
+1111,alpha complex topology,Trimeric intracellular cation (TRIC) channel
+1026,alpha bundles,Rev protein
+1121,alpha superhelices,Hypothetical protein SF216
+1133,beta sandwiches,Immunomodulator A46 N-terminal domain
+7508,a/b three-layered sandwiches,O-glucosyltransferase rumi N-terminal domain
+1031,a+b complex topology,Rifampin phosphotransferase RPH-Lm middle domain
+1151,alpha bundles,Helical membrane domain in lipooligosaccharide phosphoethanolamine transferase A
+1119,a+b complex topology,6-carboxyhexanoate-CoA ligase
+1023,beta barrels,Cell division protein ZapC N-terminal domain
+1099,a+b two layers,RNase inhibitor Dip
+1080,beta barrels,Hantavirus structural glycoprotein Gn ectodomain subdomain III
+1038,alpha complex topology,Pre-mRNA-splicing factor 8 N-terminal domain
+1039,extended segments,Pre-mRNA-processing factor 31 C-terminal region
+1040,extended segments,U4/U6 small nuclear ribonucleoprotein PRP3 N-terminal region
+1106,alpha arrays,RDS3 complex subunit 10
+1150,few secondary structure elements,"Rattusin, a novel defensin with intermolecular disulfides"
+1191,alpha duplicates or obligate multimers,UPF0253 protein YaeP
+1118,a+b complex topology,Anchorless fibronectin/fibrinogen binding protein C-terminal domain
+1036,a+b two layers,60S ribosomal export protein NMD3 a+b domain
+1180,alpha bundles,Flagellar biosynthetic protein FliP periplasmic domain
+6172,extended segments,Transmembrane helix of sigma-1 receptor
+1047,a+b complex topology,Baseplate wedge protein gp7 domain II
+1048,extended segments,Baseplate wedge protein gp7 domain VI
+1049,alpha duplicates or obligate multimers,Baseplate wedge protein gp7 helical domain-like
+3941,beta sandwiches,Baseplate structural protein gp6 C-terminal domain II
+1160,beta duplicates or obligate multimers,Endoglin orphan region (OR) domain
+1073,alpha arrays,Mitochondrial calcium uniporter (MCU)
+1065,alpha bundles,SPX domain
+1062,a+b three layers,Cryptic loci regulator 2 N-terminal domain
+1090,alpha arrays,Oxalate biosynthetic component 1 (Obc1) cap domain
+1097,alpha bundles,C-terminal subgroup One Signature (COS) domain
+1152,a+b three layers,a+b domain in conserved hypothetical protein Rv3899c
+1153,alpha superhelices,Helical domain in conserved hypothetical protein Rv3899c
+1120,alpha bundles,KSHV ORF49 protein
+1077,few secondary structure elements,RelA zinc-finger domain
+1167,beta sandwiches,Ice-binding adhesin
+1115,alpha arrays,Csd1/Csd2 helical domain
+1156,alpha complex topology,EcoR124I HsdR C-terminal domain
+3271,alpha arrays,CdiA C-terminal nuclease domain
+1086,beta meanders,C-terminal beta-hairpin in astrotactin-2
+1148,a+b two layers,Cell wall binding protein cwp8 domain 2
+3992,few secondary structure elements,Excalibur domain of choline binding protein L
+1117,alpha arrays,Enhancer of polycomb-like protein 1 (Epl1) N-terminal domain
+1208,a+b two layers,Hypothetical protein RPA3313
+1147,alpha bundles,RNA polymerase II elongation factor ELL2 C-terminal domain
+3747,a+b two layers,Flagellar hook protein FlgE D0 domain
+3468,a+b two layers,HLTF protein HIRAN domain
+1159,alpha arrays,Melanoregulin
+1142,alpha arrays,Immunomodulating metalloprotease IMPa helical domain
+7603,a/b three-layered sandwiches,Immunomodulating metalloprotease IMPa N-terminal domain
+1154,beta duplicates or obligate multimers,VirG insertion domain (VID)
+3106,alpha bundles,A hypothetical protein from Vibrio cholerae
+1169,a+b complex topology,Procyclic specific surface antigen-2
+1101,alpha bundles,Uncharacterized protein LPG2271
+3734,beta barrels,P22 coat protein insertion domain
+1144,beta sandwiches,Apc (acetophenone carboxylase) beta subunit C-terminal domain
+7604,a/b three-layered sandwiches,a/b domain in Acetophenone carboxylase (Apc) alpha subunit
+1143,beta sandwiches,beta sandwich domain in acetophenone carboxylase (Apc) alpha subunit
+1107,alpha bundles,Pilin
+1135,a+b complex topology,Immune Mapped Protein 2 (IMP2)
+1128,alpha bundles,LYR protein
+1129,a+b three layers,"Mitochondrial complex I, B17.2 subunit"
+1122,extended segments,"Mitochondrial complex I, B9 subunit"
+1131,extended segments,"Mitochondrial complex I, B14.5b subunit"
+1132,extended segments,"Mitochondrial complex I, B16.6 subunit"
+1123,extended segments,"Mitochondrial complex I, AGGG subunit"
+1127,extended segments,"Mitochondrial complex I, SGDH subunit"
+1124,extended segments,"Mitochondrial complex I, KFYI subunit"
+1125,extended segments,"Mitochondrial complex I, MNLL subunit"
+1126,extended segments,"Mitochondrial complex I, MWFE subunit"
+1130,alpha bundles,"Mitochondrial complex I, PDSW subunit"
+3161,alpha duplicates or obligate multimers,LOB domain
+1155,few secondary structure elements,Shisa 3 N-terminal domain
+1190,a+b two layers,Curli production assembly/transport component CsgF
+3575,a+b complex topology,Nigritoxin N-terminal domain
+1196,a+b complex topology,Nigritoxin C-terminal domain
+1157,a+b two layers,Seb1 domain 2
+4189,alpha arrays,ICP4 DNA-binding domain
+1166,alpha arrays,Potassium-transporting ATPase KdpC subunit
+1201,alpha superhelices,Peptide N-methyltransferase C-terminal helical domain
+1175,alpha complex topology,Apolipoprotein N-acyltransferase transmembrane domain
+1193,alpha arrays,Neutral trehalase N-terminal domain
+1176,alpha arrays,Nitrogenase vanadium-iron protein delta chain
+1177,few secondary structure elements,lybatide 2
+3466,alpha arrays,Phospholipid translocation channel MlaA
+1181,few secondary structure elements,EMI domain
+1182,alpha arrays,Cas5fv helical domain
+1204,alpha bundles,Bacteriocin pyocin-S2 N-terminal domain
+5088,alpha superhelices,RidL repeats
+1183,alpha complex topology,Rift Valley fever virus non-structural protein NS-S
+7036,beta barrels,N-terminal domain of TAP-binding protein-related
+7043,alpha arrays,Assembly domain of GTP-binding protein
+1103,mixed a+b and a/b,uncharacterized protein LPG2148 insertion domain
+1105,alpha complex topology,Retinol uptake receptor STRA6
+3971,alpha arrays,Uncharacterized protein aq_1974
+1116,a+b two layers,Polycystin-mucolipin domain
+1205,a+b two layers,C-terminal domain of CdiA toxin
+1136,a+b complex topology,ssRNA bacteriophage MS2 maturation protein
+1139,beta barrels,secretin domain
+174,few secondary structure elements,Tetraspanin transmembrane domain
+1113,alpha arrays,Protein of Unknown Function YPO2564
+1188,alpha bundles,ZIP zinc transporter
+1140,alpha duplicates or obligate multimers,Traversal protein CelTOS
+7006,extended segments,mitochondrial aminolevulinate synthase C-terminal domain
+1141,alpha arrays,Glycosyl transferase TarS linker domain
+5012,alpha complex topology,CRISPR-associated endonuclease C2c1 second helical domain
+1146,few secondary structure elements,CRISPR-associated endonuclease C2c1 C-terminal domain
+4352,alpha superhelices,Effector protein SidK
+565,alpha arrays,"Orange carotenoid protein, N-terminal domain"
+1179,alpha complex topology,TelC toxin domain
+3779,a+b two layers,OxsB N-terminal domain
+1161,alpha duplicates or obligate multimers,IreB
+1178,alpha arrays,Staphylococcal peroxidase inhibitor
+7002,alpha duplicates or obligate multimers,TM trimerization region of envelope glycoprotein B
+1198,alpha bundles,BTA121
+1186,few secondary structure elements,Avirulence protein AvrP123
+1158,a+b complex topology,Arenavirus glycoprotein GP2
+1171,alpha arrays,beta-herpesvirus envelope glycoprotein L (gL) N-terminal domain
+1173,beta barrels,UL128 C-terminal domain
+1172,beta barrels,UL131A-like
+1174,alpha complex topology,Potassium channel TMEM175
+7017,beta meanders,beta-taco fold of TamB
+3804,alpha bundles,CRISPR-Cas system RNase C2c2 N-terminal domain
+4974,alpha bundles,CRISPR-Cas system first helical domain
+1149,alpha bundles,CRISPR-Cas system second helical domain
+7030,alpha superhelices,N-terminal domain of P-granule protein
+7012,a+b complex topology,Monotopic phosphoglycosyl transferase (PGT)-like
+7057,alpha duplicates or obligate multimers,N-terminal head domain of protein delta
+7058,beta duplicates or obligate multimers,beta-fiber domain of protein delta
+7007,extended segments,TOR1 N-terminal extended segment
+1184,alpha arrays,Primosome protein DnaB middle domain
+1168,alpha bundles,MERS-CoV helicase helical bundle domain
+1165,alpha complex topology,DotM cytosolic domain
+1164,a+b two layers,Hypothetical virulence protein
+1163,alpha arrays,IcmS
+1162,alpha arrays,IcmW
+7018,few secondary structure elements,gp76 helical domain
+1197,alpha bundles,Integral membrane glycerol 3-phosphate acyltransferase PlsY
+1195,a+b complex topology,Suppressor of hydroxyurea sensitivity protein 2
+1187,beta complex topology,Phlebovirus glycoprotein Gn
+7005,a+b duplicates or obligate multimers,LUBAC-tethering domain
+7003,a+b complex topology,N-terminal domain of the pestivirus NS5B protein
+3157,alpha arrays,Kinetoplastid membrane protein 11
+7031,a+b complex topology,extracellular domain of BK channel beta4 subunit
+1206,alpha bundles,Effector SdeA helical domain
+7013,alpha bundles,Ribosome assembly factor Efg1-like
+7079,a+b complex topology,Phage tail fiber assembly protein
+7044,alpha bundles,N-terminal domain of Small RNA Degrading Nuclease (SDN)
+7041,alpha arrays,N-terminal domain of N-acetylglucosaminyltransferase-V
+7042,a+b three layers,C-terminal domain of N-acetylglucosaminyltransferase-V
+7048,a+b complex topology,head domain of ScoMcrA
+7049,alpha complex topology,sulfur-binding domain (SBD) of ScoMcrA
+7053,a+b complex topology,oligomerization domain of PprA
+7052,a+b two layers,N-terminal domain of PprA
+7085,alpha arrays,Twin-arginine translocation pathway signal
+7097,a+b two layers,Uncharacterized protein MXAN_0049
+7088,alpha arrays,GPI-anchored protein
+7082,alpha arrays,N-terminal domain of viral protein A26
+7083,beta sandwiches,C-terminal domain of viral protein A26
+7033,a+b complex topology,Ribonuclease P protein subunit p40
+7010,alpha arrays,Activation-binding domain of RNA polymerase II mediator
+1185,a+b two layers,A hypothetical protein from Neisseria gonorrhoeae
+7019,alpha duplicates or obligate multimers,anti-CRISPR protein AcrE1
+7011,alpha bundles,RodA transmembrane domain
+7004,alpha duplicates or obligate multimers,split helical dimerization (SHED) domain
+7020,few secondary structure elements,Influenza A M2 transmembrane domain
+7015,alpha bundles,Palmitoyltransferase DHHC transmembrane domain
+7016,extended segments,Palmitoyltransferase DHHC C-terminal domain
+7021,alpha bundles,viral membrane assembly protein A6 homolog
+7023,alpha bundles,helical ridge domain of D-alanyl transfer protein
+7022,alpha bundles,central core domain of D-alanyl transfer protein
+7024,a+b duplicates or obligate multimers,"Dimerization domain of lysinoalanine synthase, DurN"
+7001,alpha complex topology,palm insertion domain of RNAP2
+7046,a+b complex topology,RNAi suppressor protein CrPV-1A
+7025,alpha bundles,LIN9-LIN52 heterodimer
+7014,alpha bundles,Undecaprenyl pyrophosphate phosphatase (UppP) transmembrane domain
+7034,alpha arrays,Protein A6 N-terminal domain
+7026,beta meanders,N-terminal region of lipid transporter Vps13
+7050,few secondary structure elements,Npl4 zinc binding domain
+7051,alpha arrays,C-terminal domain of Npl4
+1202,few secondary structure elements,barrettide A
+7008,alpha arrays,N-terminal domain of hexon-associated protein (IIIa)
+7032,a+b two layers,Paratox
+7089,a+b two layers,"Methane monooxygenase hydroxylase, MmoD"
+7075,a+b two layers,uncharacterized protein SAMEA2273162_06031
+7059,a+b complex topology,SatS C-terminal domain
+7062,alpha bundles,Helical domain of retinal degeneration 3 protein
+7066,alpha complex topology,First helical domain of Cas13b
+7067,a+b complex topology,Lid domain of Cas13b
+7068,alpha bundles,Second helical domain of Cas13b
+7054,beta sandwiches,Mucin-like region of HAP2
+7055,beta complex topology,Domain II of HAP2
+7086,beta barrels,CRISPR-Cas effector Cas13d N-terminal domain
+7063,a/b three-layered sandwiches,C-terminal domain of poxin
+7035,beta barrels,Cuben fold of PcncAAAD
+7045,a+b complex topology,C-terminal domain of RNA helicase HrpB
+1200,alpha bundles,Type IX secretion system component GldM helical domain
+7028,alpha arrays,attachment domain of fiber adhesin
+1207,a+b two layers,MTHFR SAM-binding regulatory domain
+7072,beta sandwiches,N-terminal half of TgpA periplasmic domain
+7076,alpha bundles,Mto2 twin-cysteine dimerization domain
+7040,a+b two layers,EcoKMcrA modification binding domain
+7107,few secondary structure elements,"AapA1 toxin, transmembrane helix"
+7037,few secondary structure elements,Cys-rich region of amnionless (AMN) extracellular domain
+7103,alpha arrays,"MJ1004, C-terminal domain"
+7069,alpha complex topology,Head domain of SBV glycoprotein Gc
+7108,alpha complex topology,"Stl repressor, middle domain"
+7071,alpha arrays,C-terminal domain of USP25
+7104,beta sandwiches,putative carbohydrate-binding module of GH2
+7093,alpha arrays,Insertion domain of glycoside hydrolase family 149 (GH149)
+7047,alpha complex topology,uncharacterized domain of PaTox
+7101,extended segments,Prp8-binding region of SLU7
+7100,extended segments,Notch transmembrane helix
+7060,alpha arrays,ELMO domain
+7039,a+b complex topology,Helical domain of PCIF1/CAPAM
+7064,alpha bundles,Transmembrane domain of VIT1
+7065,alpha arrays,Cytoplasmic metal binding domain of VIT1
+7091,a+b complex topology,C-terminal domain of DNA repair helicase RadD
+7092,a+b two layers,N-terminal domain of vibrio phospholipase
+7112,alpha arrays,DdrO C-terminal domain
+7094,alpha bundles,Paddle domain of mitochondrial dynamin
+7109,alpha arrays,"AnkH, cap domain"
+7113,alpha bundles,"LegK7, C-terminal domain"
+7056,few secondary structure elements,Zinc binding domain of metalloprotease Spartan
+7038,few secondary structure elements,Zinc-binding domain of DENR
+7061,few secondary structure elements,VWF C8-3 module
+7105,alpha arrays,Helical domain in class 2 OLD protein
+7074,extended segments,C-terminal portion of ANKRD31
+7110,alpha arrays,Helical insertion of YcjX stress protein
+7095,alpha arrays,C-terminal domain of DEAH helicase DHX37
+7080,beta sandwiches,SARAF luminal domain
+7506,a/b three-layered sandwiches,N-terminal domain of GerK3 germinant receptor
+7087,alpha bundles,Emopamil binding protein (EBP) transmembrane domain
+7077,a+b complex topology,N-terminal domain of SidJ
+7078,alpha superhelices,C-terminal domain of SidJ
+7096,a+b two layers,Insertion domain of carboxypeptidase dacD
+7081,a+b two layers,Transactivation domain (TAD) of FoxM1
+7106,few secondary structure elements,Conotoxin phi-MiXXVIIA
+7099,a+b complex topology,VP5 N-terminal domain
+7084,few secondary structure elements,Highly disulfide-linked beta sandwich region of p43
+7111,alpha bundles,"Ubiquinol-cytochrome C chaperone, C-terminal domain"

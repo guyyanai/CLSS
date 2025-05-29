@@ -16,21 +16,24 @@ from biotools.tools.sequences import (
 )
 from utils import cache_to_pickle
 
+ecod_redundancy = 'F40'
+# ecod_redundancy = 'F100'
+
 # Constants
-structures_path = 'data/structures/'
-dataset_path = 'data/list_of_domains_in_Xfolds_more_than_50_ECOD289_F40.csv'
+structures_path = f'data/{ecod_redundancy}structures/'
+dataset_path = f'data/{ecod_redundancy}/domains.csv'
 checkpoint = f'checkpoints/F100_b180_g8_h32_r10_AF2_1M.lckpt'
 output_dir = 'outputs'
 cache_dir = 'cache'
 
 def get_cache_paths() -> Tuple[str, str]:
-    loaded_domains_cache_path = os.path.join(cache_dir, 'loaded_domains.pkl')
-    embeddings_cache_path = os.path.join(cache_dir, 'embeddings.pkl')
+    loaded_domains_cache_path = os.path.join(cache_dir, f'{ecod_redundancy}_loaded_domains.pkl')
+    embeddings_cache_path = os.path.join(cache_dir, f'{ecod_redundancy}_embeddings.pkl')
 
     return loaded_domains_cache_path, embeddings_cache_path
 
 def get_output_path() -> str:
-    return os.path.join(output_dir, 'domain_embeddings_dict.pkl')
+    return os.path.join(output_dir, f'{ecod_redundancy}_domain_embeddings_dict.pkl')
 
 @cache_to_pickle(path_param_name='cache_path')
 def load_domains(domain_ids: List[str], cache_path: str) -> Tuple[List[str], List[str], List[torch.Tensor], List[str]]:

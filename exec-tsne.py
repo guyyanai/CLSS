@@ -5,9 +5,11 @@ import pickle
 from sklearn.manifold import TSNE
 from typing import List, Tuple
 
+ecod_redundancy = 'F40'
 output_dir = 'outputs'
-input_dict_path = os.path.join(output_dir, 'domain_embeddings_dict.pkl')
-output_pkl_path = os.path.join(output_dir, 'tsne_results.pkl')
+
+input_dict_path = os.path.join(output_dir, f'{ecod_redundancy}_domain_embeddings_dict.pkl')
+output_pkl_path = os.path.join(output_dir, f'{ecod_redundancy}_tsne_results.pkl')
 
 def load_embeddings_dict(dict_path: str) -> Tuple[List[str], List[int], np.ndarray]:
     embeddings_dict = None
