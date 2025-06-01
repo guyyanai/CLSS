@@ -17,11 +17,11 @@ ecod_redundancy = 'F100' # ----> We still need to populate the h_name, t_name, f
 # ecod_redundancy = 'F40'  ----> This doesn't work correctly currently, we need to add the x_name, h_name, t_name, f_name columns to its domains.csv
 
 # === File Paths ===
-DATA_PATH = os.path.join('../data', ecod_redundancy)
-OUTPUT_PATH = os.path.join('../outputs', ecod_redundancy)
+DATA_PATH = os.path.join('..', 'data', ecod_redundancy)
+OUTPUT_PATH = os.path.join('..', 'outputs', ecod_redundancy)
 
 DATASET_PATH = os.path.join(OUTPUT_PATH, 'tsne_results.pkl')
-FOLDS_PATH = os.path.join(DATA_PATH, 'xfolds.csv')
+HIERARCHY_PATH = os.path.join(DATA_PATH, 'hierarchy.csv')
 DOMAINS_PATH = os.path.join(DATA_PATH, 'domains.csv')
 ARCH_COLOR_PATH = os.path.join(DATA_PATH, 'architecture_colors.tsv')
 
@@ -29,11 +29,21 @@ ARCH_COLOR_PATH = os.path.join(DATA_PATH, 'architecture_colors.tsv')
 with open(DATASET_PATH, 'rb') as pf:
     dataset = pickle.load(pf)
 
-folds_df = pd.read_csv(FOLDS_PATH, dtype={'fold': str})
-fold_arch_map_original = dict(zip(folds_df['fold'], folds_df['architecture']))
+hierarchy_df = pd.read_csv(HIERARCHY_PATH)
+hierarchy_df['fold'] = hierarchy_df['hierarchy'].str.split('.').str[0].astype(str)
+fold_arch_map_original = dict(zip(hierarchy_df['fold'], hierarchy_df['architecture']))
+hierarchy_to_xname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['fold_desc']))
+hierarchy_to_hname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['h_desc']))
+hierarchy_to_tname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['t_desc']))
+hierarchy_to_fname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['f_desc']))
 
-domain_df = pd.read_csv(DOMAINS_PATH, dtype={'domain_id': str, 'xfold': str}, usecols=['domain_id', 'domain_name', 'x_name', 'h_name', 't_name', 'f_name'])
+domain_df = pd.read_csv(DOMAINS_PATH, dtype={'domain_id': str, 'xfold': str}, usecols=['domain_id', 'domain_name', 'hierarchy'])
 domain_name_map = dict(zip(domain_df['domain_id'], domain_df['domain_name']))
+domain_df['x_name'] = domain_df['hierarchy'].map(hierarchy_to_xname_map)
+domain_df['h_name'] = domain_df['hierarchy'].map(hierarchy_to_hname_map)
+domain_df['t_name'] = domain_df['hierarchy'].map(hierarchy_to_tname_map)
+domain_df['f_name'] = domain_df['hierarchy'].map(hierarchy_to_fname_map)
+
 xname_map = dict(zip(domain_df['domain_id'], domain_df['x_name']))
 hname_map = dict(zip(domain_df['domain_id'], domain_df['h_name']))
 tname_map = dict(zip(domain_df['domain_id'], domain_df['t_name']))
@@ -148,7 +158,7 @@ def create_plot(modality_filter, search_query, color_level, arch_filter, fold_fi
                 line=dict(width=0)
             ),
             hovertext=grp['domain_name'],
-            customdata=grp[['domain_name', 'domain_id', 'architecture', 'fold', 'x_name', 'h_name', 'f_name', 't_name']],
+            customdata=grp[['domain_name', 'domain_id', 'architecture', 'fold', 'x_name', 'h_name', 't_name', 'f_name']],
             hovertemplate=(
                 "<b>%{customdata[0]}</b><br>ID: %{customdata[1]}<br>Architecture: %{customdata[2]}"
                 "<br>Fold: %{customdata[3]}<br>Fold Name: %{customdata[4]}"
