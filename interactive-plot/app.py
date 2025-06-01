@@ -37,7 +37,7 @@ hierarchy_to_hname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['h_des
 hierarchy_to_tname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['t_desc']))
 hierarchy_to_fname_map = dict(zip(hierarchy_df['hierarchy'], hierarchy_df['f_desc']))
 
-domain_df = pd.read_csv(DOMAINS_PATH, dtype={'domain_id': str, 'xfold': str}, usecols=['domain_id', 'domain_name', 'hierarchy'])
+domain_df = pd.read_csv(DOMAINS_PATH, dtype={'domain_id': str}, usecols=['domain_id', 'domain_name', 'hierarchy'])
 domain_name_map = dict(zip(domain_df['domain_id'], domain_df['domain_name']))
 domain_df['x_name'] = domain_df['hierarchy'].map(hierarchy_to_xname_map)
 domain_df['h_name'] = domain_df['hierarchy'].map(hierarchy_to_hname_map)
