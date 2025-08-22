@@ -1,16 +1,12 @@
-# CLSS: Contrastive Learning for Protein Sequence and Structure
+# CLSS: Contrastive learning unites sequence and structure in a global representation of protein space
 
-CLSS is a PyTorch Lightning-based project for learning joint representations of protein sequences and their 3D structures. It uses a contrastive learning objective to align the embeddings from a sequence model (ESM-2) and a structure model (ESM-3).
+This repository contains the official implementation for the paper: **"Contrastive learning unites sequence and structure in a global representation of protein space"** (Yanai et al., Conference/Journal 2025).
 
-## Overview
+[Link to Paper](https://example.com) (coming soon)
 
-The core idea is to train a model that can understand the relationship between a protein's amino acid sequence and its folded structure. This is achieved by:
+## Abstract
 
-1.  **Encoding Sequences**: Using the pre-trained ESM-2 model to generate embeddings from protein sequences.
-2.  **Encoding Structures**: Using the pre-trained ESM-3 model to generate embeddings from PDB structures.
-3.  **Contrastive Loss**: Training projection heads on top of the encoders using a contrastive loss function. This encourages the sequence and structure embeddings for the same protein to be close in the embedding space, while being distant from embeddings of other proteins.
-
-The project is built with scalability in mind, leveraging PyTorch Lightning for features like multi-GPU training, mixed-precision, and easy-to-use logging.
+*Amino acid sequence dictates the three-dimensional structure and biological function of proteins. Yet, despite decades of research, our understanding of the interplay between sequence and structure is incomplete. To meet this challenge, we introduce Contrastive Learning Sequence-Structure (CLSS), an AI-based contrastive learning model trained to co-embed sequence and structure information in a self-supervised manner. We trained CLSS on large and diverse sets of protein building blocks called domains. CLSS represents both sequences and structures as vectors in the same high-dimensional space, where distance relates to sequence-structure similarity. Thus, CLSS provides a natural way to represent the protein universe, reflecting structural and evolutionary relationships among all known domains. We find that CLSS refines expert knowledge about the global organization of protein space, and highlights transitional forms that resist hierarchical classification. CLSS reveals linkage between domains of seemingly separate lineages, thereby significantly improving our understanding of evolutionary design.*
 
 ## Features
 
@@ -26,7 +22,7 @@ The project is built with scalability in mind, leveraging PyTorch Lightning for 
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/guyyanai/CLSS.git
     cd CLSS
     ```
 
@@ -59,44 +55,48 @@ You can specify the paths to the CSV file and the structures directory using com
 
 The main training script is `training/train.py`. You can run it from the root directory of the project.
 
-### Example Command
+### Reproducing Paper Results
 
-Here is an example command to start a training run:
+To reproduce the results from the paper, you can run the following command:
 
 ```bash
-torchrun --nproc_per_node=4 training/train.py 
-    --batch-size 32 
-    --hidden-projection-dim 128 
-    --learning-rate 1e-4 
-    --epochs 50 
-    --dataset-path /path/to/your/dataset.csv 
-    --structures-dir /path/to/your/structures 
-    --train-pickle "/path/to/cache/train.pkl" 
-    --validation-pickle "/path/to/cache/val.pkl" 
-    --run-name "clss-training-run-1" 
-    --random-sequence-stretches 
+torchrun --nproc_per_node=4 training/train.py \
+    --batch-size 32 \
+    --hidden-projection-dim 128 \
+    --learning-rate 1e-4 \
+    --epochs 50 \
+    --dataset-path /path/to/your/dataset.csv \
+    --structures-dir /path/to/your/structures \
+    --train-pickle "/path/to/cache/train.pkl" \
+    --validation-pickle "/path/to/cache/val.pkl" \
+    --run-name "clss-paper-reproduction" \
+    --random-sequence-stretches \
     --learn-temperature
 ```
 
 ### Command-Line Arguments
 
--   `--batch-size`: Training batch size.
--   `--hidden-projection-dim`: The dimension of the non-linear projection head.
--   `--learning-rate`: The learning rate for the optimizer.
--   `--epochs`: Number of training epochs.
--   `--dataset-path`: Path to the CSV file with ECOD IDs.
--   `--structures-dir`: Path to the directory containing PDB files.
--   `--train-pickle`: Path to save/load the cached training dataset.
--   `--validation-pickle`: Path to save/load the cached validation dataset.
--   `--run-name`: A name for the Weights & Biases run.
--   `--random-sequence-stretches`: (flag) Enable data augmentation using random sequence stretches.
--   `--learn-temperature`: (flag) Make the temperature parameter of the contrastive loss learnable.
-
-For a full list of arguments, run:
+For a full list of arguments and their descriptions, run:
 ```bash
 python training/train.py --help
 ```
 
-## Contributing
+## Citation
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
+If you find this work useful in your research, please consider citing our paper:
+
+```bibtex
+@article{YourName2025CLSS,
+  title={Contrastive learning unites sequence and structure in a global representation of protein space},
+  author={Guy Yanai, Gabriel Axel, Liam M. Longo, Nir Ben-Tal, Rachel Kolodny},
+  journal={Conference or Journal Name},
+  year={2025},
+  volume={1},
+  number={1},
+  pages={1-10}
+}
+```
+
+## Contact
+
+For questions or issues, please open an issue on the GitHub repository.
