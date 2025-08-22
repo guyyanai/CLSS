@@ -1,0 +1,71 @@
+"""
+This script is the main entry point for training the CLSS model.
+
+It handles setting up the distributed environment, parsing arguments, preparing the
+datasets and dataloaders, initializing the model, and running the training loop
+using PyTorch Lightning.
+"""
+
+from model.clss import CLSS
+import pytorch_lightning as pl
+from pytorch_lightning.utilities import rank_zero_only
+from pytorch_lightning.loggers import WandbLogger
+import os
+import warnings
+import torch
+import torch.distributed
+from infra import setup_wandb, setup_process_group, setup_dataset, setup_dataloaders, setup_trainer
+from args import setup_args
+
+
+@rank_zero_only
+def save_checkpoint(trainer: pl.Trainer, wandb_logger: WandbLogger, checkpoint_path: str):
+    trainer.save_checkpoint(
+        os.path.join(
+            checkpoint_path, "models", f"{wandb_logger.experiment.name}.lckpt"
+        )
+    )
+
+if __name__ == "__main__":
+    setup_process_group()
+
+    warnings.filterwarnings("ignore", category=UserWarning)
+
+    args = setup_args()
+
+    pl.seed_everything(args.seed, workers=True)
+
+    # Set up distributed environment if running with SLURM
+    if torch.cuda.is_available():
+        print(f"Found {torch.cuda.device_count()} GPUs.")
+
+    # Set up Wandb logging only on rank 0
+    wandb_logger = setup_wandb(args)
+
+    # Initialize the PyTorch Lightning trainer
+    trainer = setup_trainer(args.epochs, wandb_logger)
+
+    # Load dataset
+    train_dataset, val_dataset = setup_dataset(args)
+    torch.distributed.barrier()
+
+    # Create DataLoaders
+    train_dataloader, val_dataloader = setup_dataloaders(train_dataset, val_dataset, args.batch_size)
+
+    # Define the model
+    model = CLSS(
+        esm2_checkpoint=args.esm_checkpoint,  # Specify the ESM2 model variant you want to use
+        hidden_dim=args.hidden_projection_dim,  # Dimension of the projection head
+        learning_rate=args.learning_rate,  # Learning rate
+        random_sequence_stretches=args.random_sequence_stretches,
+        random_stretch_min_size=args.random_stretch_min_size,
+        should_learn_temperature=args.learn_temperature,
+        should_load_esm3=False,
+    )
+
+    # Train the model
+    trainer.fit(model, train_dataloader, val_dataloader)
+
+    torch.distributed.destroy_process_group()
+
+    save_checkpoint(trainer, wandb_logger, args.checkpoint_path)

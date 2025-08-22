@@ -1,3 +1,11 @@
+"""
+This module defines the CLSS (Contrastive Learning for Sequence and Structure) model.
+
+The CLSS model is a PyTorch Lightning module that learns joint representations of
+protein sequences and structures using a contrastive learning approach. It utilizes
+pre-trained ESM-2 for sequence encoding and ESM-3 for structure encoding.
+"""
+
 from typing import Tuple, List
 import torch
 import torch.nn as nn
