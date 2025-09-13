@@ -1,102 +1,161 @@
-# CLSS: Contrastive learning unites sequence and structure in a global representation of protein space
+# Contrastive learning unites sequence and structure in a global representation of protein space
 
-This repository contains the official implementation for the paper: **"Contrastive learning unites sequence and structure in a global representation of protein space"** (Yanai et al., Conference/Journal 2025).
+**Repository name:** `CLSS`
 
-[Link to Paper](https://example.com) (coming soon)
+**Paper:** [https://www.biorxiv.org/content/10.1101/2025.09.05.674454v3.full.pdf](https://www.biorxiv.org/content/10.1101/2025.09.05.674454v3.full.pdf)
+**DOI:** [https://doi.org/10.1101/2025.09.05.674454](https://doi.org/10.1101/2025.09.05.674454)
+**Interactive viewer:** [https://gabiaxel.github.io/clss-viewer/](https://gabiaxel.github.io/clss-viewer/)
+
+---
 
 ## Abstract
 
-*Amino acid sequence dictates the three-dimensional structure and biological function of proteins. Yet, despite decades of research, our understanding of the interplay between sequence and structure is incomplete. To meet this challenge, we introduce Contrastive Learning Sequence-Structure (CLSS), an AI-based contrastive learning model trained to co-embed sequence and structure information in a self-supervised manner. We trained CLSS on large and diverse sets of protein building blocks called domains. CLSS represents both sequences and structures as vectors in the same high-dimensional space, where distance relates to sequence-structure similarity. Thus, CLSS provides a natural way to represent the protein universe, reflecting structural and evolutionary relationships among all known domains. We find that CLSS refines expert knowledge about the global organization of protein space, and highlights transitional forms that resist hierarchical classification. CLSS reveals linkage between domains of seemingly separate lineages, thereby significantly improving our understanding of evolutionary design.*
+> Amino acid sequence dictates the three-dimensional structure and biological function of proteins. Yet, despite decades of research, our understanding of the interplay between sequence and structure is incomplete. To meet this challenge, we introduce Contrastive Learning Sequence-Structure (CLSS), an AI-based contrastive learning model trained to co-embed sequence and structure information in a self-supervised manner. We trained CLSS on large and diverse sets of protein building blocks called domains. CLSS represents both sequences and structures as vectors in the same high-dimensional space, where distance relates to sequence-structure similarity. Thus, CLSS provides a natural way to represent the protein universe, reflecting evolutionary relationships, as well as structural changes. We find that CLSS refines expert knowledge about the global organization of protein space, and highlights transitional forms that resist hierarchical classification. CLSS reveals linkage between domains of seemingly separate lineages, thereby significantly improving our understanding of evolutionary design.
 
-## Features
+---
 
--   **Contrastive Learning**: Employs a powerful self-supervised learning technique to learn from unlabeled protein data.
--   **Pre-trained Models**: Leverages state-of-the-art protein language models: ESM-2 for sequences and ESM-3 for structures.
--   **Efficient Training**: Built with PyTorch Lightning for streamlined and scalable training loops.
--   **Distributed Training**: Supports multi-GPU and multi-node training using Distributed Data Parallel (DDP) and SLURM.
--   **Experiment Tracking**: Integrates with Weights & Biases (Wandb) for logging metrics, and model checkpoints.
--   **Data Augmentation**: Includes an option for using random sequence stretches as a form of data augmentation.
--   **Efficient Data Handling**: Caches pre-processed datasets to speed up subsequent training runs.
+## TL;DR
+
+**CLSS** is a self-supervised, two-tower contrastive model that co-embeds **protein sequences** and **structures** into a **shared 32‑D space**, enabling unified mapping of protein space across modalities.
+
+---
+
+## Key ideas (from the paper)
+
+* **Two-tower architecture:** sequence tower (ESM2‑like, \~35M params) co-trained; structure tower (ESM3) kept frozen; both feed **32‑D L2‑normalized adapters**.
+* **Segment-aware training:** contrastive pairs match **full-domain structures** with **random sequence sub-segments (≥10 aa)** to encode contextual compatibility.
+* **Unified embeddings:** sequences, structures, and subsequences align in a **single space**; distances track ECOD hierarchy and reveal cross-fold relationships.
+* **Scale & efficiency:** \~36M trainable params, compact embeddings (32‑D) supporting efficient storage and search.
+* **Resources:** code + weights, and a public **CLSS viewer** for exploration.
+
+> See paper for full details, datasets, ablations, and comparisons.
+
+---
 
 ## Installation
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/guyyanai/CLSS.git
-    cd CLSS
-    ```
-
-2.  **Create a Conda environment and install dependencies:**
-    It is recommended to use a Conda environment to manage dependencies.
-
-    ```bash
-    conda create -n clss python=3.9
-    conda activate clss
-    ```
-
-3.  **Install PyTorch:**
-    Install PyTorch with CUDA support according to the instructions on the [official PyTorch website](https://pytorch.org/get-started/locally/).
-
-4.  **Install other dependencies:**
-    ```bash
-    pip install pytorch-lightning transformers 'esm[esm3]' wandb pandas scikit-learn tqdm
-    ```
-
-## Dataset
-
-The training script expects the data to be organized as follows:
-
-1.  **A CSV file**: This file should contain a list of ECOD domain IDs to be used for training/validation. It should have a column named `ecod_uid`.
-2.  **A directory of PDB files**: This directory should contain the 3D structure files in PDB format. The files should be organized in a way that they can be located using the ECOD ID. The default script assumes a path like `.../{ecod_id[2:7]}/{ecod_id}/{ecod_id}.pdb`.
-
-You can specify the paths to the CSV file and the structures directory using command-line arguments.
-
-## Usage
-
-The main training script is `training/train.py`. You can run it from the root directory of the project.
-
-### Reproducing Paper Results
-
-To reproduce the results from the paper, you can run the following command:
-
 ```bash
-torchrun --nproc_per_node=4 training/train.py \
-    --batch-size 32 \
-    --hidden-projection-dim 128 \
-    --learning-rate 1e-4 \
-    --epochs 50 \
-    --dataset-path /path/to/your/dataset.csv \
-    --structures-dir /path/to/your/structures \
-    --train-pickle "/path/to/cache/train.pkl" \
-    --validation-pickle "/path/to/cache/val.pkl" \
-    --run-name "clss-paper-reproduction" \
-    --random-sequence-stretches \
-    --learn-temperature
+# clone your repository
+git clone https://github.com/<your-username>/CLSS.git
+cd CLSS
+
+# create env (example with conda)
+conda create -n clss python=3.10 -y
+conda activate clss
+
+# install Python deps
+pip install -r requirements.txt
 ```
 
-### Command-Line Arguments
+> If you use CUDA, ensure PyTorch/Lightning versions match your system. See your `requirements.txt`.
 
-For a full list of arguments and their descriptions, run:
+---
+
+## Quickstart
+
+### Inference (embeddings)
+
 ```bash
-python training/train.py --help
+python infer.py \
+  --checkpoint weights/clss.pt \
+  --input data/example_sequences.fasta \
+  --output outputs/embeddings.npy
 ```
+
+* **Input:** FASTA sequences (optionally PDB/CIF structures if your script supports structure embeddings).
+* **Output:** N×32 NumPy array of L2‑normalized embeddings.
+
+### Training (from scratch or fine-tuning)
+
+```bash
+python train.py \
+  --config configs/train.yaml \
+  --data data/ecod_af2_train_index.json \
+  --outdir runs/exp01
+```
+
+Key config fields (example):
+
+```yaml
+model:
+  seq_encoder: esm2_35m
+  str_encoder: esm3_frozen
+  embed_dim: 32
+  temperature: 0.5
+train:
+  epochs: 80
+  batch_size: 1440        # effective batch across GPUs
+  min_seg_len: 10         # min aa for random subsequences
+  gpus: 8                 # adjust to your setup
+```
+
+---
+
+## Data
+
+* **ECOD‑AF2 domains** (training/validation and Dataset 1 in the paper).
+* **CATH metamorphic set** (Dataset 2 in the paper).
+* Prepare your own indices listing domain IDs, sequence files, and (optionally) structure files. Include minimal examples under `data/`.
+
+---
+
+## Repository structure (suggested)
+
+```
+CLSS/
+├─ configs/               # YAML configs
+├─ clss/                  # Python package (models, data, utils)
+│  ├─ models/
+│  ├─ data/
+│  └─ nn/
+├─ scripts/               # preprocessing, evaluation, export
+├─ train.py               # training entry point
+├─ infer.py               # inference entry point
+├─ requirements.txt
+└─ README.md
+```
+
+---
+
+## Reproducing paper figures
+
+* Explore the **CLSS viewer** for t‑SNE maps: [https://gabiaxel.github.io/clss-viewer/](https://gabiaxel.github.io/clss-viewer/)
+* Provide a script (e.g., `scripts/tsne_map.py`) to project and plot embeddings for your datasets.
+
+---
+
+## Pretrained weights
+
+* Provide links or bundle a release asset, e.g., `weights/clss.pt`.
+* If you mirror the paper’s weights, reference the original release/source.
+
+---
 
 ## Citation
 
-If you find this work useful in your research, please consider citing our paper:
+If you use this repository, please cite:
 
 ```bibtex
-@article{YourName2025CLSS,
+@article{Yanai2025CLSS,
   title={Contrastive learning unites sequence and structure in a global representation of protein space},
-  author={Guy Yanai, Gabriel Axel, Liam M. Longo, Nir Ben-Tal, Rachel Kolodny},
-  journal={Conference or Journal Name},
+  author={Yanai, Guy and Axel, Gabriel and Longo, Liam M. and Ben-Tal, Nir and Kolodny, Rachel},
+  journal={bioRxiv},
   year={2025},
-  volume={1},
-  number={1},
-  pages={1-10}
+  doi={10.1101/2025.09.05.674454},
+  url={https://www.biorxiv.org/content/10.1101/2025.09.05.674454v3.full.pdf}
 }
 ```
 
-## Contact
+---
 
-For questions or issues, please open an issue on the GitHub repository.
+## License
+
+* **Paper:** CC BY‑NC 4.0 (see bioRxiv page).
+* **Code:** Add your chosen license in `LICENSE` (e.g., MIT/Apache‑2.0).
+
+---
+
+## Acknowledgments & Contact
+
+* See the paper for funding and acknowledgments.
+* Correspondence (from the paper): [llongo@elsi.jp](mailto:llongo@elsi.jp), [bental@tauex.tau.ac.il](mailto:bental@tauex.tau.ac.il), [trachel@cs.haifa.ac.il](mailto:trachel@cs.haifa.ac.il).
