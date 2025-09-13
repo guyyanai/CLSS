@@ -1,4 +1,4 @@
-# Contrastive learning unites sequence and structure in a global representation of protein space
+# CLSS: Contrastive learning unites sequence and structure in a global representation of protein space
 
 **Paper:** [https://www.biorxiv.org/content/10.1101/2025.09.05.674454v3.full.pdf](https://www.biorxiv.org/content/10.1101/2025.09.05.674454v3.full.pdf)
 
