@@ -25,7 +25,7 @@
 * **Two-tower architecture:** sequence tower (ESM2‑like, \~35M params) co-trained; structure tower (ESM3) kept frozen; both feed **32‑D L2‑normalized adapters**.
 * **Segment-aware training:** contrastive pairs match **full-domain structures** with **random sequence sub-segments (≥10 aa)** to encode contextual compatibility.
 * **Unified embeddings:** sequences, structures, and subsequences align in a **single space**; distances track ECOD hierarchy and reveal cross-fold relationships.
-* **Scale & efficiency:** \~36M trainable params, compact embeddings (32‑D) supporting efficient storage and search.
+* **Scale & efficiency:** \~36M trainable params, compact embeddings (32‑D) supporting efficient inference and training.
 * **Resources:** code + weights, and a public **CLSS viewer** for exploration.
 
 > See paper for full details, datasets, ablations, and comparisons.
