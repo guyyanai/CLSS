@@ -65,4 +65,4 @@ If you use this repository, please cite:
 ## Acknowledgments & Contact
 
 * See the paper for funding and acknowledgments.
-* Correspondence (from the paper): [llongo@elsi.jp](mailto:llongo@elsi.jp), [bental@tauex.tau.ac.il](mailto:bental@tauex.tau.ac.il), [trachel@cs.haifa.ac.il](mailto:trachel@cs.haifa.ac.il).
+* Correspondence: [llongo@elsi.jp](mailto:llongo@elsi.jp), [bental@tauex.tau.ac.il](mailto:bental@tauex.tau.ac.il), [trachel@cs.haifa.ac.il](mailto:trachel@cs.haifa.ac.il).
