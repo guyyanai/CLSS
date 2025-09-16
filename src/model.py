@@ -47,7 +47,7 @@ class CLSSModel(pl.LightningModule):
         self.save_hyperparameters()
 
         # Load the pre-trained ESM2 model
-        self.sequence_encoder, self.sequence_tokenizer = self.load_esm2(esm2_checkpoint)
+        self.load_esm2(esm2_checkpoint)
 
         # Create ESM2 (sequence) adapter
         self.sequence_adapter = nn.Sequential(
@@ -57,7 +57,7 @@ class CLSSModel(pl.LightningModule):
 
         # Load ESM3 (structure) model if needed
         if should_load_esm3:
-            self.structure_encoder = self.load_esm3()
+            self.load_esm3()
 
         # Create ESM3 (structure) adapter
         self.structure_adapter = nn.Sequential(nn.Linear(1536, hidden_dim))
@@ -98,7 +98,8 @@ class CLSSModel(pl.LightningModule):
             if "contact_head" in parameter_name:
                 parameter.requires_grad = False
 
-        return model, tokenizer
+        self.sequence_encoder = model
+        self.sequence_tokenizer = tokenizer
 
     def load_esm3(self, checkpoint=ESM3_OPEN_SMALL) -> ESM3:
         """
@@ -114,15 +115,16 @@ class CLSSModel(pl.LightningModule):
         for parameter in model.parameters():
             parameter.requires_grad = False
 
-        return model
+        self.structure_encoder = model
 
-    def embed_sequences(self, sequences: List[str]) -> torch.Tensor:
+    def embed_sequences(self, sequences: List[str], apply_adapter: bool = True) -> torch.Tensor:
         """
-        Embed a list of protein sequences using ESM2 and project to hidden_dim.
+        Embed a list of protein sequences using ESM2 and potentially project to hidden_dim.
         Args:
             sequences (List[str]): List of protein sequences.
+            apply_adapter (bool): Whether to apply the adapter projection.
         Returns:
-            torch.Tensor: Normalized sequence embeddings of shape (N, hidden_dim).
+            torch.Tensor: Normalized sequence embeddings of shape (N, ESM2-35M output dim)/(N, hidden_dim).
         """
         embedding_list = []
 
@@ -138,6 +140,10 @@ class CLSSModel(pl.LightningModule):
             embedding_list.append(embedding)
 
         esm_embeddings = torch.stack(embedding_list)
+
+        if not apply_adapter:
+            return esm_embeddings
+
         embeddings = self.sequence_adapter(esm_embeddings)
         normalized_embeddings = F.normalize(embeddings, dim=1)
 
@@ -153,8 +159,10 @@ class CLSSModel(pl.LightningModule):
         """
         if self.structure_encoder is None:
             raise Exception(
-                "Structure encoder (ESM3) wasn't loaded, please make sure the 'should_load_esm3' flag is enabled"
+                "Structure encoder (ESM3) wasn't loaded, please make sure the 'should_load_esm3' flag is enabled or call load_esm3()."
             )
+
+        structures = [structure.to(self.device) for structure in structures]
 
         esm_proteins = [ESMProtein(coordinates=structure) for structure in structures]
         embedding_list = []
