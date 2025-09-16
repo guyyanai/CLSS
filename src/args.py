@@ -126,6 +126,14 @@ def setup_args():
         default=None,
     )
     parser.add_argument(
+        "--wandb-project",
+        dest="wandb_project",
+        type=str,
+        help="WandB project name",
+        required=True,
+        default=None,
+    )
+    parser.add_argument(
         "--random-sequence-stretches",
         dest="random_sequence_stretches",
         help="Should use random sequence stretches",

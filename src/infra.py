@@ -41,7 +41,7 @@ def setup_wandb(args: object) -> WandbLogger:
     # Initialize the WandB logger
     wandb_logger = WandbLogger(
         name=args.run_name,
-        project="sequence-stretch-structure-contrastive",
+        project=args.wandb_project,
         save_dir=os.path.join(args.checkpoint_path, "logs"),
     )
 
