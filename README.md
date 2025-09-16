@@ -20,7 +20,7 @@
 
 ---
 
-## Key ideas (from the paper)
+## Key ideas
 
 * **Two-tower architecture:** sequence tower (ESM2‑like, \~35M params) co-trained; structure tower (ESM3) kept frozen; both feed **32‑D L2‑normalized adapters**.
 * **Segment-aware training:** contrastive pairs match **full-domain structures** with **random sequence sub-segments (≥10 aa)** to encode contextual compatibility.
