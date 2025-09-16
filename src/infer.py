@@ -45,7 +45,9 @@ model.load_esm3()
 
 # Embed structures
 structure_embeddings = model.embed_structures(structures)
+no_adapter_structure_embeddings = model.embed_structures(structures, apply_adapter=False)
 
-print("Sequence Embeddings Shape:", sequence_embeddings.shape)
-print("No Adapter Sequence Embeddings Shape:", no_adapter_sequence_embeddings.shape)
-print("Structure Embeddings Shape:", structure_embeddings.shape)
+print("Sequence embeddings shape:", sequence_embeddings.shape)
+print("No adapter sequence embeddings shape:", no_adapter_sequence_embeddings.shape)
+print("Structure embeddings shape:", structure_embeddings.shape)
+print("No adapter structure embeddings shape:", no_adapter_structure_embeddings.shape)

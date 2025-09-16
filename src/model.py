@@ -149,13 +149,14 @@ class CLSSModel(pl.LightningModule):
 
         return normalized_embeddings
 
-    def embed_structures(self, structures: List[torch.Tensor]) -> torch.Tensor:
+    def embed_structures(self, structures: List[torch.Tensor], apply_adapter: bool = True) -> torch.Tensor:
         """
-        Embed a list of protein structures using ESM3 and project to hidden_dim.
+        Embed a list of protein structures using ESM3 and potentially project to hidden_dim.
         Args:
             structures (List[torch.Tensor]): List of structure tensors.
+            apply_adapter (bool): Whether to apply the adapter projection.
         Returns:
-            torch.Tensor: Normalized structure embeddings of shape (N, hidden_dim).
+            torch.Tensor: Normalized structure embeddings of shape (N, ESM3 output dim)/(N, hidden_dim).
         """
         if self.structure_encoder is None:
             raise Exception(
@@ -178,6 +179,10 @@ class CLSSModel(pl.LightningModule):
             embedding_list.append(output.mean_embedding)
 
         esm_embeddings = torch.stack(embedding_list)
+        
+        if not apply_adapter:
+            return esm_embeddings
+        
         embeddings = self.structure_adapter(esm_embeddings)
         normalized_embeddings = F.normalize(embeddings, dim=1)
 
