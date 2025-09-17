@@ -77,7 +77,7 @@ class CLSSModel(pl.LightningModule):
         self.use_global_loss = use_global_loss
         self.should_load_esm3 = should_load_esm3
 
-    def load_esm2(self, checkpoint: str) -> Tuple[EsmModel, EsmTokenizer]:
+    def load_esm2(self, checkpoint: str):
         # Load the pre-trained ESM2 tokenizer & model
         """
         Load the pre-trained ESM2 tokenizer and model.
@@ -101,7 +101,7 @@ class CLSSModel(pl.LightningModule):
         self.sequence_encoder = model
         self.sequence_tokenizer = tokenizer
 
-    def load_esm3(self, checkpoint=ESM3_OPEN_SMALL) -> ESM3:
+    def load_esm3(self, checkpoint=ESM3_OPEN_SMALL):
         """
         Load the pre-trained ESM3 structure encoder model.
         Disables training for all parameters.
@@ -117,11 +117,12 @@ class CLSSModel(pl.LightningModule):
 
         self.structure_encoder = model
 
-    def embed_sequences(self, sequences: List[str], apply_adapter: bool = True) -> torch.Tensor:
+    def embed_sequences(self, sequences: List[str], return_per_residue: bool = False, apply_adapter: bool = True) -> torch.Tensor:
         """
         Embed a list of protein sequences using ESM2 and potentially project to hidden_dim.
         Args:
             sequences (List[str]): List of protein sequences.
+            return_per_residue (bool): Whether to return per-residue embeddings.
             apply_adapter (bool): Whether to apply the adapter projection.
         Returns:
             torch.Tensor: Normalized sequence embeddings of shape (N, ESM2-35M output dim)/(N, hidden_dim).
@@ -136,7 +137,7 @@ class CLSSModel(pl.LightningModule):
             with torch.no_grad():
                 output = self.sequence_encoder(**tokenized_sequence)
 
-            embedding = output.last_hidden_state.mean(dim=1)[0]
+            embedding = output.last_hidden_state[0] if return_per_residue else output.last_hidden_state.mean(dim=1)[0]
             embedding_list.append(embedding)
 
         esm_embeddings = torch.stack(embedding_list)
@@ -145,15 +146,16 @@ class CLSSModel(pl.LightningModule):
             return esm_embeddings
 
         embeddings = self.sequence_adapter(esm_embeddings)
-        normalized_embeddings = F.normalize(embeddings, dim=1)
+        normalized_embeddings = F.normalize(embeddings, dim=-1)
 
         return normalized_embeddings
 
-    def embed_structures(self, structures: List[torch.Tensor], apply_adapter: bool = True) -> torch.Tensor:
+    def embed_structures(self, structures: List[torch.Tensor], return_per_residue: bool = False, apply_adapter: bool = True) -> torch.Tensor:
         """
         Embed a list of protein structures using ESM3 and potentially project to hidden_dim.
         Args:
             structures (List[torch.Tensor]): List of structure tensors.
+            return_per_residue (bool): Whether to return per-residue embeddings.
             apply_adapter (bool): Whether to apply the adapter projection.
         Returns:
             torch.Tensor: Normalized structure embeddings of shape (N, ESM3 output dim)/(N, hidden_dim).
@@ -162,6 +164,8 @@ class CLSSModel(pl.LightningModule):
             raise Exception(
                 "Structure encoder (ESM3) wasn't loaded, please make sure the 'should_load_esm3' flag is enabled or call load_esm3()."
             )
+
+        esm3_sampling_config = SamplingConfig(return_mean_embedding=not return_per_residue, return_per_residue_embeddings=return_per_residue)
 
         structures = [structure.to(self.device) for structure in structures]
 
@@ -173,10 +177,10 @@ class CLSSModel(pl.LightningModule):
 
             with torch.no_grad():
                 output = self.structure_encoder.forward_and_sample(
-                    protein_tensor, SamplingConfig(return_mean_embedding=True)
+                    protein_tensor, esm3_sampling_config
                 )
 
-            embedding_list.append(output.mean_embedding)
+            embedding_list.append(output.per_residue_embedding if return_per_residue else output.mean_embedding)
 
         esm_embeddings = torch.stack(embedding_list)
         
@@ -184,7 +188,7 @@ class CLSSModel(pl.LightningModule):
             return esm_embeddings
         
         embeddings = self.structure_adapter(esm_embeddings)
-        normalized_embeddings = F.normalize(embeddings, dim=1)
+        normalized_embeddings = F.normalize(embeddings, dim=-1)
 
         return normalized_embeddings
 
