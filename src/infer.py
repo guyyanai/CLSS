@@ -39,7 +39,7 @@ for pdb_file in os.listdir(pdb_files_dir):
 # Embed sequences
 sequence_embeddings = model.embed_sequences(sequences)
 no_adapter_sequence_embeddings = model.embed_sequences(sequences, apply_adapter=False)
-per_residue_sequence_embeddings = model.embed_sequences(sequences, apply_adapter=False, return_per_residue=True)
+per_residue_sequence_embeddings = model.embed_sequence_residues(sequences)
 
 # Make sure the ESM3 model is loaded
 model.load_esm3()
@@ -47,11 +47,11 @@ model.load_esm3()
 # Embed structures
 structure_embeddings = model.embed_structures(structures)
 no_adapter_structure_embeddings = model.embed_structures(structures, apply_adapter=False)
-per_residue_structure_embeddings = model.embed_structures(structures, apply_adapter=False, return_per_residue=True)
+per_residue_structure_embeddings = model.embed_structure_residues(structures)
 
 print("Sequence embeddings shape:", sequence_embeddings.shape)
 print("No adapter sequence embeddings shape:", no_adapter_sequence_embeddings.shape)
-print("Per-residue sequence embeddings shape:", per_residue_sequence_embeddings.shape)
+print("Per-residue sequence embeddings shape:", len(per_residue_sequence_embeddings), per_residue_sequence_embeddings[0].shape)
 print("Structure embeddings shape:", structure_embeddings.shape)
 print("No adapter structure embeddings shape:", no_adapter_structure_embeddings.shape)
-print("Per-residue structure embeddings shape:", per_residue_structure_embeddings.shape)
+print("Per-residue structure embeddings shape:", len(per_residue_structure_embeddings), per_residue_structure_embeddings[0].shape)

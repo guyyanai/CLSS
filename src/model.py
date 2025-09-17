@@ -117,15 +117,13 @@ class CLSSModel(pl.LightningModule):
 
         self.structure_encoder = model
 
-    def embed_sequences(self, sequences: List[str], return_per_residue: bool = False, apply_adapter: bool = True) -> torch.Tensor:
+    def embed_sequence_residues(self, sequences: List[str]) -> List[torch.Tensor]:
         """
-        Embed a list of protein sequences using ESM2 and potentially project to hidden_dim.
+        Embed each residue in a list of protein sequences using ESM2.
         Args:
             sequences (List[str]): List of protein sequences.
-            return_per_residue (bool): Whether to return per-residue embeddings.
-            apply_adapter (bool): Whether to apply the adapter projection.
         Returns:
-            torch.Tensor: Normalized sequence embeddings of shape (N, ESM2-35M output dim)/(N, hidden_dim).
+            List[torch.Tensor]: List of per-residue embeddings (N, L, D).
         """
         embedding_list = []
 
@@ -137,35 +135,58 @@ class CLSSModel(pl.LightningModule):
             with torch.no_grad():
                 output = self.sequence_encoder(**tokenized_sequence)
 
-            embedding = output.last_hidden_state[0] if return_per_residue else output.last_hidden_state.mean(dim=1)[0]
-            embedding_list.append(embedding)
+            embedding_list.append(output.last_hidden_state[0])
 
-        esm_embeddings = torch.stack(embedding_list)
+        return embedding_list
+
+    def embed_sequences(
+        self,
+        sequences: List[str],
+        apply_adapter: bool = True,
+        normalize: bool = True,
+    ) -> torch.Tensor:
+        """
+        Embed a list of protein sequences using ESM2 and potentially project to hidden_dim.
+        Args:
+            sequences (List[str]): List of protein sequences.
+            apply_adapter (bool): Whether to apply the adapter projection.
+            normalize (bool): Whether to normalize the embeddings.
+        Returns:
+            torch.Tensor: Normalized sequence embeddings of shape (N, D).
+        """
+        esm_embeddings = torch.stack(
+            [
+                embedding.mean(dim=0)
+                for embedding in self.embed_sequence_residues(sequences)
+            ]
+        )
 
         if not apply_adapter:
             return esm_embeddings
 
         embeddings = self.sequence_adapter(esm_embeddings)
+
+        if not normalize:
+            return embeddings
+
         normalized_embeddings = F.normalize(embeddings, dim=-1)
 
         return normalized_embeddings
 
-    def embed_structures(self, structures: List[torch.Tensor], return_per_residue: bool = False, apply_adapter: bool = True) -> torch.Tensor:
+    def embed_structure_residues(
+        self, structures: List[torch.Tensor]
+    ) -> List[torch.Tensor]:
         """
-        Embed a list of protein structures using ESM3 and potentially project to hidden_dim.
+        Embed each residue in a list of protein structures using ESM3.
         Args:
             structures (List[torch.Tensor]): List of structure tensors.
-            return_per_residue (bool): Whether to return per-residue embeddings.
-            apply_adapter (bool): Whether to apply the adapter projection.
         Returns:
-            torch.Tensor: Normalized structure embeddings of shape (N, ESM3 output dim)/(N, hidden_dim).
+            List[torch.Tensor]: List of per-residue embeddings (N, L, D).
         """
         if self.structure_encoder is None:
             raise Exception(
                 "Structure encoder (ESM3) wasn't loaded, please make sure the 'should_load_esm3' flag is enabled or call load_esm3()."
             )
-
-        esm3_sampling_config = SamplingConfig(return_mean_embedding=not return_per_residue, return_per_residue_embeddings=return_per_residue)
 
         structures = [structure.to(self.device) for structure in structures]
 
@@ -177,17 +198,38 @@ class CLSSModel(pl.LightningModule):
 
             with torch.no_grad():
                 output = self.structure_encoder.forward_and_sample(
-                    protein_tensor, esm3_sampling_config
+                    protein_tensor, SamplingConfig(return_per_residue_embeddings=True)
                 )
 
-            embedding_list.append(output.per_residue_embedding if return_per_residue else output.mean_embedding)
+            embedding_list.append(output.per_residue_embedding)
 
-        esm_embeddings = torch.stack(embedding_list)
-        
+        return embedding_list
+
+    def embed_structures(
+        self,
+        structures: List[torch.Tensor],
+        apply_adapter: bool = True,
+        normalize: bool = True,
+    ) -> torch.Tensor:
+        """
+        Embed a list of protein structures using ESM3 and potentially project to hidden_dim.
+        Args:
+            structures (List[torch.Tensor]): List of structure tensors.
+            apply_adapter (bool): Whether to apply the adapter projection.
+            normalize (bool): Whether to normalize the embeddings.
+        Returns:
+            torch.Tensor: Normalized structure embeddings of shape (N, D).
+        """
+        esm_embeddings = torch.stack([embedding.mean(dim=0) for embedding in self.embed_structure_residues(structures)])
+
         if not apply_adapter:
             return esm_embeddings
-        
+
         embeddings = self.structure_adapter(esm_embeddings)
+
+        if not normalize:
+            return embeddings
+
         normalized_embeddings = F.normalize(embeddings, dim=-1)
 
         return normalized_embeddings
