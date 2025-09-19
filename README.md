@@ -55,13 +55,6 @@ If you use this repository, please cite:
 
 ---
 
-## License
-
-* **Paper:** CC BY‑NC 4.0 (see bioRxiv page).
-* **Code:** Add your chosen license in `LICENSE` (e.g., MIT/Apache‑2.0).
-
----
-
 ## Acknowledgments & Contact
 
 * See the paper for funding and acknowledgments.
