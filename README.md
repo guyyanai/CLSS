@@ -34,7 +34,7 @@
 
 ## Data
 
-* **ECOD‑AF2 domains** (training/validation and Dataset 1 in the paper).
+* **ECOD‑AF2 domains** (training/validation set).
 
 ---
 
