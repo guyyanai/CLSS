@@ -7,6 +7,7 @@ hyperparameters, and other training configurations.
 
 import argparse
 
+
 def setup_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -28,7 +29,7 @@ def setup_args():
         dest="dataset_path",
         type=str,
         help="Path to contrastive dataset",
-        default="/datasets/ecod/domains-with-structures/AF2/F100.csv",
+        required=True,
     )
     parser.add_argument(
         "--train-pickle",
@@ -49,7 +50,7 @@ def setup_args():
         dest="structures_dir",
         type=str,
         help="Path to directory containing all structures",
-        default="/local/ecod/AF2/structures",
+        required=True,
     )
     parser.add_argument(
         "--learning-rate",
@@ -64,7 +65,13 @@ def setup_args():
         help="Should learn temperature parameter",
         action="store_true",
     )
-    # parser.add_argument('--temperature', dest='temperature', type=float, help='Contrastive loss temperature', default=0.5)
+    parser.add_argument(
+        "--init-temperature",
+        dest="init_temperature",
+        type=float,
+        help="Initial contrastive loss temperature",
+        default=0.5,
+    )
     parser.add_argument(
         "--projection-dim",
         dest="hidden_projection_dim",
@@ -77,14 +84,14 @@ def setup_args():
         dest="epochs",
         type=int,
         help="Number of training epochs",
-        default=40,
+        default=80,
     )
     parser.add_argument(
         "--dataset-limit",
         dest="dataset_size_limit",
         type=int,
         help="Limit to the size of the dataset",
-        default=10000,
+        default=1000000,
     )
     parser.add_argument(
         "--validation-frac",
@@ -98,32 +105,15 @@ def setup_args():
         dest="checkpoint_path",
         type=str,
         help="Path to folder which the model checkpoint will be saved to",
-        default="/checkpoints/sequence-stretch-structure-contrastive",
+        required=True,
     )
     parser.add_argument("--seed", dest="seed", type=int, help="Random seed", default=0)
-    parser.add_argument(
-        "--deterministic",
-        dest="deterministic",
-        help="Should use deterministic flag in pl trainer",
-        action="store_true",
-    )
-    parser.add_argument(
-        "--precision", dest="precision", type=int, help="Trainer precision", default=32
-    )
-    parser.add_argument(
-        "--accumulate",
-        dest="accumulate",
-        type=int,
-        help="Trainer gradient accumulation",
-        default=1,
-    )
     parser.add_argument(
         "--run-name",
         dest="run_name",
         type=str,
         help="Name of the current run",
         required=False,
-        default=None,
     )
     parser.add_argument(
         "--wandb-project",
@@ -131,7 +121,6 @@ def setup_args():
         type=str,
         help="WandB project name",
         required=True,
-        default=None,
     )
     parser.add_argument(
         "--random-sequence-stretches",
@@ -145,12 +134,5 @@ def setup_args():
         help="Minimum size for random sequence stretches",
         type=int,
         default=30,
-    )
-    parser.add_argument(
-        "--resume-from-checkpoint",
-        dest="resume_from_checkpoint",
-        type=str,
-        help="Path to checkpoint to resume training from",
-        default=None,
     )
     return parser.parse_args()

@@ -6,15 +6,19 @@ protein sequences and structures using a contrastive learning approach. It utili
 pre-trained ESM-2 for sequence encoding and ESM-3 for structure encoding.
 """
 
-from typing import Tuple, List
+from typing import List, Tuple
+
+import pytorch_lightning as pl
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import pytorch_lightning as pl
-from transformers import EsmModel, EsmTokenizer
 from esm.models.esm3 import ESM3
 from esm.sdk.api import ESMProtein, SamplingConfig
 from esm.utils.constants.models import ESM3_OPEN_SMALL
+from transformers import EsmModel, EsmTokenizer
+
+from .config import CLSSConfig
+from .utils import download_pretrained_model
 
 
 class CLSSModel(pl.LightningModule):
@@ -46,6 +50,9 @@ class CLSSModel(pl.LightningModule):
         super(CLSSModel, self).__init__()
         self.save_hyperparameters()
 
+        # Store the hidden dimension
+        self.hidden_dim = hidden_dim
+
         # Load the pre-trained ESM2 model
         self.load_esm2(esm2_checkpoint)
 
@@ -54,6 +61,9 @@ class CLSSModel(pl.LightningModule):
             nn.ReLU(),
             nn.Linear(self.sequence_encoder.config.hidden_size, hidden_dim),
         )
+
+        # Initialize structure encoder
+        self.structure_encoder = None
 
         # Load ESM3 (structure) model if needed
         if should_load_esm3:
@@ -77,7 +87,77 @@ class CLSSModel(pl.LightningModule):
         self.use_global_loss = use_global_loss
         self.should_load_esm3 = should_load_esm3
 
-    def load_esm2(self, checkpoint: str):
+    @classmethod
+    def from_config(
+        cls, config: CLSSConfig, should_load_esm3: bool = False, **kwargs
+    ) -> "CLSSModel":
+        """
+        Create a CLSSModel from a CLSSConfig.
+
+        Args:
+            config: CLSSConfig instance
+            should_load_esm3: Whether to load ESM3 structure encoder
+            **kwargs: Additional arguments to override config values
+
+        Returns:
+            CLSSModel instance
+        """
+        # Convert config to dict and update with any overrides
+        config_dict = config.to_dict()
+        config_dict.update(kwargs)
+
+        # Map config parameters to model parameters
+        model_kwargs = {
+            "esm2_checkpoint": config_dict["esm2_checkpoint"],
+            "hidden_dim": config_dict["hidden_dim"],
+            "learning_rate": config_dict["learning_rate"],
+            "init_temperature": config_dict["init_temperature"],
+            "should_learn_temperature": config_dict["should_learn_temperature"],
+            "random_sequence_stretches": config_dict["random_sequence_stretches"],
+            "random_stretch_min_size": config_dict["random_stretch_min_size"],
+            "use_global_loss": config_dict["use_global_loss"],
+            "should_load_esm3": config_dict["should_load_esm3"],
+        }
+
+        return cls(**model_kwargs)
+
+    @classmethod
+    def from_pretrained(
+        cls,
+        repo_id: str = "guyyanai/CLSS",
+        model_name: str = "h32_r10.lckpt",
+        device: str = "cuda",
+    ) -> "CLSSModel":
+        """
+        Load a pretrained CLSS model.
+
+        Args:
+            model_name: Name of the model file to download
+            repo_id: Hugging Face repository ID
+
+        Returns:
+            CLSSModel
+        """
+        # Download model
+        model_path = download_pretrained_model(repo_id=repo_id, model_name=model_name)
+
+        # Load model
+        return cls.load_from_checkpoint(checkpoint_path=model_path, map_location=device)
+
+    @classmethod
+    def from_checkpoint(cls, checkpoint_path: str) -> "CLSSModel":
+        """
+        Load CLSS model from local checkpoint.
+
+        Args:
+            checkpoint_path: Path to model checkpoint
+
+        Returns:
+            CLSSModel
+        """
+        return cls.load_from_checkpoint(checkpoint_path)
+
+    def load_esm2(self, checkpoint: str) -> None:
         # Load the pre-trained ESM2 tokenizer & model
         """
         Load the pre-trained ESM2 tokenizer and model.
@@ -101,7 +181,7 @@ class CLSSModel(pl.LightningModule):
         self.sequence_encoder = model
         self.sequence_tokenizer = tokenizer
 
-    def load_esm3(self, checkpoint=ESM3_OPEN_SMALL):
+    def load_esm3(self, checkpoint=ESM3_OPEN_SMALL) -> None:
         """
         Load the pre-trained ESM3 structure encoder model.
         Disables training for all parameters.
@@ -220,7 +300,12 @@ class CLSSModel(pl.LightningModule):
         Returns:
             torch.Tensor: Normalized structure embeddings of shape (N, D).
         """
-        esm_embeddings = torch.stack([embedding.mean(dim=0) for embedding in self.embed_structure_residues(structures)])
+        esm_embeddings = torch.stack(
+            [
+                embedding.mean(dim=0)
+                for embedding in self.embed_structure_residues(structures)
+            ]
+        )
 
         if not apply_adapter:
             return esm_embeddings
@@ -298,7 +383,9 @@ class CLSSModel(pl.LightningModule):
 
         return sequence_projections, structure_projections
 
-    def sample_sequence_stretch(self, input_ids, attention_mask, sequence_length):
+    def sample_sequence_stretch(
+        self, input_ids, attention_mask, sequence_length
+    ) -> Tuple[torch.Tensor, torch.Tensor, int]:
         """
         Sample a random stretch from a sequence.
         Args:
@@ -348,7 +435,7 @@ class CLSSModel(pl.LightningModule):
         self,
         projections1: torch.Tensor,
         projections2: torch.Tensor,
-    ):
+    ) -> torch.Tensor:
         """
         Compute contrastive loss between two sets of projections.
         Args:
@@ -389,7 +476,7 @@ class CLSSModel(pl.LightningModule):
 
         return loss
 
-    def training_step(self, batch, batch_idx):
+    def training_step(self, batch, batch_idx) -> torch.Tensor:
         """
         Training step for contrastive learning.
         Args:
@@ -428,7 +515,7 @@ class CLSSModel(pl.LightningModule):
 
         return loss
 
-    def validation_step(self, batch, batch_idx):
+    def validation_step(self, batch, batch_idx) -> torch.Tensor:
         """
         Validation step for contrastive learning.
         Args:
@@ -460,7 +547,7 @@ class CLSSModel(pl.LightningModule):
 
         return val_loss
 
-    def configure_optimizers(self):
+    def configure_optimizers(self) -> torch.optim.Adam:
         """
         Configure the optimizer for training.
         Returns:
@@ -469,7 +556,7 @@ class CLSSModel(pl.LightningModule):
         # Set up optimizer
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate)
 
-    def on_save_checkpoint(self, checkpoint):
+    def on_save_checkpoint(self, checkpoint) -> None:
         """
         Callback to modify checkpoint before saving.
         Removes structure_encoder weights from checkpoint.

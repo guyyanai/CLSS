@@ -32,6 +32,30 @@
 
 ---
 
+## Quick Start
+
+### Installation
+
+```bash
+pip install clss-model
+```
+
+### Examples
+
+Complete examples are available in the [`examples/`](examples/) directory:
+
+- **[`examples/training/`](examples/training/)** - Full training pipeline
+  - `train.py` - Main training script with PyTorch Lightning
+  - `dataset.py` - ECOD dataset loading and preprocessing  
+  - `args.py` - Command-line argument parsing
+  - `infra.py` - Infrastructure setup (distributed training, logging)
+
+- **[`examples/inference/`](examples/inference/)** - Inference and embedding
+  - `infer.py` - Protein sequence and structure embedding
+  - `sample-pdbs/` - Example PDB files for testing
+
+---
+
 ## Data
 
 * **ECOD‑AF2 domains** (training/validation set).

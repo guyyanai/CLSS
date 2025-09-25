@@ -18,7 +18,10 @@ from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.utilities import rank_zero_only
 from pytorch_lightning.strategies.ddp import DDPStrategy
 from pytorch_lightning.plugins.environments import SLURMEnvironment
+import random
+import numpy as np
 from dataset import CLSSDataset
+from typing import Tuple
 
 @rank_zero_only
 def setup_wandb(args: object) -> WandbLogger:
@@ -80,10 +83,13 @@ def setup_process_group():
 
     torch.cuda.set_device(local_rank)
 
+def destroy_process_group():
+    if torch.distributed.is_initialized():
+        torch.distributed.destroy_process_group()
 
 def setup_dataloaders(
     train_dataset: CLSSDataset, val_dataset: CLSSDataset, batch_size: int
-) -> tuple[DataLoader, DataLoader]:
+) -> Tuple[DataLoader, DataLoader]:
     """Creates DataLoader objects for training and validation sets.
 
     This function prepares DataLoaders for the training and validation datasets.
@@ -119,7 +125,7 @@ def setup_dataset(
     train_pickle_file: str,
     validation_pickle_file: str,
     seed: int,
-) -> tuple[CLSSDataset, CLSSDataset]:
+) -> Tuple[CLSSDataset, CLSSDataset]:
     """Prepares the training and validation datasets.
 
     This function reads a dataset from a CSV file, splits it into training and
@@ -188,3 +194,14 @@ def setup_trainer(epochs: int, wandb_logger: WandbLogger) -> pl.Trainer:
             find_unused_parameters=True, cluster_environment=SLURMEnvironment()
         ),
     )
+
+
+def set_seed(seed: int = 42) -> None:
+    """Set random seed for reproducibility."""
+
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)

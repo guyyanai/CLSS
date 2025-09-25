@@ -6,35 +6,39 @@ datasets and dataloaders, initializing the model, and running the training loop
 using PyTorch Lightning.
 """
 
-from model import CLSSModel
+import os
+import warnings
+import atexit
 import pytorch_lightning as pl
 from pytorch_lightning.utilities import rank_zero_only
 from pytorch_lightning.loggers import WandbLogger
-import os
-import warnings
 import torch
 import torch.distributed
 from infra import (
     setup_wandb,
     setup_process_group,
+    destroy_process_group,
     setup_dataset,
     setup_dataloaders,
     setup_trainer,
 )
 from args import setup_args
+from clss import CLSSModel
 
 
 @rank_zero_only
 def save_checkpoint(
     trainer: pl.Trainer, wandb_logger: WandbLogger, checkpoint_path: str
-):
+) -> None:
     trainer.save_checkpoint(
         os.path.join(checkpoint_path, "models", f"{wandb_logger.experiment.name}.lckpt")
     )
 
 
-if __name__ == "__main__":
+def main():
+    """Main training function that can be called as a console script."""
     setup_process_group()
+    atexit.register(destroy_process_group)
 
     warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -80,6 +84,7 @@ if __name__ == "__main__":
         random_sequence_stretches=args.random_sequence_stretches,
         random_stretch_min_size=args.random_stretch_min_size,
         should_learn_temperature=args.learn_temperature,
+        init_temperature=args.init_temperature,
         should_load_esm3=False,
     )
 
@@ -89,3 +94,7 @@ if __name__ == "__main__":
     torch.distributed.destroy_process_group()
 
     save_checkpoint(trainer, wandb_logger, args.checkpoint_path)
+
+
+if __name__ == "__main__":
+    main()
