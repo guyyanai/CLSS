@@ -22,15 +22,6 @@ class CLSSConfig:
     use_global_loss: bool = False
     should_load_esm3: bool = False
 
-    # Data configuration
-    structures_dir: str = "/path/to/structures/pdbs/folder"
-    dataset_limit: int = 1000000
-    validation_frac: float = 0.2
-
-    # Training configuration
-    epochs: int = 80
-    seed: int = 0
-
     def to_dict(self) -> Dict[str, Any]:
         """Return configuration as dictionary."""
         return asdict(self)
