@@ -132,3 +132,4 @@ Desktop.ini
 tests/
 
 build.sh
+upload.sh
