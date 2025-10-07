@@ -44,9 +44,11 @@ if args.fasta_path_column or args.use_pdb_sequences:
     )
     sequences = load_sequences(
         domain_dataframe=domain_dataframe,
+        domain_id_column=args.id_column,
         use_pdb_sequences=args.use_pdb_sequences,
         pdb_path_column=args.pdb_path_column,
         fasta_path_column=args.fasta_path_column,
+        use_record_id=args.use_record_id,
         cache_path=sequences_cache_path,
     )
     domain_dataframe[SEQUENCE_COLUMN] = sequences

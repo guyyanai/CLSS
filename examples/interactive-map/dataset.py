@@ -39,6 +39,7 @@ def load_domain_dataset(
         ValueError: If required columns are missing in the dataset
     """
     domain_dataframe = pd.read_csv(dataset_path, dtype={id_column: str})
+    domain_dataframe = domain_dataframe.where(pd.notna(domain_dataframe), None)
 
     if id_column not in domain_dataframe.columns:
         raise ValueError(f"Column '{id_column}' not found in dataset")
@@ -170,9 +171,11 @@ def load_sequence_from_pdb(pdb_path: str) -> str:
 @cache_to_pickle(path_param_name="cache_path")
 def load_sequences(
     domain_dataframe: pd.DataFrame,
+    domain_id_column: str,
     use_pdb_sequences: bool = False,
     pdb_path_column: Optional[str] = None,
     fasta_path_column: Optional[str] = None,
+    use_record_id: bool = False,
     cache_path: Optional[str] = None,
 ) -> List[str | None]:
     """
@@ -180,9 +183,11 @@ def load_sequences(
 
     Args:
         domain_dataframe: DataFrame containing domain data
+        domain_id_column: Name of the domain ID column
         use_pdb_sequences: Whether to use PDB sequences instead of FASTA
         pdb_path_column: Name of the column containing PDB file paths
         fasta_path_column: Name of the column containing FASTA file paths
+        use_record_id: Whether to use the domain ID as the record ID in FASTA files
         cache_path: Optional path to cache the loaded sequences
 
     Returns:
@@ -204,11 +209,12 @@ def load_sequences(
             sequences.append(None)
             continue
 
+        fasta_record_id = str(row[domain_id_column]) if use_record_id else None
         try:
             sequence = (
                 load_sequence_from_pdb(file_path)
                 if should_use_pdb
-                else load_sequence_from_fasta(file_path)
+                else load_sequence_from_fasta(file_path, fasta_record_id)
             )
             sequences.append(sequence)
         except (FileNotFoundError, ValueError) as e:

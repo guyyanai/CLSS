@@ -2,7 +2,7 @@
 
 An interactive visualization tool for exploring protein domains through multi-modal embeddings using the CLSS (Contrastive Learning of Sequence and Structure) model.
 
-**WARNING** This is a Work In Progress!
+> **Note**: This tool processes data and creates visualizations but does not yet include the final interactive mapping component (mapper.py is currently empty).
 
 ## Overview
 
@@ -38,34 +38,18 @@ graph LR
     I --> J[Export HTML]
 ```
 
-## Installation
-
-### Prerequisites
-
-- Python 3.8+
-- PyTorch
-- Required Python packages (see `requirements.txt`)
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/guyyanai/CLSS.git
-cd CLSS/examples/interactive-map
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Download CLSS model (if not using default HuggingFace repo)
-# The tool will automatically download from HuggingFace Hub
-```
-
 ## Usage
 
 ### Basic Command
 
 ```bash
-python app.py --dataset-path domains.csv --id-column domain_id --label-column fold_class --fasta-path-column fasta_file --pdb-path-column pdb_file
+python app.py \
+    --dataset-path domains.csv \
+    --id-column domain_id \
+    --label-column fold_class \
+    --fasta-path-column fasta_file \
+    --pdb-path-column pdb_file \
+    --html-output-path output.html
 ```
 
 ### Full Example
@@ -77,10 +61,14 @@ python app.py \
     --label-column architecture \
     --fasta-path-column sequence_path \
     --pdb-path-column structure_path \
+    --html-output-path visualization.html \
     --model-repo guyyanai/CLSS \
     --model-filename h32_r10.lckpt \
     --tsne-perplexity 50 \
     --tsne-max-iterations 1000 \
+    --hex-color-column custom_color \
+    --use-pdb-sequences \
+    --use-record-id \
     --cache-path ./cache
 ```
 
@@ -91,6 +79,7 @@ python app.py \
 | `--dataset-path` | ✅ | - | Path to CSV file with domain data |
 | `--id-column` | ✅ | - | Column name for domain IDs |
 | `--label-column` | ✅ | - | Column name for labels (determines colors) |
+| `--html-output-path` | ✅ | - | Path to output HTML file |
 | `--fasta-path-column` | * | - | Column name for FASTA file paths |
 | `--pdb-path-column` | * | - | Column name for PDB file paths |
 | `--model-repo` | ❌ | `guyyanai/CLSS` | HuggingFace model repository |
@@ -98,9 +87,14 @@ python app.py \
 | `--tsne-perplexity` | ❌ | 30 | t-SNE perplexity parameter |
 | `--tsne-max-iterations` | ❌ | 1000 | Maximum t-SNE iterations |
 | `--tsne-random-state` | ❌ | 0 | Random state for reproducibility |
+| `--hex-color-column` | ❌ | - | Column with hex color codes for custom colors |
+| `--use-pdb-sequences` | ❌ | False | Extract sequences from PDB files instead of FASTA |
+| `--use-record-id` | ❌ | False | Use domain ID as FASTA record ID when loading |
 | `--cache-path` | ❌ | - | Directory for caching intermediate results |
 
-*At least one of `--fasta-path-column` or `--pdb-path-column` must be provided.
+**Requirements:**
+- At least one of `--fasta-path-column` or `--pdb-path-column` must be provided
+- If `--use-pdb-sequences` is set, `--pdb-path-column` must be provided
 
 ## Input Data Format
 
@@ -109,34 +103,36 @@ python app.py \
 Your input CSV should contain the following columns:
 
 ```csv
-domain_id,architecture,sequence_path,structure_path
-d1a00a_,alpha/beta,/path/to/d1a00a_.fasta,/path/to/d1a00a_.pdb
-d1a01a_,alpha,/path/to/d1a01a_.fasta,/path/to/d1a01a_.pdb
-d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb
+domain_id,architecture,sequence_path,structure_path,custom_color
+d1a00a_,alpha/beta,/path/to/d1a00a_.fasta,/path/to/d1a00a_.pdb,#FF5733
+d1a01a_,alpha,/path/to/d1a01a_.fasta,/path/to/d1a01a_.pdb,#33C3FF
+d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
 ```
+
+**Required Columns:**
+- **ID column**: Unique identifier for each domain (specified via `--id-column`)
+- **Label column**: Category/class for coloring (specified via `--label-column`)
+
+**Optional Columns:**
+- **FASTA path column**: Paths to FASTA files (specified via `--fasta-path-column`)
+- **PDB path column**: Paths to PDB files (specified via `--pdb-path-column`)
+- **Hex color column**: Custom hex colors for points (specified via `--hex-color-column`)
 
 ### File Requirements
 
 - **FASTA files**: Standard protein sequence format
+  - Can contain single or multiple sequences
+  - If `--use-record-id` is set, the tool looks for a specific record ID matching the domain ID
+  - Otherwise, uses the first sequence in the file
 - **PDB files**: Standard Protein Data Bank format
+  - Used for both structure coordinates and sequence extraction (if `--use-pdb-sequences` is set)
 - **Paths**: Can be relative or absolute paths to the files
 
-## Output
+### Sequence Loading Options
 
-The application generates:
-
-1. **Console Output**: Progress information and statistics
-2. **Interactive HTML**: Standalone HTML file with the interactive visualization
-3. **Cached Data**: Intermediate results stored for faster re-runs (if `--cache-path` specified)
-
-### Visualization Features
-
-- **Scatter Plot**: Each point represents a domain-modality pair
-- **Color Coding**: Points colored by the label column (e.g., protein fold, function)
-- **Shape Coding**: Different markers for sequences (circles) vs structures (squares)
-- **Hover Information**: Detailed domain information on mouse hover
-- **Zoom & Pan**: Interactive exploration of the embedding space
-- **Export Options**: Save plots as PNG, SVG, or HTML
+1. **FASTA-only mode**: Use `--fasta-path-column` to load sequences from FASTA files
+2. **PDB-only mode**: Use `--pdb-path-column` with `--use-pdb-sequences` to extract sequences from PDB files
+3. **Mixed mode**: Provide both `--fasta-path-column` and `--pdb-path-column` for dual-modality analysis
 
 ## Performance & Caching
 
@@ -149,11 +145,6 @@ The tool implements multi-level caching to avoid expensive recomputation:
 3. **Embeddings**: Cached CLSS model outputs
 4. **Dimensionality Reduction**: Cached t-SNE results
 
-### Performance Tips
-
-- Use `--cache-path` for large datasets
-- Adjust `--tsne-perplexity` based on dataset size
-
 ## Architecture
 
 ### Component Overview
@@ -162,72 +153,34 @@ The tool implements multi-level caching to avoid expensive recomputation:
 - **`dataset.py`**: Data loading and preprocessing functions
 - **`embeddings.py`**: CLSS model loading and embedding generation
 - **`dim_reducer.py`**: t-SNE dimensionality reduction
-- **`mapper.py`**: Interactive visualization creation
+- **`mapper.py`**: Interactive visualization creation *(currently empty - not yet implemented)*
 - **`utils.py`**: Utility functions and caching helpers
 - **`app.py`**: Main application orchestrator
 
 ### Data Flow
 
-1. **Dataset Loading**: Parse CSV and validate columns
-2. **File Reading**: Load sequences from FASTA and structures from PDB
-3. **Model Loading**: Initialize CLSS model from HuggingFace Hub
-4. **Embedding Generation**: Process sequences and structures through CLSS
-5. **Data Structuring**: Create unified dataframe with embeddings
-6. **Dimensionality Reduction**: Apply t-SNE to reduce to 2D
-7. **Visualization**: Generate interactive Plotly scatter plot
-8. **Export**: Save as standalone HTML file
-
-## Troubleshooting
-
-### Common Issues
-
-**Model Loading Errors**
-```bash
-# Ensure you have internet connection for HuggingFace download
-# Or specify a local model path
---model-repo /path/to/local/model
-```
-
-**Memory Issues with Large Datasets**
-```bash
-# Use smaller batch sizes or enable caching
---cache-path ./cache
-# Reduce t-SNE iterations for faster processing
---tsne-max-iterations 500
-```
-
-**File Path Errors**
-```bash
-# Ensure all file paths in CSV are accessible
-# Use absolute paths if having issues with relative paths
-```
+1. **Dataset Loading**: Parse CSV and validate required columns exist
+2. **Cache Setup**: Create cache paths for intermediate results (if specified)
+3. **Sequence Loading**: Load sequences from FASTA files OR extract from PDB files
+   - Supports FASTA record ID matching with domain IDs
+   - Can extract sequences directly from PDB files
+   - Handles missing files gracefully
+4. **Structure Loading**: Load 3D coordinates from PDB files (if specified)
+5. **Model Loading**: Initialize CLSS model from HuggingFace Hub and load ESM3 components
+6. **Embedding Generation**: Process sequences and structures through CLSS model
+   - Generates 32-dimensional embeddings for each modality
+   - Handles missing sequences/structures gracefully
+7. **Data Structuring**: Create unified dataframe with:
+   - Domain IDs and labels
+   - Modality information (sequence/structure)
+   - High-dimensional embeddings
+   - Optional custom colors
+8. **Dimensionality Reduction**: Apply t-SNE to reduce embeddings to 2D coordinates
+9. **Final Dataframe**: Create visualization-ready dataframe with x,y coordinates
+10. **HTML Export**: *(Not yet implemented)* - Generate interactive Plotly visualization
 
 ### Performance Optimization
 
 - **GPU Acceleration**: The CLSS model will automatically use GPU if available
 - **Parallel Processing**: Multiple CPU cores used for file I/O operations
 - **Memory Management**: Large datasets processed in batches to avoid memory overflow
-
-## Citation
-
-If you use this tool in your research, please cite:
-
-```bibtex
-@software{clss_interactive_map,
-  title={CLSS Interactive Protein Domain Map},
-  author={[Your Name]},
-  year={2025},
-  url={https://github.com/guyyanai/CLSS}
-}
-```
-
-## License
-
-This project is licensed under the same terms as the CLSS model. See the LICENSE file for details.
-
-## Support
-
-For issues and questions:
-- 🐛 **Bug Reports**: Create an issue on GitHub
-- 💡 **Feature Requests**: Discuss in GitHub Discussions
-- 📖 **Documentation**: Check the examples and code comments
