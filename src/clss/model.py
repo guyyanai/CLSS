@@ -457,7 +457,7 @@ class CLSSModel(pl.LightningModule):
 
         # Compute cosine similarity
         similarities = torch.mm(projections1, projections2.T)
-        scaled_similarities = similarities * self.temperature
+        scaled_similarities = similarities / self.temperature
 
         # Labels for contrastive learning: diagonal elements should match
         labels = torch.arange(projections1.size(0), device=self.device)
