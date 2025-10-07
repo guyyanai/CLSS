@@ -155,7 +155,8 @@ The application generates a complete interactive visualization:
 Intermediate results stored for faster re-runs (if `--cache-path` specified):
 - `sequences.pkl`: Parsed sequences from FASTA/PDB files
 - `structures.pkl`: Loaded protein structure coordinates
-- `embeddings.pkl`: CLSS model embeddings
+- `sequence_embeddings.pkl`: CLSS model sequence embeddings
+- `structure_embeddings.pkl`: CLSS model structure embeddings
 - `reduced_embeddings.pkl`: t-SNE 2D coordinates
 
 ## Performance & Caching
