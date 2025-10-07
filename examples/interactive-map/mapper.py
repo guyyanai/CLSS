@@ -3,10 +3,11 @@ Interactive visualization module for protein domain embeddings.
 Creates Plotly scatter plots and exports them to HTML files.
 """
 
+import os
+from typing import Optional, Dict, Any
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from typing import Optional, Dict, Any
 
 
 def create_interactive_scatter_plot(
@@ -202,6 +203,9 @@ def export_to_html(
 </body>
 </html>
 """
+    
+    # Ensure the output directory exists
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     # Export to HTML
     fig.write_html(
