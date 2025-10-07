@@ -4,6 +4,8 @@
 
 **DOI:** [https://doi.org/10.1101/2025.09.05.674454](https://doi.org/10.1101/2025.09.05.674454)
 
+**GitHub repository:** [https://github.com/guyyanai/CLSS](https://github.com/guyyanai/CLSS)
+
 **Interactive viewer:** [https://gabiaxel.github.io/clss-viewer/](https://gabiaxel.github.io/clss-viewer/)
 
 ---
