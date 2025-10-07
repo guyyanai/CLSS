@@ -134,3 +134,5 @@ tests/
 build.sh
 upload.sh
 squash/
+examples/interactive-map/cache/
+examples/interactive-map/run.sh

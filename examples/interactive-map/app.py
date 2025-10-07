@@ -8,25 +8,25 @@ from dataset import (
 )
 from embeddings import load_clss, embed_dataframe
 from dim_reducer import apply_dim_reduction
+from utils import create_cache_paths, disable_warnings
 
+# Constants for DataFrame columns
 SEQUENCE_COLUMN = "sequence"
 STRUCTURE_COLUMN = "structure"
 
+# Parse command-line arguments
 args = parse_args()
 
-cache_paths = (None, None, None, None)
+# Disable Biotite and ESM warnings
+disable_warnings()
 
-if args.cache_path is not None:
-    from utils import create_cache_paths
-
-    cache_paths = create_cache_paths(args.cache_path)
-
+# Create cache paths
 (
     sequences_cache_path,
     structures_cache_path,
     embeddings_cache_path,
     reduced_embeddings_cache_path,
-) = cache_paths
+) = create_cache_paths(args.cache_path)
 
 domain_dataframe = load_domain_dataset(
     args.dataset_path,
@@ -38,18 +38,28 @@ domain_dataframe = load_domain_dataset(
 )
 print(f"Loaded domain dataset with {len(domain_dataframe)} entries")
 
-if args.fasta_path_column:
-    print("Loading sequences from FASTA files...")
+if args.fasta_path_column or args.use_pdb_sequences:
+    print(
+        f"Loading sequences from {'FASTA' if not args.use_pdb_sequences else 'PDB'} files..."
+    )
     sequences = load_sequences(
-        domain_dataframe, args.fasta_path_column, cache_path=sequences_cache_path
+        domain_dataframe=domain_dataframe,
+        use_pdb_sequences=args.use_pdb_sequences,
+        pdb_path_column=args.pdb_path_column,
+        fasta_path_column=args.fasta_path_column,
+        cache_path=sequences_cache_path,
     )
     domain_dataframe[SEQUENCE_COLUMN] = sequences
-    print(f"Loaded {len([s for s in sequences if s])} sequences from FASTA files.")
+    print(
+        f"Loaded {len([s for s in sequences if s])} sequences from {'FASTA' if not args.use_pdb_sequences else 'PDB'} files."
+    )
 
 if args.pdb_path_column:
     print("Loading structures from PDB files...")
     structures = load_structures(
-        domain_dataframe, args.pdb_path_column, cache_path=structures_cache_path
+        domain_dataframe=domain_dataframe,
+        pdb_path_column=args.pdb_path_column,
+        cache_path=structures_cache_path,
     )
     domain_dataframe[STRUCTURE_COLUMN] = structures
     print(

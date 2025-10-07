@@ -23,6 +23,7 @@ class CLIArgs:
         tsne_max_iterations: Maximum iterations for t-SNE (required)
         tsne_random_state: Random state for t-SNE reproducibility (required)
         html_output_path: Path to the HTML output file (required)
+        use_pdb_sequences: Whether to use sequences extracted from PDB files when PDB column is provided (default: False)
         fasta_path_column: Name of the FASTA path column in the dataset (at least one of fasta_path_column or pdb_path_column is required)
         pdb_path_column: Name of the PDB path column in the dataset (at least one of fasta_path_column or pdb_path_column is required)
         hex_color_column: Name of the column with hex color codes for points (optional)
@@ -40,6 +41,7 @@ class CLIArgs:
     tsne_max_iterations: int
     tsne_random_state: int
     html_output_path: str
+    use_pdb_sequences: bool = False
     fasta_path_column: Optional[str] = None
     pdb_path_column: Optional[str] = None
     hex_color_column: Optional[str] = None
@@ -49,6 +51,9 @@ class CLIArgs:
         """Validate arguments after initialization."""
         if not self.fasta_path_column and not self.pdb_path_column:
             raise ValueError("At least one of fasta_path_column or pdb_path_column must be provided")
+
+        if self.use_pdb_sequences and not self.pdb_path_column:
+            raise ValueError("use_pdb_sequences is set to True but pdb_path_column is not provided")
 
 
 def create_argument_parser() -> argparse.ArgumentParser:
@@ -148,6 +153,12 @@ def create_argument_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
+        "--use-pdb-sequences",
+        action="store_true",
+        help="Whether to use sequences extracted from PDB files when PDB column is provided (default: False)"
+    )
+
+    parser.add_argument(
         "--cache-path",
         type=str,
         default=None,
@@ -180,6 +191,7 @@ def parse_args() -> CLIArgs:
         tsne_max_iterations=parsed.tsne_max_iterations,
         tsne_random_state=parsed.tsne_random_state,
         html_output_path=parsed.html_output_path,
+        use_pdb_sequences=parsed.use_pdb_sequences,
         fasta_path_column=parsed.fasta_path_column,
         pdb_path_column=parsed.pdb_path_column,
         hex_color_column=parsed.hex_color_column,

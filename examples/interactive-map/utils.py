@@ -1,10 +1,21 @@
+import warnings
 import os
 import pickle
 import functools
-from typing import Callable, Tuple
+from typing import Callable, Tuple, Optional
 
 
-def create_cache_paths(base_cache_path: str) -> Tuple:
+def disable_warnings():
+    """
+    Disable warnings from the Biotite library.
+    """
+
+    warnings.filterwarnings("ignore", category=UserWarning, module="biotite")
+    warnings.filterwarnings("ignore", category=UserWarning, module="esm")
+    warnings.filterwarnings("ignore", category=FutureWarning, module="esm")
+
+
+def create_cache_paths(base_cache_path: Optional[str] = None) -> Tuple:
     """
     Create and return paths for caching various data components.
 
@@ -14,12 +25,18 @@ def create_cache_paths(base_cache_path: str) -> Tuple:
     Returns:
         Tuple: Paths for caching various data components.
     """
-    return (
-        os.path.join(base_cache_path, "sequences.pkl"),
-        os.path.join(base_cache_path, "structures.pkl"),
-        os.path.join(base_cache_path, "embeddings.pkl"),
-        os.path.join(base_cache_path, "reduced_embeddings.pkl"),
-    )
+    cache_paths = (None, None, None, None)
+
+    if base_cache_path is not None:
+        os.makedirs(base_cache_path, exist_ok=True)
+        return (
+            os.path.join(base_cache_path, "sequences.pkl"),
+            os.path.join(base_cache_path, "structures.pkl"),
+            os.path.join(base_cache_path, "embeddings.pkl"),
+            os.path.join(base_cache_path, "reduced_embeddings.pkl"),
+        )
+
+    return cache_paths
 
 
 def cache_to_pickle(path_param_name: str) -> Callable:

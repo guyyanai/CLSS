@@ -1,5 +1,6 @@
 import os
-from typing import List, Optional
+from typing import List, Optional, Dict
+from functools import cache
 from Bio import SeqIO
 import pandas as pd
 from tqdm import tqdm
@@ -30,7 +31,7 @@ def load_domain_dataset(
         fasta_path_column: Name of the FASTA path column
         pdb_path_column: Name of the PDB path column
         hex_color_column: Name of the column with hex color codes for points
-        
+
     Returns:
         pd.DataFrame: Loaded domain dataset
 
@@ -45,24 +46,51 @@ def load_domain_dataset(
     if label_column not in domain_dataframe.columns:
         raise ValueError(f"Column '{label_column}' not found in dataset")
 
-    if fasta_path_column is not None and fasta_path_column not in domain_dataframe.columns:
+    if (
+        fasta_path_column is not None
+        and fasta_path_column not in domain_dataframe.columns
+    ):
         raise ValueError(f"Column '{fasta_path_column}' not found in dataset")
 
     if pdb_path_column is not None and pdb_path_column not in domain_dataframe.columns:
         raise ValueError(f"Column '{pdb_path_column}' not found in dataset")
 
-    if hex_color_column is not None and hex_color_column not in domain_dataframe.columns:
+    if (
+        hex_color_column is not None
+        and hex_color_column not in domain_dataframe.columns
+    ):
         raise ValueError(f"Column '{hex_color_column}' not found in dataset")
 
     return domain_dataframe
 
+@cache
+def load_fasta_to_dict(fasta_path: str) -> Dict[str, SeqIO.SeqRecord]:
+    """
+    Load a FASTA file and return a dictionary mapping record IDs to sequences.
 
-def load_sequence_from_fasta(fasta_path: str) -> str:
+    Args:
+        fasta_path: Path to the FASTA file
+    Returns:
+        Dict[str, SeqIO.SeqRecord]: Dictionary mapping record IDs to sequences
+    Raises:
+        FileNotFoundError: If the FASTA file does not exist
+        ValueError: If the FASTA file is empty or improperly formatted
+    """
+    if not os.path.exists(fasta_path):
+        raise FileNotFoundError(f"File not found: {fasta_path}")
+    if os.path.getsize(fasta_path) == 0:
+        raise ValueError("The FASTA file is empty.")
+
+    records: Dict[str, SeqIO.SeqRecord] = SeqIO.to_dict(SeqIO.parse(fasta_path, "fasta"))
+    return records
+
+def load_sequence_from_fasta(fasta_path: str, record_id: Optional[str] = None) -> str:
     """
     Load a sequence from a FASTA file.
 
     Args:
         fasta_path: Path to the FASTA file
+        record_id: Optional ID of the specific record to load (if None, load the first record)
 
     Returns:
         str: The loaded sequence
@@ -71,18 +99,17 @@ def load_sequence_from_fasta(fasta_path: str) -> str:
         FileNotFoundError: If the FASTA file does not exist
         ValueError: If the FASTA file is empty or improperly formatted
     """
-    # Check file existence and non-empty
-    if not os.path.exists(fasta_path):
-        raise FileNotFoundError(f"File not found: {fasta_path}")
-    if os.path.getsize(fasta_path) == 0:
-        raise ValueError("The FASTA file is empty.")
-
-    # Try reading the first record
-    records = SeqIO.parse(fasta_path, "fasta")
-    try:
-        record = next(records)
-    except StopIteration:
-        raise ValueError("No FASTA sequences found in the file.")
+    fasta_dict = load_fasta_to_dict(fasta_path)
+    
+    if record_id:
+        record = fasta_dict.get(record_id, None)
+        if record is None:
+            raise ValueError(f"Record ID '{record_id}' not found in FASTA file.")
+    else:
+        try:
+            record = next(iter(fasta_dict.values()))
+        except StopIteration:
+            raise ValueError("No FASTA sequences found in the file.")
 
     # Validate the content
     if not record.id or not record.seq:
@@ -92,22 +119,74 @@ def load_sequence_from_fasta(fasta_path: str) -> str:
 
     return str(record.seq)
 
+@cache
+def load_protein_from_pdb_file(pdb_path: str):
+    """
+    Load a protein structure from a PDB file.
+    Args:
+        pdb_path: Path to the PDB file
+    Returns:
+        ESMProtein: The loaded protein structure
+    Raises:
+        FileNotFoundError: If the PDB file does not exist
+        ValueError: If the PDB file is improperly formatted
+    """
+
+    if not os.path.exists(pdb_path):
+        raise FileNotFoundError(f"PDB file not found: {pdb_path}")
+
+    try:
+        chain = ProteinChain.from_pdb(pdb_path)
+        loaded_protein = ESMProtein.from_protein_chain(chain)
+        return loaded_protein
+    except Exception as e:
+        raise ValueError(f"Error loading PDB file: {e}") from e
+
+def load_sequence_from_pdb(pdb_path: str) -> str:
+    """
+    Load a sequence from a PDB file.
+
+    Args:
+        pdb_path: Path to the PDB file
+    Returns:
+        str: The loaded sequence
+    Raises:
+        FileNotFoundError: If the PDB file does not exist
+        ValueError: If the PDB file is improperly formatted or has no sequence
+    """
+
+    loaded_protein = load_protein_from_pdb_file(pdb_path)
+    try:
+        sequence = loaded_protein.sequence
+
+        if sequence is None:
+            raise ValueError("No sequence found in PDB file.")
+
+        return sequence
+    except Exception as e:
+        raise ValueError(f"Error loading PDB file: {e}") from e
+
 
 @cache_to_pickle(path_param_name="cache_path")
 def load_sequences(
     domain_dataframe: pd.DataFrame,
-    fasta_path_column: str,
+    use_pdb_sequences: bool = False,
+    pdb_path_column: Optional[str] = None,
+    fasta_path_column: Optional[str] = None,
     cache_path: Optional[str] = None,
 ) -> List[str | None]:
     """
-    Load sequences from FASTA files specified in the dataframe.
+    Load sequences from FASTA/PDB files specified in the dataframe.
 
     Args:
-        domain_dataframe: DataFrame containing domain data with FASTA paths
+        domain_dataframe: DataFrame containing domain data
+        use_pdb_sequences: Whether to use PDB sequences instead of FASTA
+        pdb_path_column: Name of the column containing PDB file paths
         fasta_path_column: Name of the column containing FASTA file paths
+        cache_path: Optional path to cache the loaded sequences
 
     Returns:
-        List[str]: List of loaded sequences
+        List[str | None]: List of loaded sequences
     """
     sequences: List[str | None] = []
     for index, row in tqdm(
@@ -115,16 +194,27 @@ def load_sequences(
         total=len(domain_dataframe),
         desc="Loading sequences",
     ):
-        fasta_path = row[fasta_path_column]
-        if fasta_path is None:
+        should_use_pdb = (
+            use_pdb_sequences and pdb_path_column and row[pdb_path_column] is not None
+        )
+        file_path_column = pdb_path_column if should_use_pdb else fasta_path_column
+
+        file_path = str(row[file_path_column])
+        if file_path is None:
             sequences.append(None)
             continue
 
         try:
-            sequence = load_sequence_from_fasta(fasta_path)
+            sequence = (
+                load_sequence_from_pdb(file_path)
+                if should_use_pdb
+                else load_sequence_from_fasta(file_path)
+            )
             sequences.append(sequence)
         except (FileNotFoundError, ValueError) as e:
-            print(f"Error loading FASTA file for row {index}: {e}")
+            print(
+                f"Error loading {'PDB' if should_use_pdb else 'FASTA'} file for row {index}: {e}"
+            )
             sequences.append(None)
             continue
 
@@ -143,12 +233,9 @@ def load_structure_from_pdb(pdb_path: str) -> torch.Tensor:
         FileNotFoundError: If the PDB file does not exist
         ValueError: If the PDB file is improperly formatted or has no coordinates
     """
-    if not os.path.exists(pdb_path):
-        raise FileNotFoundError(f"PDB file not found: {pdb_path}")
+    loaded_protein = load_protein_from_pdb_file(pdb_path)
 
     try:
-        chain = ProteinChain.from_pdb(pdb_path)
-        loaded_protein = ESMProtein.from_protein_chain(chain)
         coordinates = loaded_protein.coordinates
 
         if coordinates is None:
@@ -171,6 +258,7 @@ def load_structures(
     Args:
         domain_dataframe: DataFrame containing domain data with PDB paths
         pdb_path_column: Name of the column containing PDB file paths
+        cache_path: Optional path to cache the loaded structures
 
     Returns:
         List[torch.Tensor]: List of loaded structures
@@ -182,7 +270,7 @@ def load_structures(
         total=len(domain_dataframe),
         desc="Loading structures",
     ):
-        pdb_path = row[pdb_path_column]
+        pdb_path = str(row[pdb_path_column])
         if pdb_path is None:
             structures.append(None)
             continue
