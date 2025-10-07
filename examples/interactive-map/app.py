@@ -57,7 +57,7 @@ if args.fasta_path_column or args.use_pdb_sequences:
         f"Loaded {len([s for s in sequences if s])} sequences from {'FASTA' if not args.use_pdb_sequences else 'PDB'} files."
     )
 
-if args.pdb_path_column:
+if args.pdb_path_column and args.include_structures:
     print("Loading structures from PDB files...")
     structures = load_structures(
         domain_dataframe=domain_dataframe,
@@ -76,8 +76,8 @@ clss_model = load_clss(args.model_repo, args.model_filename)
 sequence_embeddings, structure_embeddings = embed_dataframe(
     clss_model,
     domain_dataframe,
-    sequence_column=SEQUENCE_COLUMN,
-    structure_column=STRUCTURE_COLUMN,
+    sequence_column=SEQUENCE_COLUMN if args.fasta_path_column or (args.use_pdb_sequences and args.pdb_path_column) else None,
+    structure_column=STRUCTURE_COLUMN if args.pdb_path_column and args.include_structures else None,
     cache_path=embeddings_cache_path,
 )
 

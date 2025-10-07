@@ -23,6 +23,7 @@ class CLIArgs:
         tsne_max_iterations: Maximum iterations for t-SNE (required)
         tsne_random_state: Random state for t-SNE reproducibility (required)
         html_output_path: Path to the HTML output file (required)
+        include_structures: Whether to include structure data if PDB column is provided (default: True)
         use_pdb_sequences: Whether to use sequences extracted from PDB files when PDB column is provided (default: False)
         use_record_id: Whether to use the domain ID as the record ID in FASTA files (default: False)
         fasta_path_column: Name of the FASTA path column in the dataset (at least one of fasta_path_column or pdb_path_column is required)
@@ -42,6 +43,7 @@ class CLIArgs:
     tsne_max_iterations: int
     tsne_random_state: int
     html_output_path: str
+    include_structures: bool = True
     use_pdb_sequences: bool = False
     use_record_id: bool = False
     fasta_path_column: Optional[str] = None
@@ -155,6 +157,12 @@ def create_argument_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
+        "--include-structures",
+        action="store_true",
+        help="Whether to include structure data if PDB column is provided (default: True)"
+    )
+
+    parser.add_argument(
         "--use-pdb-sequences",
         action="store_true",
         help="Whether to use sequences extracted from PDB files when PDB column is provided (default: False)"
@@ -199,6 +207,7 @@ def parse_args() -> CLIArgs:
         tsne_max_iterations=parsed.tsne_max_iterations,
         tsne_random_state=parsed.tsne_random_state,
         html_output_path=parsed.html_output_path,
+        include_structures=parsed.include_structures,
         use_pdb_sequences=parsed.use_pdb_sequences,
         use_record_id=parsed.use_record_id,
         fasta_path_column=parsed.fasta_path_column,
