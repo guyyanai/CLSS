@@ -8,6 +8,7 @@ from dataset import (
 )
 from embeddings import load_clss, embed_dataframe
 from dim_reducer import apply_dim_reduction
+from mapper import create_and_export_visualization
 from utils import create_cache_paths, disable_warnings
 
 # Constants for DataFrame columns
@@ -86,6 +87,7 @@ embedded_dataframe = create_embedded_dataframe(
     structure_embeddings,
     id_column=args.id_column,
     label_column=args.label_column,
+    hex_color_column=args.hex_color_column,
 )
 
 print(
@@ -103,3 +105,13 @@ print(f"Reduced embeddings to 2D with shape {reduced_embeddings.shape}.")
 
 map_dataframe = create_map_dataframe(embedded_dataframe, reduced_embeddings)
 print(f"Created map dataframe with {len(map_dataframe)} entries.")
+
+# Create and export interactive visualization
+create_and_export_visualization(
+    map_dataframe=map_dataframe,
+    id_column=args.id_column,
+    label_column=args.label_column,
+    output_path=args.html_output_path,
+    hex_color_column=args.hex_color_column,
+    title="CLSS Protein Domain Interactive Map"
+)

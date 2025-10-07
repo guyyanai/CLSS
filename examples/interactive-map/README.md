@@ -1,8 +1,6 @@
-# CLSS Interactive Protein Domain Map (WIP)
+# CLSS Interactive Protein Domain Map
 
 An interactive visualization tool for exploring protein domains through multi-modal embeddings using the CLSS (Contrastive Learning of Sequence and Structure) model.
-
-> **Note**: This tool processes data and creates visualizations but does not yet include the final interactive mapping component (mapper.py is currently empty).
 
 ## Overview
 
@@ -16,11 +14,12 @@ This application creates an interactive 2D visualization of protein domains by:
 ## Features
 
 - 📊 **Multi-modal visualization** - sequences and structures in the same embedding space
-- 🎨 **Color-coded labels** - protein domains colored by functional/structural categories
-- 🔍 **Shape-coded modalities** - different markers for sequence vs structure data
+- 🎨 **Custom color mapping** - use hex colors with meaningful legend labels
+- 🔍 **Shape-coded modalities** - circles for sequences, squares for structures
+- 🖱️ **Interactive controls** - scrollwheel zoom, pan, hover tooltips
+- 📱 **Full-screen experience** - visualization fills entire browser window
 - 💾 **Smart caching** - avoids recomputing expensive operations
-- 📱 **Interactive exploration** - zoom, pan, hover for detailed information
-- 📄 **Export capability** - save visualizations as standalone HTML files
+- � **Standalone HTML export** - self-contained interactive visualizations
 
 ## Pipeline Overview
 
@@ -134,6 +133,30 @@ d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
 2. **PDB-only mode**: Use `--pdb-path-column` with `--use-pdb-sequences` to extract sequences from PDB files
 3. **Mixed mode**: Provide both `--fasta-path-column` and `--pdb-path-column` for dual-modality analysis
 
+## Output
+
+The application generates a complete interactive visualization:
+
+### Interactive HTML Visualization
+- **Full-screen display**: Automatically fills the entire browser window
+- **Scatter plot**: Each point represents a domain-modality pair in t-SNE space
+- **Custom colors**: Points colored using hex values from your color column
+- **Meaningful legends**: Legend shows label names, not hex codes
+- **Shape distinction**: Circles for sequences, squares for structures
+- **Interactive controls**:
+  - 🖱️ Scrollwheel to zoom in/out
+  - 🖱️ Click and drag to pan
+  - 🖱️ Double-click to reset view
+  - 📱 Hover for detailed domain information
+- **Export options**: Download plot as high-resolution PNG
+
+### Cached Data
+Intermediate results stored for faster re-runs (if `--cache-path` specified):
+- `sequences.pkl`: Parsed sequences from FASTA/PDB files
+- `structures.pkl`: Loaded protein structure coordinates
+- `embeddings.pkl`: CLSS model embeddings
+- `reduced_embeddings.pkl`: t-SNE 2D coordinates
+
 ## Performance & Caching
 
 ### Caching Strategy
@@ -153,7 +176,7 @@ The tool implements multi-level caching to avoid expensive recomputation:
 - **`dataset.py`**: Data loading and preprocessing functions
 - **`embeddings.py`**: CLSS model loading and embedding generation
 - **`dim_reducer.py`**: t-SNE dimensionality reduction
-- **`mapper.py`**: Interactive visualization creation *(currently empty - not yet implemented)*
+- **`mapper.py`**: Interactive Plotly visualization creation and HTML export
 - **`utils.py`**: Utility functions and caching helpers
 - **`app.py`**: Main application orchestrator
 
@@ -177,10 +200,12 @@ The tool implements multi-level caching to avoid expensive recomputation:
    - Optional custom colors
 8. **Dimensionality Reduction**: Apply t-SNE to reduce embeddings to 2D coordinates
 9. **Final Dataframe**: Create visualization-ready dataframe with x,y coordinates
-10. **HTML Export**: *(Not yet implemented)* - Generate interactive Plotly visualization
+10. **Interactive Visualization**: Generate full-screen Plotly scatter plot with:
+    - Custom colors from hex color column (if provided)
+    - Legend labels from label column
+    - Shape coding for sequence vs structure modalities
+    - Hover tooltips with domain information
+    - Scrollwheel zoom and pan controls
+11. **HTML Export**: Save as standalone, responsive HTML file
 
-### Performance Optimization
 
-- **GPU Acceleration**: The CLSS model will automatically use GPU if available
-- **Parallel Processing**: Multiple CPU cores used for file I/O operations
-- **Memory Management**: Large datasets processed in batches to avoid memory overflow
