@@ -25,7 +25,8 @@ disable_warnings()
 (
     sequences_cache_path,
     structures_cache_path,
-    embeddings_cache_path,
+    sequence_embeddings_cache_path,
+    structure_embeddings_cache_path,
     reduced_embeddings_cache_path,
 ) = create_cache_paths(args.cache_path)
 
@@ -57,7 +58,7 @@ if args.fasta_path_column or args.use_pdb_sequences:
         f"Loaded {len([s for s in sequences if s])} sequences from {'FASTA' if not args.use_pdb_sequences else 'PDB'} files."
     )
 
-if args.pdb_path_column and args.include_structures:
+if args.pdb_path_column and not args.exclude_structures:
     print("Loading structures from PDB files...")
     structures = load_structures(
         domain_dataframe=domain_dataframe,
@@ -77,8 +78,9 @@ sequence_embeddings, structure_embeddings = embed_dataframe(
     clss_model,
     domain_dataframe,
     sequence_column=SEQUENCE_COLUMN if args.fasta_path_column or (args.use_pdb_sequences and args.pdb_path_column) else None,
-    structure_column=STRUCTURE_COLUMN if args.pdb_path_column and args.include_structures else None,
-    cache_path=embeddings_cache_path,
+    structure_column=STRUCTURE_COLUMN if args.pdb_path_column and not args.exclude_structures else None,
+    sequence_emb_cache_path=sequence_embeddings_cache_path,
+    structure_emb_cache_path=structure_embeddings_cache_path,
 )
 
 embedded_dataframe = create_embedded_dataframe(

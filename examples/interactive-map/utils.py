@@ -32,7 +32,8 @@ def create_cache_paths(base_cache_path: Optional[str] = None) -> Tuple:
         return (
             os.path.join(base_cache_path, "sequences.pkl"),
             os.path.join(base_cache_path, "structures.pkl"),
-            os.path.join(base_cache_path, "embeddings.pkl"),
+            os.path.join(base_cache_path, "sequence_embeddings.pkl"),
+            os.path.join(base_cache_path, "structure_embeddings.pkl"),
             os.path.join(base_cache_path, "reduced_embeddings.pkl"),
         )
 
