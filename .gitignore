@@ -133,3 +133,4 @@ tests/
 
 build.sh
 upload.sh
+squash/
