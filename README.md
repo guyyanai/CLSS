@@ -56,6 +56,13 @@ Complete examples are available in the [`examples/`](examples/) directory:
   - `infer.py` - Protein sequence and structure embedding
   - `sample-pdbs/` - Example PDB files for testing
 
+- **[`examples/interactive-map/`](examples/interactive-map/)** - Interactive visualization
+  - `app.py` - Complete pipeline from data to interactive HTML visualization
+  - `mapper.py` - Plotly-based interactive scatter plot creation
+  - `dataset.py` - Multi-modal data loading (FASTA/PDB)
+  - `embeddings.py` - CLSS model inference and embedding generation
+  - `dim_reducer.py` - t-SNE dimensionality reduction
+
 ---
 
 ## Data
