@@ -87,6 +87,7 @@ python app.py \
 | `--tsne-max-iterations` | ❌ | 1000 | Maximum t-SNE iterations |
 | `--tsne-random-state` | ❌ | 0 | Random state for reproducibility |
 | `--hex-color-column` | ❌ | - | Column with hex color codes for custom colors |
+| `--include-structures` | ❌ | True | Include structure data if PDB column is provided |
 | `--use-pdb-sequences` | ❌ | False | Extract sequences from PDB files instead of FASTA |
 | `--use-record-id` | ❌ | False | Use domain ID as FASTA record ID when loading |
 | `--cache-path` | ❌ | - | Directory for caching intermediate results |
