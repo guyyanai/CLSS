@@ -67,7 +67,9 @@ Complete examples are available in the [`examples/`](examples/) directory:
 
 ## Data
 
-* **ECOD‑AF2 domains** (training/validation set).
+* **ECOD‑AF2 domains** (training/validation set) - Available in `datasets/training/`
+* **F40-large-folds** (Dataset 1 from paper) - Available in `datasets/F40-large-folds/`
+  - Contains all ECOD-PDB-F40 domains in folds with more than 50 domains
 
 ---
 
