@@ -142,7 +142,7 @@ class CLSSModel(pl.LightningModule):
         model_path = download_pretrained_model(repo_id=repo_id, model_name=model_name)
 
         # Load model
-        return cls.load_from_checkpoint(checkpoint_path=model_path, map_location=device)
+        return cls.load_from_checkpoint(checkpoint_path=model_path, map_location=device, strict=False)
 
     @classmethod
     def from_checkpoint(cls, checkpoint_path: str) -> "CLSSModel":
