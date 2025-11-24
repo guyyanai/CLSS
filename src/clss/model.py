@@ -145,17 +145,18 @@ class CLSSModel(pl.LightningModule):
         return cls.load_from_checkpoint(checkpoint_path=model_path, map_location=device, strict=False)
 
     @classmethod
-    def from_checkpoint(cls, checkpoint_path: str) -> "CLSSModel":
+    def from_checkpoint(cls, checkpoint_path: str, device: str = "cuda") -> "CLSSModel":
         """
         Load CLSS model from local checkpoint.
 
         Args:
             checkpoint_path: Path to model checkpoint
+            device: Device to map the model to
 
         Returns:
             CLSSModel
         """
-        return cls.load_from_checkpoint(checkpoint_path)
+        return cls.load_from_checkpoint(checkpoint_path=checkpoint_path, map_location=device, strict=False)
 
     def load_esm2(self, checkpoint: str) -> None:
         # Load the pre-trained ESM2 tokenizer & model
