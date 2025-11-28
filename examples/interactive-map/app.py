@@ -34,9 +34,14 @@ domain_dataframe = load_domain_dataset(
     args.dataset_path,
     args.id_column,
     args.label_column,
-    args.fasta_path_column,
-    args.pdb_path_column,
-    args.hex_color_column,
+    [
+        args.fasta_path_column,
+        args.pdb_path_column,
+        args.hex_color_column,
+        args.line_width_column,
+        args.line_color_column,
+        args.alpha_column,
+    ],
 )
 print(f"Loaded domain dataset with {len(domain_dataframe)} entries")
 
@@ -77,8 +82,16 @@ clss_model = load_clss(args.model_repo, args.model_filename)
 sequence_embeddings, structure_embeddings = embed_dataframe(
     clss_model,
     domain_dataframe,
-    sequence_column=SEQUENCE_COLUMN if args.fasta_path_column or (args.use_pdb_sequences and args.pdb_path_column) else None,
-    structure_column=STRUCTURE_COLUMN if args.pdb_path_column and not args.exclude_structures else None,
+    sequence_column=(
+        SEQUENCE_COLUMN
+        if args.fasta_path_column or (args.use_pdb_sequences and args.pdb_path_column)
+        else None
+    ),
+    structure_column=(
+        STRUCTURE_COLUMN
+        if args.pdb_path_column and not args.exclude_structures
+        else None
+    ),
     sequence_emb_cache_path=sequence_embeddings_cache_path,
     structure_emb_cache_path=structure_embeddings_cache_path,
 )
@@ -90,6 +103,9 @@ embedded_dataframe = create_embedded_dataframe(
     id_column=args.id_column,
     label_column=args.label_column,
     hex_color_column=args.hex_color_column,
+    line_width_column=args.line_width_column,
+    line_color_column=args.line_color_column,
+    alpha_column=args.alpha_column,
 )
 
 print(
@@ -115,5 +131,8 @@ create_and_export_visualization(
     label_column=args.label_column,
     output_path=args.html_output_path,
     hex_color_column=args.hex_color_column,
-    title="CLSS Protein Domain Interactive Map"
+    line_width_column=args.line_width_column,
+    line_color_column=args.line_color_column,
+    alpha_column=args.alpha_column,
+    title="CLSS Protein Domain Interactive Map",
 )

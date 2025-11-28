@@ -29,6 +29,9 @@ class CLIArgs:
         fasta_path_column: Name of the FASTA path column in the dataset (at least one of fasta_path_column or pdb_path_column is required)
         pdb_path_column: Name of the PDB path column in the dataset (at least one of fasta_path_column or pdb_path_column is required)
         hex_color_column: Name of the column with hex color codes for points (optional)
+        line_width_column: Name of the column for marker line widths (optional)
+        line_color_column: Name of the column for marker line colors (optional)
+        alpha_column: Name of the column for marker opacity/transparency values (optional)
         cache_path: Path to the cache directory (optional)
 
     Raises:
@@ -49,6 +52,9 @@ class CLIArgs:
     fasta_path_column: Optional[str] = None
     pdb_path_column: Optional[str] = None
     hex_color_column: Optional[str] = None
+    line_width_column: Optional[str] = None
+    line_color_column: Optional[str] = None
+    alpha_column: Optional[str] = None
     cache_path: Optional[str] = None
 
     def __post_init__(self):
@@ -126,6 +132,27 @@ def create_argument_parser() -> argparse.ArgumentParser:
         type=str,
         default=None,
         help="Name of the column with hex color codes for points (optional)"
+    )
+
+    parser.add_argument(
+        "--line-width-column",
+        type=str,
+        default=None,
+        help="Name of the column for marker line widths (optional)"
+    )
+
+    parser.add_argument(
+        "--line-color-column",
+        type=str,
+        default=None,
+        help="Name of the column for marker line colors (optional)"
+    )
+
+    parser.add_argument(
+        "--alpha-column",
+        type=str,
+        default=None,
+        help="Name of the column for marker opacity/transparency values (optional)"
     )
 
     parser.add_argument(
@@ -213,5 +240,8 @@ def parse_args() -> CLIArgs:
         fasta_path_column=parsed.fasta_path_column,
         pdb_path_column=parsed.pdb_path_column,
         hex_color_column=parsed.hex_color_column,
+        line_width_column=parsed.line_width_column,
+        line_color_column=parsed.line_color_column,
+        alpha_column=parsed.alpha_column,
         cache_path=parsed.cache_path,
     )

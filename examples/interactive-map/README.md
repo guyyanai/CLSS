@@ -16,10 +16,11 @@ This application creates an interactive 2D visualization of protein domains by:
 - 📊 **Multi-modal visualization** - sequences and structures in the same embedding space
 - 🎨 **Custom color mapping** - use hex colors with meaningful legend labels
 - 🔍 **Shape-coded modalities** - circles for sequences, squares for structures
+- 🖌️ **Advanced marker styling** - customize border width, border color, and transparency per marker
 - 🖱️ **Interactive controls** - scrollwheel zoom, pan, hover tooltips
 - 📱 **Full-screen experience** - visualization fills entire browser window
 - 💾 **Smart caching** - avoids recomputing expensive operations
-- � **Standalone HTML export** - self-contained interactive visualizations
+- 📄 **Standalone HTML export** - self-contained interactive visualizations
 
 ## Pipeline Overview
 
@@ -66,6 +67,9 @@ python app.py \
     --tsne-perplexity 50 \
     --tsne-max-iterations 1000 \
     --hex-color-column custom_color \
+    --line-width-column border_width \
+    --line-color-column border_color \
+    --alpha-column transparency \
     --use-pdb-sequences \
     --use-record-id \
     --cache-path ./cache
@@ -87,6 +91,9 @@ python app.py \
 | `--tsne-max-iterations` | ❌ | 1000 | Maximum t-SNE iterations |
 | `--tsne-random-state` | ❌ | 0 | Random state for reproducibility |
 | `--hex-color-column` | ❌ | - | Column with hex color codes for custom colors |
+| `--line-width-column` | ❌ | - | Column with numeric values for marker border widths |
+| `--line-color-column` | ❌ | - | Column with color values for marker border colors |
+| `--alpha-column` | ❌ | - | Column with opacity values (0-1) for marker transparency |
 | `--exclude-structures` | ❌ | False | Exclude structure data if PDB column is provided |
 | `--use-pdb-sequences` | ❌ | False | Extract sequences from PDB files instead of FASTA |
 | `--use-record-id` | ❌ | False | Use domain ID as FASTA record ID when loading |
@@ -117,6 +124,9 @@ d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
 - **FASTA path column**: Paths to FASTA files (specified via `--fasta-path-column`)
 - **PDB path column**: Paths to PDB files (specified via `--pdb-path-column`)
 - **Hex color column**: Custom hex colors for points (specified via `--hex-color-column`)
+- **Line width column**: Numeric values for marker border widths (specified via `--line-width-column`)
+- **Line color column**: Color values for marker border colors (specified via `--line-color-column`)
+- **Alpha column**: Opacity values (0-1) for marker transparency (specified via `--alpha-column`)
 
 ### File Requirements
 
@@ -142,6 +152,7 @@ The application generates a complete interactive visualization:
 - **Full-screen display**: Automatically fills the entire browser window
 - **Scatter plot**: Each point represents a domain-modality pair in t-SNE space
 - **Custom colors**: Points colored using hex values from your color column
+- **Per-marker styling**: Individual customization of border width, border color, and transparency for each marker
 - **Meaningful legends**: Legend shows label names, not hex codes
 - **Shape distinction**: Circles for sequences, squares for structures
 - **Interactive controls**:

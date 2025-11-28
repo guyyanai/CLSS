@@ -17,9 +17,7 @@ def load_domain_dataset(
     dataset_path: str,
     id_column: str,
     label_column: str,
-    fasta_path_column: Optional[str] = None,
-    pdb_path_column: Optional[str] = None,
-    hex_color_column: Optional[str] = None,
+    optional_columns: List[Optional[str]],
 ) -> pd.DataFrame:
     """
     Load the domain dataset from a CSV file and validate required columns.
@@ -28,9 +26,7 @@ def load_domain_dataset(
         dataset_path: Path to the CSV dataset file
         id_column: Name of the domain ID column
         label_column: Name of the label column
-        fasta_path_column: Name of the FASTA path column
-        pdb_path_column: Name of the PDB path column
-        hex_color_column: Name of the column with hex color codes for points
+        optional_columns: List of optional column names to validate
 
     Returns:
         pd.DataFrame: Loaded domain dataset
@@ -47,22 +43,12 @@ def load_domain_dataset(
     if label_column not in domain_dataframe.columns:
         raise ValueError(f"Column '{label_column}' not found in dataset")
 
-    if (
-        fasta_path_column is not None
-        and fasta_path_column not in domain_dataframe.columns
-    ):
-        raise ValueError(f"Column '{fasta_path_column}' not found in dataset")
-
-    if pdb_path_column is not None and pdb_path_column not in domain_dataframe.columns:
-        raise ValueError(f"Column '{pdb_path_column}' not found in dataset")
-
-    if (
-        hex_color_column is not None
-        and hex_color_column not in domain_dataframe.columns
-    ):
-        raise ValueError(f"Column '{hex_color_column}' not found in dataset")
-
+    for col in optional_columns:
+        if col is not None and col not in domain_dataframe.columns:
+            raise ValueError(f"Column '{col}' not found in dataset")
+    
     return domain_dataframe
+
 
 @cache
 def load_fasta_to_dict(fasta_path: str) -> Dict[str, SeqIO.SeqRecord]:
@@ -82,8 +68,11 @@ def load_fasta_to_dict(fasta_path: str) -> Dict[str, SeqIO.SeqRecord]:
     if os.path.getsize(fasta_path) == 0:
         raise ValueError("The FASTA file is empty.")
 
-    records: Dict[str, SeqIO.SeqRecord] = SeqIO.to_dict(SeqIO.parse(fasta_path, "fasta"))
+    records: Dict[str, SeqIO.SeqRecord] = SeqIO.to_dict(
+        SeqIO.parse(fasta_path, "fasta")
+    )
     return records
+
 
 def load_sequence_from_fasta(fasta_path: str, record_id: Optional[str] = None) -> str:
     """
@@ -101,7 +90,7 @@ def load_sequence_from_fasta(fasta_path: str, record_id: Optional[str] = None) -
         ValueError: If the FASTA file is empty or improperly formatted
     """
     fasta_dict = load_fasta_to_dict(fasta_path)
-    
+
     if record_id:
         record = fasta_dict.get(record_id, None)
         if record is None:
@@ -119,6 +108,7 @@ def load_sequence_from_fasta(fasta_path: str, record_id: Optional[str] = None) -
         raise ValueError("Sequence is empty.")
 
     return str(record.seq)
+
 
 @cache
 def load_protein_from_pdb_file(pdb_path: str):
@@ -142,6 +132,7 @@ def load_protein_from_pdb_file(pdb_path: str):
         return loaded_protein
     except Exception as e:
         raise ValueError(f"Error loading PDB file: {e}") from e
+
 
 def load_sequence_from_pdb(pdb_path: str) -> str:
     """
@@ -299,6 +290,9 @@ def create_embedded_dataframe(
     id_column: str,
     label_column: str,
     hex_color_column: Optional[str] = None,
+    line_width_column: Optional[str] = None,
+    line_color_column: Optional[str] = None,
+    alpha_column: Optional[str] = None,
 ) -> pd.DataFrame:
     """
     Create a new DataFrame with embedded sequences and structures.
@@ -310,6 +304,9 @@ def create_embedded_dataframe(
         id_column: Name of the domain ID column
         label_column: Name of the label column
         hex_color_column: Name of the column with hex color codes for points (optional)
+        line_width_column: Name of the column for marker line widths (optional)
+        line_color_column: Name of the column for marker line colors (optional)
+        alpha_column: Name of the column for marker opacity/transparency values (optional)
 
     Returns:
         pd.DataFrame: New DataFrame with embedded sequences and structures
@@ -319,6 +316,9 @@ def create_embedded_dataframe(
     embeddings = []
     labels = []
     colors = []
+    line_widths = []
+    line_colors = []
+    alphas = []
 
     for (_, row), seq_emb, struct_emb in zip(
         domain_dataframe.iterrows(), sequence_embeddings, structure_embeddings
@@ -330,6 +330,12 @@ def create_embedded_dataframe(
             labels.append(row[label_column])
             if hex_color_column is not None:
                 colors.append(row[hex_color_column])
+            if line_width_column is not None:
+                line_widths.append(row[line_width_column])
+            if line_color_column is not None:
+                line_colors.append(row[line_color_column])
+            if alpha_column is not None:
+                alphas.append(row[alpha_column])
 
         if struct_emb is not None:
             domain_ids.append(row[id_column])
@@ -338,6 +344,12 @@ def create_embedded_dataframe(
             labels.append(row[label_column])
             if hex_color_column is not None:
                 colors.append(row[hex_color_column])
+            if line_width_column is not None:
+                line_widths.append(row[line_width_column])
+            if line_color_column is not None:
+                line_colors.append(row[line_color_column])
+            if alpha_column is not None:
+                alphas.append(row[alpha_column])
 
     embedded_dataframe = pd.DataFrame(
         {
@@ -350,6 +362,15 @@ def create_embedded_dataframe(
 
     if hex_color_column is not None:
         embedded_dataframe[hex_color_column] = colors
+
+    if line_width_column is not None:
+        embedded_dataframe[line_width_column] = line_widths
+
+    if line_color_column is not None:
+        embedded_dataframe[line_color_column] = line_colors
+    
+    if alpha_column is not None:
+        embedded_dataframe[alpha_column] = alphas
 
     return embedded_dataframe
 
