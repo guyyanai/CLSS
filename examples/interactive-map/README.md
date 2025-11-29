@@ -70,6 +70,7 @@ python app.py \
     --line-width-column border_width \
     --line-color-column border_color \
     --alpha-column transparency \
+    --hover-columns resolution b_factor method \
     --use-pdb-sequences \
     --use-record-id \
     --cache-path ./cache
@@ -94,6 +95,7 @@ python app.py \
 | `--line-width-column` | ❌ | - | Column with numeric values for marker border widths |
 | `--line-color-column` | ❌ | - | Column with color values for marker border colors |
 | `--alpha-column` | ❌ | - | Column with opacity values (0-1) for marker transparency |
+| `--hover-columns` | ❌ | - | List of additional columns to include in hover tooltips |
 | `--exclude-structures` | ❌ | False | Exclude structure data if PDB column is provided |
 | `--use-pdb-sequences` | ❌ | False | Extract sequences from PDB files instead of FASTA |
 | `--use-record-id` | ❌ | False | Use domain ID as FASTA record ID when loading |
@@ -127,6 +129,7 @@ d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
 - **Line width column**: Numeric values for marker border widths (specified via `--line-width-column`)
 - **Line color column**: Color values for marker border colors (specified via `--line-color-column`)
 - **Alpha column**: Opacity values (0-1) for marker transparency (specified via `--alpha-column`)
+- **Hover columns**: Additional columns to display in hover tooltips (specified via `--hover-columns`)
 
 ### File Requirements
 
@@ -159,7 +162,7 @@ The application generates a complete interactive visualization:
   - 🖱️ Scrollwheel to zoom in/out
   - 🖱️ Click and drag to pan
   - 🖱️ Double-click to reset view
-  - 📱 Hover for detailed domain information
+  - 📱 Hover for detailed domain information (includes domain ID, label, modality, and any custom columns specified via `--hover-columns`)
 - **Export options**: Download plot as high-resolution PNG
 
 ### Cached Data

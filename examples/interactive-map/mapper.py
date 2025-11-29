@@ -18,6 +18,7 @@ def create_interactive_scatter_plot(
     line_width_column: Optional[str] = None,
     line_color_column: Optional[str] = None,
     alpha_column: Optional[str] = None,
+    hover_columns: Optional[list[str]] = None,
     title: str = "Protein Domain Interactive Map",
     width: Optional[int] = None,
     height: Optional[int] = None,
@@ -33,6 +34,7 @@ def create_interactive_scatter_plot(
         line_width_column: Optional column for marker line widths
         line_color_column: Optional column for marker line colors
         alpha_column: Optional column for marker opacity/transparency values (0-1)
+        hover_columns: Optional list of additional columns to include in hover info
         title: Plot title
         width: Plot width in pixels
         height: Plot height in pixels
@@ -48,9 +50,8 @@ def create_interactive_scatter_plot(
         "modality": True,
     }
 
-    # Add custom colors if available
-    if hex_color_column and hex_color_column in map_dataframe.columns:
-        hover_data[hex_color_column] = True
+    for col in hover_columns or []:
+        hover_data[col] = True
 
     # Define symbols for different modalities
     symbol_map = {"sequence": "circle", "structure": "square"}
@@ -238,6 +239,7 @@ def create_and_export_visualization(
     line_width_column: Optional[str] = None,
     line_color_column: Optional[str] = None,
     alpha_column: Optional[str] = None,
+    hover_columns: Optional[list[str]] = None,
     title: str = "Protein Domain Interactive Map",
     width: Optional[int] = None,
     height: Optional[int] = None,
@@ -254,6 +256,7 @@ def create_and_export_visualization(
         line_width_column: Optional column for marker line widths
         line_color_column: Optional column for marker line colors
         alpha_column: Optional column
+        hover_columns: Optional list of additional columns to include in hover info
         title: Plot title
         width: Plot width in pixels
         height: Plot height in pixels
@@ -270,6 +273,7 @@ def create_and_export_visualization(
         line_width_column=line_width_column,
         line_color_column=line_color_column,
         alpha_column=alpha_column,
+        hover_columns=hover_columns,
         title=title,
         width=width,
         height=height,

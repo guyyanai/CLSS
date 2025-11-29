@@ -41,6 +41,7 @@ domain_dataframe = load_domain_dataset(
         args.line_width_column,
         args.line_color_column,
         args.alpha_column,
+        *args.hover_columns,
     ],
 )
 print(f"Loaded domain dataset with {len(domain_dataframe)} entries")
@@ -101,11 +102,6 @@ embedded_dataframe = create_embedded_dataframe(
     sequence_embeddings,
     structure_embeddings,
     id_column=args.id_column,
-    label_column=args.label_column,
-    hex_color_column=args.hex_color_column,
-    line_width_column=args.line_width_column,
-    line_color_column=args.line_color_column,
-    alpha_column=args.alpha_column,
 )
 
 print(
@@ -134,5 +130,6 @@ create_and_export_visualization(
     line_width_column=args.line_width_column,
     line_color_column=args.line_color_column,
     alpha_column=args.alpha_column,
+    hover_columns=args.hover_columns,
     title="CLSS Protein Domain Interactive Map",
 )

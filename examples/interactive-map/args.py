@@ -32,6 +32,7 @@ class CLIArgs:
         line_width_column: Name of the column for marker line widths (optional)
         line_color_column: Name of the column for marker line colors (optional)
         alpha_column: Name of the column for marker opacity/transparency values (optional)
+        hover_columns: Optional list of additional columns to include in hover info (optional)
         cache_path: Path to the cache directory (optional)
 
     Raises:
@@ -55,6 +56,7 @@ class CLIArgs:
     line_width_column: Optional[str] = None
     line_color_column: Optional[str] = None
     alpha_column: Optional[str] = None
+    hover_columns: Optional[list[str]] = None
     cache_path: Optional[str] = None
 
     def __post_init__(self):
@@ -156,6 +158,14 @@ def create_argument_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
+        "--hover-columns",
+        type=str,
+        nargs="*",
+        default=None,
+        help="List of additional columns to include in hover info (optional)"
+    )
+
+    parser.add_argument(
         "--tsne-perplexity",
         type=int,
         default=30,
@@ -243,5 +253,6 @@ def parse_args() -> CLIArgs:
         line_width_column=parsed.line_width_column,
         line_color_column=parsed.line_color_column,
         alpha_column=parsed.alpha_column,
+        hover_columns=parsed.hover_columns,
         cache_path=parsed.cache_path,
     )

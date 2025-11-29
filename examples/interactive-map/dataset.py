@@ -288,11 +288,6 @@ def create_embedded_dataframe(
     sequence_embeddings: List[np.ndarray | None],
     structure_embeddings: List[np.ndarray | None],
     id_column: str,
-    label_column: str,
-    hex_color_column: Optional[str] = None,
-    line_width_column: Optional[str] = None,
-    line_color_column: Optional[str] = None,
-    alpha_column: Optional[str] = None,
 ) -> pd.DataFrame:
     """
     Create a new DataFrame with embedded sequences and structures.
@@ -302,11 +297,6 @@ def create_embedded_dataframe(
         sequence_embeddings: List of sequence embeddings
         structure_embeddings: List of structure embeddings
         id_column: Name of the domain ID column
-        label_column: Name of the label column
-        hex_color_column: Name of the column with hex color codes for points (optional)
-        line_width_column: Name of the column for marker line widths (optional)
-        line_color_column: Name of the column for marker line colors (optional)
-        alpha_column: Name of the column for marker opacity/transparency values (optional)
 
     Returns:
         pd.DataFrame: New DataFrame with embedded sequences and structures
@@ -314,11 +304,6 @@ def create_embedded_dataframe(
     domain_ids = []
     modalities = []
     embeddings = []
-    labels = []
-    colors = []
-    line_widths = []
-    line_colors = []
-    alphas = []
 
     for (_, row), seq_emb, struct_emb in zip(
         domain_dataframe.iterrows(), sequence_embeddings, structure_embeddings
@@ -327,50 +312,24 @@ def create_embedded_dataframe(
             domain_ids.append(row[id_column])
             modalities.append("sequence")
             embeddings.append(seq_emb)
-            labels.append(row[label_column])
-            if hex_color_column is not None:
-                colors.append(row[hex_color_column])
-            if line_width_column is not None:
-                line_widths.append(row[line_width_column])
-            if line_color_column is not None:
-                line_colors.append(row[line_color_column])
-            if alpha_column is not None:
-                alphas.append(row[alpha_column])
 
         if struct_emb is not None:
             domain_ids.append(row[id_column])
             modalities.append("structure")
             embeddings.append(struct_emb)
-            labels.append(row[label_column])
-            if hex_color_column is not None:
-                colors.append(row[hex_color_column])
-            if line_width_column is not None:
-                line_widths.append(row[line_width_column])
-            if line_color_column is not None:
-                line_colors.append(row[line_color_column])
-            if alpha_column is not None:
-                alphas.append(row[alpha_column])
 
     embedded_dataframe = pd.DataFrame(
         {
             id_column: domain_ids,
             "modality": modalities,
             "embedding": embeddings,
-            label_column: labels,
         }
     )
 
-    if hex_color_column is not None:
-        embedded_dataframe[hex_color_column] = colors
-
-    if line_width_column is not None:
-        embedded_dataframe[line_width_column] = line_widths
-
-    if line_color_column is not None:
-        embedded_dataframe[line_color_column] = line_colors
-    
-    if alpha_column is not None:
-        embedded_dataframe[alpha_column] = alphas
+    # Merge embedded dataframe with original dataframe to retain additional columns
+    embedded_dataframe = embedded_dataframe.merge(
+        domain_dataframe, on=id_column, how="left"
+    )
 
     return embedded_dataframe
 
