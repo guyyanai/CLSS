@@ -10,8 +10,6 @@ import torch
 import numpy as np
 from utils import cache_to_pickle
 
-from args import CLIArgs
-
 
 def load_domain_dataset(
     dataset_path: str,
@@ -352,3 +350,114 @@ def create_map_dataframe(
     map_df["x"] = reduced_embeddings[:, 0]
     map_df["y"] = reduced_embeddings[:, 1]
     return map_df
+
+
+def load_pairings(
+    csv_path: str,
+    id_column: str,
+    valid_ids: set,
+) -> Dict[str, List[str]]:
+    """
+    Load pairings from a CSV file with unidirectional relationships.
+    
+    Args:
+        csv_path: Path to the CSV file with exactly 2 columns (source_id, target_id)
+        id_column: Name of the ID column (for error messages)
+        valid_ids: Set of valid IDs from the main dataset
+    
+    Returns:
+        Dict mapping source IDs to lists of target IDs
+    
+    Raises:
+        ValueError: If CSV doesn't have exactly 2 columns or contains invalid IDs
+    """
+    pairings_df = pd.read_csv(csv_path, header=None, dtype=str)
+    
+    if len(pairings_df.columns) != 2:
+        raise ValueError(
+            f"Pairings CSV must have exactly 2 columns (source_id, target_id), "
+            f"found {len(pairings_df.columns)} columns"
+        )
+    
+    pairings_df.columns = ["source_id", "target_id"]
+    
+    # Build unidirectional mapping
+    pairings_map: Dict[str, List[str]] = {}
+    invalid_sources = set()
+    invalid_targets = set()
+    
+    for _, row in pairings_df.iterrows():
+        source_id = str(row["source_id"]).strip()
+        target_id = str(row["target_id"]).strip()
+        
+        # Track invalid IDs
+        if source_id not in valid_ids:
+            invalid_sources.add(source_id)
+        if target_id not in valid_ids:
+            invalid_targets.add(target_id)
+        
+        # Build mapping (only for valid pairs)
+        if source_id in valid_ids and target_id in valid_ids:
+            if source_id not in pairings_map:
+                pairings_map[source_id] = []
+            pairings_map[source_id].append(target_id)
+    
+    # Report warnings for invalid IDs
+    if invalid_sources:
+        print(f"⚠️  Warning: {len(invalid_sources)} source IDs in pairings CSV not found in dataset")
+        if len(invalid_sources) <= 10:
+            print(f"   Invalid sources: {', '.join(list(invalid_sources)[:10])}")
+    
+    if invalid_targets:
+        print(f"⚠️  Warning: {len(invalid_targets)} target IDs in pairings CSV not found in dataset")
+        if len(invalid_targets) <= 10:
+            print(f"   Invalid targets: {', '.join(list(invalid_targets)[:10])}")
+    
+    print(f"✅ Loaded {len(pairings_map)} source IDs with pairings")
+    total_pairs = sum(len(targets) for targets in pairings_map.values())
+    print(f"   Total valid pairings: {total_pairs}")
+    
+    return pairings_map
+
+
+def build_pairings_index_map(
+    map_dataframe: pd.DataFrame,
+    id_column: str,
+    pairings_map: Dict[str, List[str]],
+) -> Dict[int, List[int]]:
+    """
+    Build a mapping from DataFrame indices to paired DataFrame indices.
+    
+    Args:
+        map_dataframe: The visualization DataFrame with index column
+        id_column: Name of the domain ID column
+        pairings_map: Dictionary mapping source IDs to target IDs
+    
+    Returns:
+        Dict mapping source DataFrame indices to lists of target DataFrame indices
+    """
+    # Build ID to indices mapping (one ID can have multiple indices due to modalities)
+    id_to_indices: Dict[str, List[int]] = {}
+    for idx, row in map_dataframe.iterrows():
+        domain_id = str(row[id_column])
+        if domain_id not in id_to_indices:
+            id_to_indices[domain_id] = []
+        id_to_indices[domain_id].append(idx)
+    
+    # Build index-based pairing map
+    index_pairings_map: Dict[int, List[int]] = {}
+    
+    for source_id, target_ids in pairings_map.items():
+        # Get all DataFrame indices for this source ID (both modalities)
+        source_indices = id_to_indices.get(source_id, [])
+        
+        # Get all target indices
+        target_indices = []
+        for target_id in target_ids:
+            target_indices.extend(id_to_indices.get(target_id, []))
+        
+        # Map each source index to all target indices
+        for source_idx in source_indices:
+            index_pairings_map[source_idx] = target_indices
+    
+    return index_pairings_map

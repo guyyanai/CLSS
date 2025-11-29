@@ -17,6 +17,7 @@ This application creates an interactive 2D visualization of protein domains by:
 - 🎨 **Custom color mapping** - use hex colors with meaningful legend labels
 - 🔍 **Shape-coded modalities** - circles for sequences, squares for structures
 - 🖌️ **Advanced marker styling** - customize border width, border color, and transparency per marker
+- 🔗 **Click-to-highlight pairings** - interactively highlight related points via CSV pairings
 - 🖱️ **Interactive controls** - scrollwheel zoom, pan, hover tooltips
 - 📱 **Full-screen experience** - visualization fills entire browser window
 - 💾 **Smart caching** - avoids recomputing expensive operations
@@ -100,6 +101,7 @@ python app.py \
 | `--use-pdb-sequences` | ❌ | False | Extract sequences from PDB files instead of FASTA |
 | `--use-record-id` | ❌ | False | Use domain ID as FASTA record ID when loading |
 | `--cache-path` | ❌ | - | Directory for caching intermediate results |
+| `--pairings-csv` | ❌ | - | CSV file with ID pairings for click-to-highlight feature |
 
 **Requirements:**
 - At least one of `--fasta-path-column` or `--pdb-path-column` must be provided
@@ -130,6 +132,36 @@ d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
 - **Line color column**: Color values for marker border colors (specified via `--line-color-column`)
 - **Alpha column**: Opacity values (0-1) for marker transparency (specified via `--alpha-column`)
 - **Hover columns**: Additional columns to display in hover tooltips (specified via `--hover-columns`)
+
+### Pairings CSV Format (Optional)
+
+To enable the **click-to-highlight feature**, provide a CSV file with exactly 2 columns (no headers):
+
+```csv
+source_id_1,target_id_1
+source_id_1,target_id_2
+source_id_2,target_id_3
+source_id_2,target_id_4
+source_id_2,target_id_5
+```
+
+**Pairings Specification:**
+- **Column 1**: Source ID - when a point with this ID is clicked, its targets will be highlighted
+- **Column 2**: Target ID - these points will be highlighted when their source is clicked
+- **Directionality**: Pairings are unidirectional (source → targets only)
+- **Multi-modality**: If a domain has both sequence and structure points, clicking either one highlights all targets
+- **Visual Effect**: Highlighted targets receive a red border with width 3
+
+**Example Usage:**
+```bash
+python app.py \
+    --dataset-path domains.csv \
+    --id-column domain_id \
+    --label-column architecture \
+    --pdb-path-column pdb_file \
+    --html-output-path output.html \
+    --pairings-csv relationships.csv
+```
 
 ### File Requirements
 
@@ -162,6 +194,7 @@ The application generates a complete interactive visualization:
   - 🖱️ Scrollwheel to zoom in/out
   - 🖱️ Click and drag to pan
   - 🖱️ Double-click to reset view
+  - 🖱️ Click on source points to highlight paired targets (if pairings CSV provided)
   - 📱 Hover for detailed domain information (includes domain ID, label, modality, and any custom columns specified via `--hover-columns`)
 - **Export options**: Download plot as high-resolution PNG
 

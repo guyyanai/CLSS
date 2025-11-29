@@ -5,6 +5,8 @@ from dataset import (
     load_structures,
     create_embedded_dataframe,
     create_map_dataframe,
+    load_pairings,
+    build_pairings_index_map,
 )
 from embeddings import load_clss, embed_dataframe
 from dim_reducer import apply_dim_reduction
@@ -120,6 +122,23 @@ print(f"Reduced embeddings to 2D with shape {reduced_embeddings.shape}.")
 map_dataframe = create_map_dataframe(embedded_dataframe, reduced_embeddings)
 print(f"Created map dataframe with {len(map_dataframe)} entries.")
 
+# Load pairings if provided
+pairings_index_map = None
+if args.pairings_csv:
+    print(f"Loading pairings from {args.pairings_csv}...")
+    valid_ids = set(domain_dataframe[args.id_column].unique())
+    pairings_map = load_pairings(
+        csv_path=args.pairings_csv,
+        id_column=args.id_column,
+        valid_ids=valid_ids,
+    )
+    pairings_index_map = build_pairings_index_map(
+        map_dataframe=map_dataframe,
+        id_column=args.id_column,
+        pairings_map=pairings_map,
+    )
+    print(f"Built pairings index map with {len(pairings_index_map)} source points.")
+
 # Create and export interactive visualization
 create_and_export_visualization(
     map_dataframe=map_dataframe,
@@ -132,4 +151,5 @@ create_and_export_visualization(
     alpha_column=args.alpha_column,
     hover_columns=args.hover_columns,
     title="CLSS Protein Domain Interactive Map",
+    pairings_index_map=pairings_index_map,
 )

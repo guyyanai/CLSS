@@ -3,9 +3,10 @@ Modern CLI argument parsing with structured configuration.
 Provides type-safe access to command line arguments with autocomplete support.
 """
 
+import os
 import argparse
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, List
 
 
 @dataclass
@@ -56,8 +57,9 @@ class CLIArgs:
     line_width_column: Optional[str] = None
     line_color_column: Optional[str] = None
     alpha_column: Optional[str] = None
-    hover_columns: Optional[list[str]] = None
+    hover_columns: Optional[List[str]] = None
     cache_path: Optional[str] = None
+    pairings_csv: Optional[str] = None
 
     def __post_init__(self):
         """Validate arguments after initialization."""
@@ -66,6 +68,9 @@ class CLIArgs:
 
         if self.use_pdb_sequences and not self.pdb_path_column:
             raise ValueError("use_pdb_sequences is set to True but pdb_path_column is not provided")
+        
+        if self.pairings_csv and not os.path.exists(self.pairings_csv):
+            raise ValueError(f"Pairings CSV file not found: {self.pairings_csv}")
 
 
 def create_argument_parser() -> argparse.ArgumentParser:
@@ -218,6 +223,13 @@ def create_argument_parser() -> argparse.ArgumentParser:
         help="Path to the cache directory"
     )
 
+    parser.add_argument(
+        "--pairings-csv",
+        type=str,
+        default=None,
+        help="Path to CSV file with ID pairings (2 columns: source_id, target_id). When a source point is clicked, all target points will be highlighted."
+    )
+
     return parser
 
 
@@ -255,4 +267,5 @@ def parse_args() -> CLIArgs:
         alpha_column=parsed.alpha_column,
         hover_columns=parsed.hover_columns,
         cache_path=parsed.cache_path,
+        pairings_csv=parsed.pairings_csv,
     )

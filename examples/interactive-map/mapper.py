@@ -4,10 +4,14 @@ Creates Plotly scatter plots and exports them to HTML files.
 """
 
 import os
-from typing import Optional, Dict, Any
+import json
+from typing import Optional, Dict, Any, List
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from models import HighlightStyle, PairingMetadata
+from pairing_utils import validate_pairings, build_trace_point_mapping, build_pairings_data
+from js_templates import HIGHLIGHT_SCRIPT_TEMPLATE
 
 
 def create_interactive_scatter_plot(
@@ -18,7 +22,7 @@ def create_interactive_scatter_plot(
     line_width_column: Optional[str] = None,
     line_color_column: Optional[str] = None,
     alpha_column: Optional[str] = None,
-    hover_columns: Optional[list[str]] = None,
+    hover_columns: Optional[List[str]] = None,
     title: str = "Protein Domain Interactive Map",
     width: Optional[int] = None,
     height: Optional[int] = None,
@@ -149,7 +153,9 @@ def export_to_html(
     output_path: str,
     include_plotlyjs: str = "cdn",
     config: Optional[Dict[str, Any]] = None,
-) -> None:
+    pairings_index_map: Optional[Dict[int, List[int]]] = None,
+    highlight_style: Optional[HighlightStyle] = None,
+) -> Optional[PairingMetadata]:
     """
     Export the Plotly figure to an HTML file.
 
@@ -158,6 +164,11 @@ def export_to_html(
         output_path: Path to save the HTML file
         include_plotlyjs: How to include Plotly.js ('cdn', 'inline', 'directory', etc.)
         config: Optional configuration dictionary for the plot
+        pairings_index_map: Optional mapping from source DataFrame indices to target indices for click highlighting
+        highlight_style: Optional custom highlight styling (defaults to HighlightStyle())
+    
+    Returns:
+        PairingMetadata if pairings were provided, None otherwise
     """
 
     # Default configuration for better user experience with scrollwheel zoom
@@ -181,6 +192,27 @@ def export_to_html(
     if config:
         default_config.update(config)
 
+    # Use default highlight style if not provided
+    if highlight_style is None:
+        highlight_style = HighlightStyle()
+
+    # Prepare JavaScript for click-to-highlight functionality
+    pairings_js = ""
+    pairing_metadata = None
+    
+    if pairings_index_map:
+        # Build trace/point mapping from figure
+        mapping = build_trace_point_mapping(fig)
+        
+        # Convert pairings to trace/point coordinates
+        pairings_data = build_pairings_data(pairings_index_map, mapping)
+        
+        # Generate JavaScript with injected data
+        pairings_js = HIGHLIGHT_SCRIPT_TEMPLATE.format(
+            pairings_json=json.dumps(pairings_data),
+            highlight_style_json=json.dumps(highlight_style.to_dict())
+        )
+    
     # Export to HTML with full screen styling
     html_template = f"""
 <!DOCTYPE html>
@@ -205,6 +237,7 @@ def export_to_html(
 <body>
     <div id="protein-domain-map"></div>
     {{plot_div}}
+    {pairings_js}
 </body>
 </html>
 """
@@ -222,12 +255,14 @@ def export_to_html(
     )
 
     # Read the generated HTML and wrap it in our full-screen template
-    with open(output_path, "r") as f:
+    with open(output_path, "r", encoding="utf-8") as f:
         plot_content = f.read()
 
     # Write the full-screen version
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(html_template.replace("{plot_div}", plot_content))
+    
+    return pairing_metadata
 
 
 def create_and_export_visualization(
@@ -239,10 +274,12 @@ def create_and_export_visualization(
     line_width_column: Optional[str] = None,
     line_color_column: Optional[str] = None,
     alpha_column: Optional[str] = None,
-    hover_columns: Optional[list[str]] = None,
+    hover_columns: Optional[List[str]] = None,
     title: str = "Protein Domain Interactive Map",
     width: Optional[int] = None,
     height: Optional[int] = None,
+    pairings_index_map: Optional[Dict[int, List[int]]] = None,
+    highlight_style: Optional[HighlightStyle] = None,
 ) -> None:
     """
     Complete workflow to create and export an interactive visualization.
@@ -255,14 +292,23 @@ def create_and_export_visualization(
         hex_color_column: Optional column with custom hex colors
         line_width_column: Optional column for marker line widths
         line_color_column: Optional column for marker line colors
-        alpha_column: Optional column
+        alpha_column: Optional column for marker opacity/transparency values (0-1)
         hover_columns: Optional list of additional columns to include in hover info
         title: Plot title
         width: Plot width in pixels
         height: Plot height in pixels
+        pairings_index_map: Optional mapping from source DataFrame indices to target indices for click highlighting
+        highlight_style: Optional custom highlight styling (defaults to HighlightStyle())
     """
 
     print(f"Creating interactive visualization...")
+
+    # Validate pairings if provided
+    if pairings_index_map:
+        pairing_metadata = validate_pairings(pairings_index_map, map_dataframe)
+        if pairing_metadata.has_issues():
+            print(f"⚠️  Pairing validation warnings:")
+            pairing_metadata.print_summary()
 
     # Create the figure
     fig = create_interactive_scatter_plot(
@@ -282,7 +328,12 @@ def create_and_export_visualization(
     print(f"Exporting visualization to {output_path}...")
 
     # Export to HTML
-    export_to_html(fig, output_path)
+    export_to_html(
+        fig, 
+        output_path, 
+        pairings_index_map=pairings_index_map,
+        highlight_style=highlight_style
+    )
 
     # Print statistics
     total_points = len(map_dataframe)
@@ -295,4 +346,10 @@ def create_and_export_visualization(
     print(f"   🧬 Sequence points: {sequence_points}")
     print(f"   🏗️  Structure points: {structure_points}")
     print(f"   🏷️  Unique labels: {unique_labels}")
+    
+    # Print pairing statistics if available
+    if pairings_index_map:
+        pairing_metadata = validate_pairings(pairings_index_map, map_dataframe)
+        pairing_metadata.print_summary()
+    
     print(f"   📁 File saved to: {output_path}")
