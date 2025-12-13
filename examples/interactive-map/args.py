@@ -58,6 +58,7 @@ class CLIArgs:
     line_color_column: Optional[str] = None
     alpha_column: Optional[str] = None
     hover_columns: Optional[List[str]] = None
+    marker_shape_column: Optional[str] = None
     cache_path: Optional[str] = None
     pairings_csv: Optional[str] = None
 
@@ -171,6 +172,13 @@ def create_argument_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
+        "--marker-shape-column",
+        type=str,
+        default=None,
+        help="Name of the column for marker shapes (optional). Values must be valid Plotly marker shapes: circle, square, diamond, cross, x, triangle-up, triangle-down, pentagon, hexagon, star, etc. If not provided, all points will be circles."
+    )
+
+    parser.add_argument(
         "--tsne-perplexity",
         type=int,
         default=30,
@@ -266,6 +274,7 @@ def parse_args() -> CLIArgs:
         line_color_column=parsed.line_color_column,
         alpha_column=parsed.alpha_column,
         hover_columns=parsed.hover_columns,
+        marker_shape_column=parsed.marker_shape_column,
         cache_path=parsed.cache_path,
         pairings_csv=parsed.pairings_csv,
     )

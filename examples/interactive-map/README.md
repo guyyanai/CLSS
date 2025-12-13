@@ -15,7 +15,7 @@ This application creates an interactive 2D visualization of protein domains by:
 
 - 📊 **Multi-modal visualization** - sequences and structures in the same embedding space
 - 🎨 **Custom color mapping** - use hex colors with meaningful legend labels
-- 🔍 **Shape-coded modalities** - circles for sequences, squares for structures
+- 🔍 **Custom marker shapes** - specify marker shapes per data point using a column (circle, square, diamond, star, etc.)
 - 🖌️ **Advanced marker styling** - customize border width, border color, and transparency per marker
 - 🔗 **Click-to-highlight pairings** - interactively highlight related points via CSV pairings
 - 🖱️ **Interactive controls** - scrollwheel zoom, pan, hover tooltips
@@ -71,6 +71,7 @@ python app.py \
     --line-width-column border_width \
     --line-color-column border_color \
     --alpha-column transparency \
+    --marker-shape-column marker_shape \
     --hover-columns resolution b_factor method \
     --use-pdb-sequences \
     --use-record-id \
@@ -97,6 +98,7 @@ python app.py \
 | `--line-color-column` | ❌ | - | Column with color values for marker border colors |
 | `--alpha-column` | ❌ | - | Column with opacity values (0-1) for marker transparency |
 | `--hover-columns` | ❌ | - | List of additional columns to include in hover tooltips |
+| `--marker-shape-column` | ❌ | - | Column with marker shape values (see valid shapes below). If not provided, all points are circles |
 | `--exclude-structures` | ❌ | False | Exclude structure data if PDB column is provided |
 | `--use-pdb-sequences` | ❌ | False | Extract sequences from PDB files instead of FASTA |
 | `--use-record-id` | ❌ | False | Use domain ID as FASTA record ID when loading |
@@ -114,10 +116,10 @@ python app.py \
 Your input CSV should contain the following columns:
 
 ```csv
-domain_id,architecture,sequence_path,structure_path,custom_color
-d1a00a_,alpha/beta,/path/to/d1a00a_.fasta,/path/to/d1a00a_.pdb,#FF5733
-d1a01a_,alpha,/path/to/d1a01a_.fasta,/path/to/d1a01a_.pdb,#33C3FF
-d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
+domain_id,architecture,sequence_path,structure_path,custom_color,marker_shape
+d1a00a_,alpha/beta,/path/to/d1a00a_.fasta,/path/to/d1a00a_.pdb,#FF5733,circle
+d1a01a_,alpha,/path/to/d1a01a_.fasta,/path/to/d1a01a_.pdb,#33C3FF,square
+d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3,diamond
 ```
 
 **Required Columns:**
@@ -131,7 +133,30 @@ d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3
 - **Line width column**: Numeric values for marker border widths (specified via `--line-width-column`)
 - **Line color column**: Color values for marker border colors (specified via `--line-color-column`)
 - **Alpha column**: Opacity values (0-1) for marker transparency (specified via `--alpha-column`)
+- **Marker shape column**: Valid Plotly marker shapes for each point (specified via `--marker-shape-column`)
 - **Hover columns**: Additional columns to display in hover tooltips (specified via `--hover-columns`)
+
+### Valid Marker Shapes
+
+When using `--marker-shape-column`, the column must contain valid Plotly marker shape strings. Here are the most common options:
+
+**Basic Shapes:**
+- `circle`, `square`, `diamond`, `cross`, `x`
+- `triangle-up`, `triangle-down`, `triangle-left`, `triangle-right`
+- `pentagon`, `hexagon`, `octagon`, `star`, `hexagram`
+
+**Shape Variations:**
+- Add `-open` suffix for hollow shapes: `circle-open`, `square-open`, `diamond-open`
+- Add `-dot` suffix for shapes with center dots: `circle-dot`, `square-dot`
+- Combine both: `circle-open-dot`, `square-open-dot`
+
+**Advanced Shapes:**
+- Star variations: `star-triangle-up`, `star-square`, `star-diamond`
+- Diamond variations: `diamond-tall`, `diamond-wide`
+- Special: `hourglass`, `bowtie`, `asterisk`, `hash`, `y-up`, `y-down`
+- Lines: `line-ew` (east-west), `line-ns` (north-south), `line-ne`, `line-nw`
+
+For a complete list of ~150 supported shapes, see the [Plotly symbol reference](https://plotly.com/python/marker-style/).
 
 ### Pairings CSV Format (Optional)
 
@@ -188,8 +213,8 @@ The application generates a complete interactive visualization:
 - **Scatter plot**: Each point represents a domain-modality pair in t-SNE space
 - **Custom colors**: Points colored using hex values from your color column
 - **Per-marker styling**: Individual customization of border width, border color, and transparency for each marker
+- **Custom marker shapes**: Specify shapes per data point using the marker shape column
 - **Meaningful legends**: Legend shows label names, not hex codes
-- **Shape distinction**: Circles for sequences, squares for structures
 - **Interactive controls**:
   - 🖱️ Scrollwheel to zoom in/out
   - 🖱️ Click and drag to pan

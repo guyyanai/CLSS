@@ -43,7 +43,8 @@ domain_dataframe = load_domain_dataset(
         args.line_width_column,
         args.line_color_column,
         args.alpha_column,
-        *args.hover_columns,
+        args.marker_shape_column,
+        *(args.hover_columns if args.hover_columns else []),
     ],
 )
 print(f"Loaded domain dataset with {len(domain_dataframe)} entries")
@@ -150,6 +151,7 @@ create_and_export_visualization(
     line_color_column=args.line_color_column,
     alpha_column=args.alpha_column,
     hover_columns=args.hover_columns,
+    marker_shape_column=args.marker_shape_column,
     title="CLSS Protein Domain Interactive Map",
     pairings_index_map=pairings_index_map,
 )

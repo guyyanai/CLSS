@@ -13,6 +13,45 @@ from models import HighlightStyle, PairingMetadata
 from pairing_utils import validate_pairings, build_trace_point_mapping, build_pairings_data
 from js_templates import HIGHLIGHT_SCRIPT_TEMPLATE
 
+# Valid Plotly marker shapes
+VALID_MARKER_SHAPES = {
+    'circle', 'circle-open', 'circle-dot', 'circle-open-dot',
+    'square', 'square-open', 'square-dot', 'square-open-dot',
+    'diamond', 'diamond-open', 'diamond-dot', 'diamond-open-dot',
+    'cross', 'cross-open', 'cross-dot', 'cross-open-dot',
+    'x', 'x-open', 'x-dot', 'x-open-dot',
+    'triangle-up', 'triangle-up-open', 'triangle-up-dot', 'triangle-up-open-dot',
+    'triangle-down', 'triangle-down-open', 'triangle-down-dot', 'triangle-down-open-dot',
+    'triangle-left', 'triangle-left-open', 'triangle-left-dot', 'triangle-left-open-dot',
+    'triangle-right', 'triangle-right-open', 'triangle-right-dot', 'triangle-right-open-dot',
+    'triangle-ne', 'triangle-ne-open', 'triangle-ne-dot', 'triangle-ne-open-dot',
+    'triangle-se', 'triangle-se-open', 'triangle-se-dot', 'triangle-se-open-dot',
+    'triangle-sw', 'triangle-sw-open', 'triangle-sw-dot', 'triangle-sw-open-dot',
+    'triangle-nw', 'triangle-nw-open', 'triangle-nw-dot', 'triangle-nw-open-dot',
+    'pentagon', 'pentagon-open', 'pentagon-dot', 'pentagon-open-dot',
+    'hexagon', 'hexagon-open', 'hexagon-dot', 'hexagon-open-dot',
+    'hexagon2', 'hexagon2-open', 'hexagon2-dot', 'hexagon2-open-dot',
+    'octagon', 'octagon-open', 'octagon-dot', 'octagon-open-dot',
+    'star', 'star-open', 'star-dot', 'star-open-dot',
+    'hexagram', 'hexagram-open', 'hexagram-dot', 'hexagram-open-dot',
+    'star-triangle-up', 'star-triangle-up-open', 'star-triangle-up-dot', 'star-triangle-up-open-dot',
+    'star-triangle-down', 'star-triangle-down-open', 'star-triangle-down-dot', 'star-triangle-down-open-dot',
+    'star-square', 'star-square-open', 'star-square-dot', 'star-square-open-dot',
+    'star-diamond', 'star-diamond-open', 'star-diamond-dot', 'star-diamond-open-dot',
+    'diamond-tall', 'diamond-tall-open', 'diamond-tall-dot', 'diamond-tall-open-dot',
+    'diamond-wide', 'diamond-wide-open', 'diamond-wide-dot', 'diamond-wide-open-dot',
+    'hourglass', 'hourglass-open', 'bowtie', 'bowtie-open',
+    'circle-cross', 'circle-cross-open', 'circle-x', 'circle-x-open',
+    'square-cross', 'square-cross-open', 'square-x', 'square-x-open',
+    'diamond-cross', 'diamond-cross-open', 'diamond-x', 'diamond-x-open',
+    'cross-thin', 'cross-thin-open', 'x-thin', 'x-thin-open',
+    'asterisk', 'asterisk-open', 'hash', 'hash-open', 'hash-dot', 'hash-open-dot',
+    'y-up', 'y-up-open', 'y-down', 'y-down-open',
+    'y-left', 'y-left-open', 'y-right', 'y-right-open',
+    'line-ew', 'line-ew-open', 'line-ns', 'line-ns-open',
+    'line-ne', 'line-ne-open', 'line-nw', 'line-nw-open'
+}
+
 
 def create_interactive_scatter_plot(
     map_dataframe: pd.DataFrame,
@@ -23,6 +62,7 @@ def create_interactive_scatter_plot(
     line_color_column: Optional[str] = None,
     alpha_column: Optional[str] = None,
     hover_columns: Optional[List[str]] = None,
+    marker_shape_column: Optional[str] = None,
     title: str = "Protein Domain Interactive Map",
     width: Optional[int] = None,
     height: Optional[int] = None,
@@ -39,6 +79,7 @@ def create_interactive_scatter_plot(
         line_color_column: Optional column for marker line colors
         alpha_column: Optional column for marker opacity/transparency values (0-1)
         hover_columns: Optional list of additional columns to include in hover info
+        marker_shape_column: Optional column with marker shape values (must contain valid Plotly marker shapes)
         title: Plot title
         width: Plot width in pixels
         height: Plot height in pixels
@@ -57,8 +98,29 @@ def create_interactive_scatter_plot(
     for col in hover_columns or []:
         hover_data[col] = True
 
-    # Define symbols for different modalities
-    symbol_map = {"sequence": "circle", "structure": "square"}
+    # Handle marker shape configuration
+    symbol_column = None
+    symbol_map = None
+    
+    if marker_shape_column:
+        # Validate marker shape values
+        unique_shapes = map_dataframe[marker_shape_column].dropna().unique()
+        invalid_shapes = [s for s in unique_shapes if s not in VALID_MARKER_SHAPES]
+        if invalid_shapes:
+            raise ValueError(
+                f"Invalid marker shapes found in column '{marker_shape_column}': {invalid_shapes}. "
+                f"Valid shapes are: {sorted(VALID_MARKER_SHAPES)}"
+            )
+        
+        # Use the marker shape column for symbols
+        symbol_column = marker_shape_column
+        # Create identity mapping for valid shapes
+        symbol_map = {shape: shape for shape in unique_shapes}
+        
+        # Add to hover data if not already present
+        if marker_shape_column not in hover_data:
+            hover_data[marker_shape_column] = True
+    # If no marker_shape_column, use circles for all points (don't use modality)
 
     label_to_color = None
 
@@ -83,8 +145,8 @@ def create_interactive_scatter_plot(
         x="x",
         y="y",
         color=label_column,
-        symbol="modality",
-        symbol_map=symbol_map,
+        symbol=symbol_column,  # Use marker_shape_column if provided, else None (all circles)
+        symbol_map=symbol_map,  # Use shape mapping if provided, else None
         hover_data=hover_data,
         custom_data=['_plot_index'],  # Store index for efficient lookup
         title=title,
@@ -275,6 +337,7 @@ def create_and_export_visualization(
     line_color_column: Optional[str] = None,
     alpha_column: Optional[str] = None,
     hover_columns: Optional[List[str]] = None,
+    marker_shape_column: Optional[str] = None,
     title: str = "Protein Domain Interactive Map",
     width: Optional[int] = None,
     height: Optional[int] = None,
@@ -294,6 +357,7 @@ def create_and_export_visualization(
         line_color_column: Optional column for marker line colors
         alpha_column: Optional column for marker opacity/transparency values (0-1)
         hover_columns: Optional list of additional columns to include in hover info
+        marker_shape_column: Optional column with marker shape values (must contain valid Plotly marker shapes)
         title: Plot title
         width: Plot width in pixels
         height: Plot height in pixels
@@ -320,6 +384,7 @@ def create_and_export_visualization(
         line_color_column=line_color_column,
         alpha_column=alpha_column,
         hover_columns=hover_columns,
+        marker_shape_column=marker_shape_column,
         title=title,
         width=width,
         height=height,
