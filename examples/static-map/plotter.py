@@ -3,6 +3,7 @@ Static visualization module for protein domain embeddings.
 Creates publication-quality scatter plots using Matplotlib and Seaborn.
 """
 
+import os
 import logging
 from typing import Optional
 import pandas as pd
@@ -103,6 +104,7 @@ def create_static_scatter_plot(
         plt.subplots_adjust(bottom=0.2)
     
     # Save the figure
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path, format=plot_config.output_format, dpi=plot_config.dpi, bbox_inches='tight')
     logger.info(f"Static map saved to: {output_path}")
     
@@ -138,33 +140,46 @@ def _plot_with_custom_colors(
             # Get alphas
             alphas = _get_alphas(shape_data, plot_config.alpha, plot_config.alpha_column)
             
-            # Plot each point individually to handle custom colors and alphas
-            for idx, row in shape_data.iterrows():
-                ax.scatter(
-                    row[X_COLUMN], row[Y_COLUMN],
-                    c=row[plot_config.hex_color_column] if plot_config.hex_color_column in row and pd.notna(row[plot_config.hex_color_column]) else '#1f77b4',
-                    s=sizes.loc[idx] if isinstance(sizes, pd.Series) else sizes,
-                    marker=shape if shape in MATPLOTLIB_MARKERS else 'o',
-                    alpha=alphas.loc[idx] if isinstance(alphas, pd.Series) else alphas,
-                    edgecolors=plot_config.edge_color,
-                    linewidths=plot_config.edge_width,
-                )
+            # Vectorized plotting for custom colors
+            # If hex_color_column is present, use it directly as color array
+            colors = shape_data[plot_config.hex_color_column] if plot_config.hex_color_column in shape_data.columns else '#1f77b4'
+            
+            # Handle missing colors if column exists
+            if isinstance(colors, pd.Series):
+                colors = colors.fillna('#1f77b4')
+            
+            ax.scatter(
+                shape_data[X_COLUMN], 
+                shape_data[Y_COLUMN],
+                c=colors,
+                s=sizes,
+                marker=shape if shape in MATPLOTLIB_MARKERS else 'o',
+                alpha=alphas if isinstance(alphas, float) else alphas.fillna(plot_config.alpha),
+                edgecolors=plot_config.edge_color,
+                linewidths=plot_config.edge_width,
+            )
     else:
         # No custom markers, plot all at once
         sizes = _get_marker_sizes(dataframe, plot_config.marker_size, plot_config.marker_size_column)
         alphas = _get_alphas(dataframe, plot_config.alpha, plot_config.alpha_column)
         
-        # Plot each point individually to handle custom colors and alphas
-        for idx, row in dataframe.iterrows():
-            ax.scatter(
-                row[X_COLUMN], row[Y_COLUMN],
-                c=row[plot_config.hex_color_column] if plot_config.hex_color_column in row and pd.notna(row[plot_config.hex_color_column]) else '#1f77b4',
-                s=sizes.loc[idx] if isinstance(sizes, pd.Series) else sizes,
-                marker='o',
-                alpha=alphas.loc[idx] if isinstance(alphas, pd.Series) else alphas,
-                edgecolors=plot_config.edge_color,
-                linewidths=plot_config.edge_width,
-            )
+        # Vectorized plotting for custom colors
+        colors = dataframe[plot_config.hex_color_column] if plot_config.hex_color_column in dataframe.columns else '#1f77b4'
+        
+        # Handle missing colors if column exists
+        if isinstance(colors, pd.Series):
+            colors = colors.fillna('#1f77b4')
+            
+        ax.scatter(
+            dataframe[X_COLUMN], 
+            dataframe[Y_COLUMN],
+            c=colors,
+            s=sizes,
+            marker='o',
+            alpha=alphas if isinstance(alphas, float) else alphas.fillna(plot_config.alpha),
+            edgecolors=plot_config.edge_color,
+            linewidths=plot_config.edge_width,
+        )
     
     # Add custom legend if provided
     if plot_config.custom_legend_csv:
