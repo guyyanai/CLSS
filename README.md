@@ -32,6 +32,26 @@
 
 > See paper for full details, datasets, ablations, and comparisons.
 
+### Architecture
+
+<p align="center">
+  <img src="figures/clss-architecture.png" alt="CLSS Architecture" width="800"/>
+</p>
+
+**Figure 1:** Overview of training, validating, and testing of CLSS to create unified maps of protein sequence and structure space. (A) Overview of the two-tower CLSS architecture. On the left is a structure tower based on the frozen, pre-trained ESM3 model (light blue) followed by a trained (yellow) adapter that averages, reduces dimension, and normalizes the embedding. On the right is the trained CLSS sequence tower, build upon a pre-trained ESM2 model, and its adapter network (yellow). The networks are trained using contrastive loss on batches of randomly chosen structures and sequence segments from the ECOD-AF2 domain database. Labels from a hierarchical classification were not using during training in any way. Once trained, we calculate the embeddings of the structures, sequences, and sequence segments from Datasets 1 and 2 using CLSS (B) and other PLMs (C). (D) Dimensionality reduction by t-SNE was used to create visual maps of protein space (upper images). Pairwise distance distributions (lower images) were calculated from the embeddings directly, rather than the t-SNE reduced space.
+
+---
+
+## Visualization
+
+CLSS embeddings capture the global organization of protein space, revealing evolutionary relationships and structural similarities across diverse protein domains.
+
+<p align="center">
+  <img src="figures/ecod-tsne.png" alt="ECOD t-SNE Visualization" width="800"/>
+</p>
+
+**Figure 2:** CLSS embedding maps of ECOD domains (Dataset 1). For each domain, we calculate the embeddings by three modalities – structure, sequence, and a random sequence segment – and then compute a t-SNE projection of the embeddings. Each point represents one of the modalities of a domain colored according to the label of its ECOD architecture. (A) An overlay of all three modalities. Sequences are marked by circles, structures by ‘+’, and random sequence segments by ‘x’. (B) Structure embeddings. (C) sequence segment embeddings. (D) Sequence embeddings. We find that the maps of all three modalities are very similar to each other, with the sequence (D) and structure (B) embeddings being the closest. This shows that CLSS successfully injected structure information into the sequence modality. The global organization of the CLSS embedding space positions domains with the same ECOD architecture, and even the same structure class, near each other. 
+
 ---
 
 ## Quick Start
