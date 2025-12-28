@@ -41,7 +41,9 @@ graph LR
 
 ## Usage
 
-### Basic Command
+### Example Commands
+
+#### 1. Minimal Example (Required Arguments Only)
 
 ```bash
 python app.py \
@@ -49,11 +51,44 @@ python app.py \
     --id-column domain_id \
     --label-column fold_class \
     --fasta-path-column fasta_file \
-    --pdb-path-column pdb_file \
     --html-output-path output.html
 ```
 
-### Full Example
+This loads sequences from FASTA files and creates a basic visualization with default colors.
+
+#### 2. With Custom Colors
+
+```bash
+python app.py \
+    --dataset-path domains.csv \
+    --id-column domain_id \
+    --label-column fold_class \
+    --fasta-path-column fasta_file \
+    --html-output-path output.html \
+    --hex-color-column custom_color
+```
+
+Uses hex color codes from the CSV to color points, while keeping label names in the legend.
+
+#### 3. With Custom Shapes and Styling
+
+```bash
+python app.py \
+    --dataset-path domains.csv \
+    --id-column domain_id \
+    --label-column fold_class \
+    --fasta-path-column fasta_file \
+    --html-output-path output.html \
+    --hex-color-column custom_color \
+    --marker-shape-column marker_shape \
+    --line-width-column border_width \
+    --line-color-column border_color \
+    --alpha-column transparency
+```
+
+Fully customized markers with individual shapes, border styles, and transparency.
+
+#### 4. Multi-Modal with All Features
 
 ```bash
 python app.py \
@@ -63,20 +98,19 @@ python app.py \
     --fasta-path-column sequence_path \
     --pdb-path-column structure_path \
     --html-output-path visualization.html \
-    --model-repo guyyanai/CLSS \
-    --model-filename h32_r10.lckpt \
-    --tsne-perplexity 50 \
-    --tsne-max-iterations 1000 \
     --hex-color-column custom_color \
+    --marker-shape-column marker_shape \
     --line-width-column border_width \
     --line-color-column border_color \
     --alpha-column transparency \
-    --marker-shape-column marker_shape \
     --hover-columns resolution b_factor method \
-    --use-pdb-sequences \
-    --use-record-id \
+    --pairings-csv relationships.csv \
+    --tsne-perplexity 50 \
+    --tsne-max-iterations 1000 \
     --cache-path ./cache
 ```
+
+Complete multi-modal analysis with sequences from FASTA, structures from PDB, custom styling, additional hover data, click-to-highlight pairings, and caching enabled.
 
 ### CLI Arguments
 
@@ -113,28 +147,63 @@ python app.py \
 
 ### CSV Dataset Structure
 
-Your input CSV should contain the following columns:
+Your input CSV must contain certain required columns and can optionally include additional columns for customization.
 
+#### CSV Column Requirements
+
+| Column Type | Requirement Status | CLI Argument | Purpose | Example Values | Notes |
+|------------|-------------------|--------------|---------|----------------|-------|
+| **ID Column** | Required | `--id-column` | Unique identifier for each domain | `d1a00a_`, `PF00001` | Any column name; must contain unique values |
+| **Label Column** | Required | `--label-column` | Category/class for grouping and coloring | `alpha/beta`, `kinase`, `rossmann fold` | Used for default colors and legend labels |
+| **FASTA Path Column** | Conditional* | `--fasta-path-column` | File paths to FASTA sequence files | `/path/to/seq.fasta`, `./data/d1a00a_.fa` | At least one of FASTA or PDB column required |
+| **PDB Path Column** | Conditional* | `--pdb-path-column` | File paths to PDB structure files | `/path/to/struct.pdb`, `./pdbs/1a00.pdb` | At least one of FASTA or PDB column required |
+| **Hex Color Column** | Optional | `--hex-color-column` | Custom hex color codes for points | `#FF5733`, `#33C3FF`, `#9B59B6` | Overrides default colors; legend still shows label names |
+| **Line Width Column** | Optional | `--line-width-column` | Marker border widths (numeric) | `0`, `2`, `5.5` | Default is 0 (no border) if not specified |
+| **Line Color Column** | Optional | `--line-color-column` | Marker border colors | `black`, `#000000`, `rgba(0,0,0,0.5)` | Only visible if line width > 0 |
+| **Alpha Column** | Optional | `--alpha-column` | Marker opacity/transparency | `0.3`, `0.8`, `1.0` | Values should be 0-1; default is 1.0 (opaque) |
+| **Marker Shape Column** | Optional | `--marker-shape-column` | Plotly marker shapes per point | `circle`, `square`, `diamond`, `star` | Must be valid Plotly shapes; default is circle for all |
+| **Hover Columns** | Optional | `--hover-columns` | Additional data to show in tooltips | Any column(s) | Space-separated list of column names |
+
+**\* Conditional Requirements:**
+- At least one of `--fasta-path-column` OR `--pdb-path-column` must be provided
+- If `--use-pdb-sequences` is set, then `--pdb-path-column` is required
+- Both columns can be provided simultaneously for multi-modal analysis
+
+**Important:** All columns specified via CLI arguments (including optional ones) must exist in the CSV, or a validation error will be raised.
+
+#### Example CSV Formats
+
+**Minimal CSV (sequences only):**
 ```csv
-domain_id,architecture,sequence_path,structure_path,custom_color,marker_shape
-d1a00a_,alpha/beta,/path/to/d1a00a_.fasta,/path/to/d1a00a_.pdb,#FF5733,circle
-d1a01a_,alpha,/path/to/d1a01a_.fasta,/path/to/d1a01a_.pdb,#33C3FF,square
-d1a02a_,beta,/path/to/d1a02a_.fasta,/path/to/d1a02a_.pdb,#FF33C3,diamond
+domain_id,fold_class,fasta_file
+d1a00a_,alpha/beta,/path/to/d1a00a_.fasta
+d1a01a_,alpha,/path/to/d1a01a_.fasta
+d1a02a_,beta,/path/to/d1a02a_.fasta
 ```
 
-**Required Columns:**
-- **ID column**: Unique identifier for each domain (specified via `--id-column`)
-- **Label column**: Category/class for coloring (specified via `--label-column`)
+**CSV with custom styling:**
+```csv
+domain_id,architecture,fasta_file,pdb_file,hex_color,shape,border_width,border_color,opacity
+d1a00a_,TIM barrel,seq1.fasta,str1.pdb,#FF5733,circle,2,black,0.8
+d1a01a_,Rossmann,seq2.fasta,str2.pdb,#33C3FF,square,1.5,#666666,1.0
+d1a02a_,beta-propeller,seq3.fasta,str3.pdb,#FF33C3,diamond,3,red,0.6
+```
 
-**Optional Columns:**
-- **FASTA path column**: Paths to FASTA files (specified via `--fasta-path-column`)
-- **PDB path column**: Paths to PDB files (specified via `--pdb-path-column`)
-- **Hex color column**: Custom hex colors for points (specified via `--hex-color-column`)
-- **Line width column**: Numeric values for marker border widths (specified via `--line-width-column`)
-- **Line color column**: Color values for marker border colors (specified via `--line-color-column`)
-- **Alpha column**: Opacity values (0-1) for marker transparency (specified via `--alpha-column`)
-- **Marker shape column**: Valid Plotly marker shapes for each point (specified via `--marker-shape-column`)
-- **Hover columns**: Additional columns to display in hover tooltips (specified via `--hover-columns`)
+### File Path Loading Modes
+
+The tool supports multiple modes for loading sequence and structure data, depending on which file path columns you provide and which flags you set.
+
+| Mode | Required Arguments | What Gets Loaded | When to Use |
+|------|-------------------|------------------|-------------|
+| **FASTA-only** | `--fasta-path-column` | Sequences from FASTA files | When you only have sequence data or want sequence embeddings only |
+| **PDB-only (sequences)** | `--pdb-path-column` + `--use-pdb-sequences` | Sequences extracted from PDB files; structures loaded from same PDB files | When PDB files contain all needed sequence information |
+| **Mixed/Dual-modal** | `--fasta-path-column` + `--pdb-path-column` | Sequences from FASTA files; structures from PDB files | Standard multi-modal analysis with separate sequence and structure files |
+| **Hybrid (no structures)** | `--fasta-path-column` + `--pdb-path-column` + `--exclude-structures` | Sequences from both FASTA and PDB files; no structure embeddings | When you want to use PDB sequence data but skip structure processing |
+
+**Notes:**
+- Structure embeddings are only generated if `--pdb-path-column` is provided AND `--exclude-structures` is NOT set
+- Each domain can have both sequence and structure embeddings (shown as separate points in the visualization)
+- Missing file paths (empty cells) are handled gracefully - that domain will have only the available modality
 
 ### Valid Marker Shapes
 
@@ -175,7 +244,7 @@ source_id_2,target_id_5
 - **Column 2**: Target ID - these points will be highlighted when their source is clicked
 - **Directionality**: Pairings are unidirectional (source → targets only)
 - **Multi-modality**: If a domain has both sequence and structure points, clicking either one highlights all targets
-- **Visual Effect**: Highlighted targets receive a red border with width 3
+- **Visual Effect**: Highlighted targets receive a bright cyan (#00FFFF) border with width 10.0 and increased marker size (12.0)
 
 **Example Usage:**
 ```bash
@@ -204,6 +273,72 @@ python app.py \
 2. **PDB-only mode**: Use `--pdb-path-column` with `--use-pdb-sequences` to extract sequences from PDB files
 3. **Mixed mode**: Provide both `--fasta-path-column` and `--pdb-path-column` for dual-modality analysis
 
+## Data Validation & Error Handling
+
+The tool performs validation at multiple stages and handles errors gracefully to allow partial dataset processing.
+
+### CSV Column Validation
+
+**Strict Validation:**
+- All columns specified via CLI arguments must exist in the CSV file
+- Missing columns will raise a `ValueError` immediately
+- This includes optional styling columns (e.g., if you specify `--hex-color-column custom_color`, the CSV must have a `custom_color` column)
+
+**Example Error:**
+```
+ValueError: Column 'custom_color' not found in dataset
+```
+
+### Marker Shape Validation
+
+**Strict Validation:**
+- When `--marker-shape-column` is provided, all shape values are validated against 41+ valid Plotly marker shapes
+- Invalid shapes will raise a `ValueError` with a list of invalid values found
+- Valid shapes include: `circle`, `square`, `diamond`, `star`, `triangle-up`, etc. (see Valid Marker Shapes section)
+
+**Other Style Columns (No Validation):**
+- Hex color values (`--hex-color-column`): Not validated - invalid hex codes may cause Plotly rendering errors
+- Line widths (`--line-width-column`): Expected to be numeric but not validated
+- Alpha values (`--alpha-column`): Expected to be 0-1 but not validated
+- Line colors (`--line-color-column`): Not validated
+
+### File Path Error Handling
+
+**Graceful Degradation:**
+- Missing or invalid file paths in individual rows are handled gracefully
+- The tool logs an error message and continues processing
+- That domain will have `None` for the failed modality (e.g., no sequence embedding if FASTA file is missing)
+- Allows partial datasets where some domains have incomplete data
+
+**Example Behavior:**
+```
+Error loading /path/to/missing.fasta: File not found
+Continuing with remaining domains...
+```
+
+### Pairings Validation
+
+**Warning System:**
+- Invalid source or target IDs (not found in dataset) trigger warnings
+- Tool prints up to 10 invalid source IDs and 10 invalid target IDs
+- Continues processing with only valid pairings
+- Provides statistics on valid vs. invalid pairings
+
+**CSV Format Validation:**
+- Pairings CSV must have exactly 2 columns
+- Raises `ValueError` if format is incorrect
+
+### Hover Data
+
+**Always-Present Tooltip Fields:**
+
+Regardless of the `--hover-columns` argument, these fields are always included in hover tooltips:
+- **ID column** (e.g., `domain_id`): The unique identifier
+- **Label column** (e.g., `architecture`): The category/class label  
+- **Modality**: Either "sequence" or "structure"
+
+Additional columns specified via `--hover-columns` are appended to this base set.
+
 ## Output
 
 The application generates a complete interactive visualization:
@@ -220,7 +355,10 @@ The application generates a complete interactive visualization:
   - 🖱️ Click and drag to pan
   - 🖱️ Double-click to reset view
   - 🖱️ Click on source points to highlight paired targets (if pairings CSV provided)
-  - 📱 Hover for detailed domain information (includes domain ID, label, modality, and any custom columns specified via `--hover-columns`)
+  - 📱 Hover for detailed domain information:
+    - Always shown: domain ID, label, and modality (sequence/structure)
+    - Additional fields from `--hover-columns` if specified
+    - Marker shape column (if provided) is automatically included
 - **Export options**: Download plot as high-resolution PNG
 
 ### Cached Data
