@@ -107,6 +107,13 @@ def setup_args():
         help="Path to folder which the model checkpoint will be saved to",
         required=True,
     )
+    parser.add_argument(
+        "--resume-from-checkpoint",
+        dest="resume_from_checkpoint",
+        type=str,
+        help="Path to checkpoint file to resume training from",
+        default=None,
+    )
     parser.add_argument("--seed", dest="seed", type=int, help="Random seed", default=0)
     parser.add_argument(
         "--run-name",
@@ -134,5 +141,19 @@ def setup_args():
         help="Minimum size for random sequence stretches",
         type=int,
         default=30,
+    )
+    parser.add_argument(
+        "--num-workers",
+        dest="num_workers",
+        type=int,
+        help="Number of data loading workers",
+        default=5,
+    )
+    parser.add_argument(
+        "--num-nodes",
+        dest="num_nodes",
+        type=int,
+        help="Number of nodes for distributed training",
+        default=1,
     )
     return parser.parse_args()
