@@ -89,7 +89,7 @@ class CLSSModel(pl.LightningModule):
 
     @classmethod
     def from_config(
-        cls, config: CLSSConfig, should_load_esm3: bool = False, **kwargs
+        cls, config: CLSSConfig, **kwargs
     ) -> "CLSSModel":
         """
         Create a CLSSModel from a CLSSConfig.
@@ -169,7 +169,7 @@ class CLSSModel(pl.LightningModule):
             Tuple[EsmModel, EsmTokenizer]: Loaded model and tokenizer.
         """
         tokenizer = EsmTokenizer.from_pretrained(checkpoint)
-        model: EsmModel = EsmModel.from_pretrained(checkpoint)  # type: ignore
+        model: EsmModel = EsmModel.from_pretrained(checkpoint)
 
         # Disable training for both LM and contact heads
         for parameter_name, parameter in list(model.named_parameters()):
@@ -182,7 +182,7 @@ class CLSSModel(pl.LightningModule):
         self.sequence_encoder = model
         self.sequence_tokenizer = tokenizer
 
-    def load_esm3(self, checkpoint=ESM3_OPEN_SMALL) -> None:
+    def load_esm3(self, checkpoint: str = ESM3_OPEN_SMALL) -> None:
         """
         Load the pre-trained ESM3 structure encoder model.
         Disables training for all parameters.
