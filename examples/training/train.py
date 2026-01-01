@@ -8,22 +8,17 @@ using PyTorch Lightning.
 
 import os
 import warnings
-import atexit
 import pytorch_lightning as pl
 from pytorch_lightning.utilities import rank_zero_only
 from pytorch_lightning.loggers import WandbLogger
 import torch
-import torch.distributed
 from infra import (
     setup_wandb,
-    setup_process_group,
-    destroy_process_group,
-    setup_dataset,
-    setup_dataloaders,
     setup_trainer,
 )
 from args import setup_args
 from clss import CLSSModel
+from datamodule import CLSSDataModule
 
 
 @rank_zero_only
@@ -37,9 +32,6 @@ def save_checkpoint(
 
 def main():
     """Main training function that can be called as a console script."""
-    setup_process_group()
-    atexit.register(destroy_process_group)
-
     warnings.filterwarnings("ignore", category=UserWarning)
 
     args = setup_args()
@@ -56,10 +48,16 @@ def main():
     wandb_logger = setup_wandb(args)
 
     # Initialize the PyTorch Lightning trainer
-    trainer = setup_trainer(args.epochs, wandb_logger)
+    trainer = setup_trainer(args.epochs, wandb_logger, args.checkpoint_path, num_nodes=args.num_nodes)
+    
+    # Validate checkpoint if resuming
+    if args.resume_from_checkpoint:
+        if not os.path.exists(args.resume_from_checkpoint):
+            raise FileNotFoundError(f"Checkpoint file not found: {args.resume_from_checkpoint}")
+        print(f"Resuming training from checkpoint: {args.resume_from_checkpoint}")
 
-    # Load dataset
-    train_dataset, val_dataset = setup_dataset(
+    # Initialize DataModule
+    datamodule = CLSSDataModule(
         dataset_path=args.dataset_path,
         dataset_size_limit=args.dataset_size_limit,
         validation_dataset_frac=args.validation_dataset_frac,
@@ -68,12 +66,8 @@ def main():
         train_pickle_file=args.train_pickle_file,
         validation_pickle_file=args.validation_pickle_file,
         seed=args.seed,
-    )
-    torch.distributed.barrier()
-
-    # Create DataLoaders
-    train_dataloader, val_dataloader = setup_dataloaders(
-        train_dataset, val_dataset, args.batch_size
+        batch_size=args.batch_size,
+        num_workers=args.num_workers,
     )
 
     # Define the model
@@ -88,10 +82,8 @@ def main():
         should_load_esm3=False,
     )
 
-    # Train the model
-    trainer.fit(model, train_dataloader, val_dataloader)
-
-    torch.distributed.destroy_process_group()
+    # Train the model (with optional checkpoint resumption)
+    trainer.fit(model, datamodule=datamodule, ckpt_path=args.resume_from_checkpoint)
 
     save_checkpoint(trainer, wandb_logger, args.checkpoint_path)
 
