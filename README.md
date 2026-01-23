@@ -104,7 +104,7 @@ If you use this repository, please cite:
   journal={bioRxiv},
   year={2025},
   doi={10.1101/2025.09.05.674454},
-  url={https://www.biorxiv.org/content/10.1101/2025.09.05.674454v3.full.pdf}
+  url={https://www.biorxiv.org/content/10.1101/2025.09.05.674454.full.pdf}
 }
 ```
 
