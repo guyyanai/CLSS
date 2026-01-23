@@ -136,3 +136,4 @@ upload.sh
 squash/
 examples/interactive-map/cache/
 examples/interactive-map/run.sh
+examples/search/results/
