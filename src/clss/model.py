@@ -179,7 +179,7 @@ class CLSSModel(pl.LightningModule):
             if "contact_head" in parameter_name:
                 parameter.requires_grad = False
 
-        self.sequence_encoder = model
+        self.sequence_encoder = model.to(self.device)
         self.sequence_tokenizer = tokenizer
 
     def load_esm3(self, checkpoint: str = ESM3_OPEN_SMALL) -> None:
@@ -191,7 +191,7 @@ class CLSSModel(pl.LightningModule):
         Returns:
             ESM3: Loaded ESM3 model.
         """
-        model = ESM3.from_pretrained(checkpoint)
+        model = ESM3.from_pretrained(checkpoint, device=self.device)
 
         for parameter in model.parameters():
             parameter.requires_grad = False
