@@ -20,7 +20,7 @@ maintainers = [
 ]
 keywords = ["protein", "machine-learning", "contrastive-learning", "bioinformatics", "structure", "sequence"]
 classifiers = [
-    "Development Status :: 4 - Alpha",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
