@@ -62,6 +62,40 @@ CLSS embeddings capture the global organization of protein space, revealing evol
 pip install clss-model
 ```
 
+### Loading the Model
+
+Load the pretrained CLSS model from the Hugging Face Hub:
+
+```python
+from clss import CLSSModel
+
+# Load CLSS-sub from Hugging Face (downloads automatically)
+model = CLSSModel.from_pretrained(
+    repo_id="guyyanai/CLSS",       # default
+    model_name="CLSS-sub.lckpt",   # default, could also use CLSS-full.lckpt
+    device="cuda",                 # or "cpu"
+)
+
+# For CLSS-full
+model = CLSSModel.from_pretrained(
+    repo_id="guyyanai/CLSS",
+    model_name="CLSS-full.lckpt",
+    device="cuda",
+)
+```
+
+To load from a local checkpoint instead:
+
+```python
+model = CLSSModel.from_checkpoint("path/to/checkpoint.lckpt", device="cuda")
+```
+
+By default, only the sequence tower (ESM2-based) is loaded. To also load the structure tower (ESM3) for structure embeddings, call:
+
+```python
+model.load_esm3()
+```
+
 ### Examples
 
 Complete examples are available in the [`examples/`](examples/) directory:
