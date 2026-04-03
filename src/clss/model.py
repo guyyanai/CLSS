@@ -6,7 +6,7 @@ protein sequences and structures using a contrastive learning approach. It utili
 pre-trained ESM-2 for sequence encoding and ESM-3 for structure encoding.
 """
 
-from typing import List, Tuple
+from typing import List, Tuple, Any
 
 import pytorch_lightning as pl
 import torch
@@ -89,7 +89,7 @@ class CLSSModel(pl.LightningModule):
 
     @classmethod
     def from_config(
-        cls, config: CLSSConfig, **kwargs
+        cls, config: CLSSConfig, **kwargs: Any
     ) -> "CLSSModel":
         """
         Create a CLSSModel from a CLSSConfig.
@@ -125,7 +125,7 @@ class CLSSModel(pl.LightningModule):
     def from_pretrained(
         cls,
         repo_id: str = "guyyanai/CLSS",
-        model_name: str = "h32_r10.lckpt",
+        model_name: str = "CLSS-sub.lckpt",
         device: str = "cuda",
     ) -> "CLSSModel":
         """
@@ -385,7 +385,7 @@ class CLSSModel(pl.LightningModule):
         return sequence_projections, structure_projections
 
     def sample_sequence_stretch(
-        self, input_ids, attention_mask, sequence_length
+        self, input_ids: torch.Tensor, attention_mask: torch.Tensor, sequence_length: int
     ) -> Tuple[torch.Tensor, torch.Tensor, int]:
         """
         Sample a random stretch from a sequence.
@@ -477,7 +477,7 @@ class CLSSModel(pl.LightningModule):
 
         return loss
 
-    def training_step(self, batch, batch_idx) -> torch.Tensor:
+    def training_step(self, batch: Tuple[torch.Tensor, torch.Tensor, torch.Tensor], batch_idx: int) -> torch.Tensor:
         """
         Training step for contrastive learning.
         Args:
@@ -516,7 +516,7 @@ class CLSSModel(pl.LightningModule):
 
         return loss
 
-    def validation_step(self, batch, batch_idx) -> torch.Tensor:
+    def validation_step(self, batch: Tuple[torch.Tensor, torch.Tensor, torch.Tensor], batch_idx: int) -> torch.Tensor:
         """
         Validation step for contrastive learning.
         Args:
@@ -557,7 +557,7 @@ class CLSSModel(pl.LightningModule):
         # Set up optimizer
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate)
 
-    def on_save_checkpoint(self, checkpoint) -> None:
+    def on_save_checkpoint(self, checkpoint: dict) -> None:
         """
         Callback to modify checkpoint before saving.
         Removes structure_encoder weights from checkpoint.

@@ -25,7 +25,7 @@ def setup_inference_args():
     parser.add_argument(
         "--model-filename",
         type=str,
-        default="h32_r10.lckpt",
+        default="CLSS-sub.lckpt",
         help="Model checkpoint filename"
     )
     return parser.parse_args()

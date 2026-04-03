@@ -175,7 +175,7 @@ def create_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--model-filename", 
         type=str,
-        default="h32_r10.lckpt",
+        default="CLSS-sub.lckpt",
         help="Model checkpoint filename"
     )
     

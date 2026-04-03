@@ -5,7 +5,7 @@ A contrastive learning model that co-embeds protein sequences and structures
 into a unified 32-dimensional space using a two-tower architecture.
 """
 
-__version__ = "0.3.8"
+__version__ = "0.4.0"
 
 # Configuration and utilities
 from .config import CLSSConfig

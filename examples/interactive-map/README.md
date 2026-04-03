@@ -123,7 +123,7 @@ Complete multi-modal analysis with sequences from FASTA, structures from PDB, cu
 | `--fasta-path-column` | * | - | Column name for FASTA file paths |
 | `--pdb-path-column` | * | - | Column name for PDB file paths |
 | `--model-repo` | ❌ | `guyyanai/CLSS` | HuggingFace model repository |
-| `--model-filename` | ❌ | `h32_r10.lckpt` | Model checkpoint filename |
+| `--model-filename` | ❌ | `CLSS-sub.lckpt` | Model checkpoint filename |
 | `--tsne-perplexity` | ❌ | 30 | t-SNE perplexity parameter |
 | `--tsne-max-iterations` | ❌ | 1000 | Maximum t-SNE iterations |
 | `--tsne-random-state` | ❌ | 0 | Random state for reproducibility |

@@ -6,7 +6,7 @@ from huggingface_hub import hf_hub_download
 
 
 def download_pretrained_model(
-    repo_id: str = "guyyanai/CLSS", model_name: str = "h32_r10.lckpt"
+    repo_id: str = "guyyanai/CLSS", model_name: str = "CLSS-sub.lckpt"
 ) -> str:
     """Download pretrained model from Hugging Face Hub."""
 

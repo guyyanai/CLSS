@@ -60,7 +60,7 @@ python generate.py \
     --pdb-path-column structure_path \
     --output-path visualization.png \
     --model-repo guyyanai/CLSS \
-    --model-filename h32_r10.lckpt \
+    --model-filename CLSS-sub.lckpt \
     --tsne-perplexity 50 \
     --tsne-max-iterations 1000 \
     --hex-color-column custom_color \
@@ -98,7 +98,7 @@ python generate.py \
 | `--fasta-path-column` | * | - | Column name for FASTA file paths |
 | `--pdb-path-column` | * | - | Column name for PDB file paths |
 | `--model-repo` | ❌ | `guyyanai/CLSS` | HuggingFace model repository |
-| `--model-filename` | ❌ | `h32_r10.lckpt` | Model checkpoint filename |
+| `--model-filename` | ❌ | `CLSS-sub.lckpt` | Model checkpoint filename |
 | `--tsne-perplexity` | ❌ | 30 | t-SNE perplexity parameter |
 | `--tsne-max-iterations` | ❌ | 1000 | Maximum t-SNE iterations |
 | `--tsne-random-state` | ❌ | 0 | Random state for reproducibility |
