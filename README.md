@@ -122,8 +122,15 @@ Complete examples are available in the [`examples/`](examples/) directory:
 ## Data
 
 * **ECOD‑AF2 domains** (training/validation set) - Available in `datasets/training/`
-* **F40-large-folds** (Dataset 1 from paper) - Available in `datasets/F40-large-folds/`
-  - Contains all ECOD-PDB-F40 domains in folds with more than 50 domains
+* **DEV292-F40-large-folds** (Dataset 1 from paper) - Available in `datasets/DEV292-F40-large-folds/`
+  - Contains all ECOD-DEVELOP292 F40 domains in folds with more than 50 domains
+* **CATHS40-large-folds** (Dataset 2 from paper) - Available in `datasets/CATHS40-large-folds/`
+  - Contains all CATHS40 domains in folds with more than 50 domains
+* **rogen-metamorphic** (Dataset 3 from paper) - Available in `datasets/rogen-metamorphic/`
+  - Contains metamorphic CATH domains from Peter Røgen's dataset of sequence-similar but topologically distinct domain pairs [Rogen et al. 2025]
+* **DEV291-F40-large-folds** - Available in `datasets/DEV291-F40-large-folds/`
+  - Contains all ECOD-DEVELOP291 F40 domains in folds with more than 50 domains (used in the paper for binding exploration)
+
 
 ---
 
