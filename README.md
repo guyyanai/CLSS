@@ -2,6 +2,8 @@
 
 **Paper:** [https://www.biorxiv.org/content/10.1101/2025.09.05.674454.full.pdf](https://www.biorxiv.org/content/10.1101/2025.09.05.674454.full.pdf)
 
+> **Note:** The paper is currently undergoing revisions and will be re-uploaded shortly.
+
 **DOI:** [https://doi.org/10.1101/2025.09.05.674454](https://doi.org/10.1101/2025.09.05.674454)
 
 **GitHub repository:** [https://github.com/guyyanai/CLSS](https://github.com/guyyanai/CLSS)
