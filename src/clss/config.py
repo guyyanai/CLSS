@@ -2,7 +2,7 @@
 Configuration and utilities for CLSS package.
 """
 
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 from dataclasses import dataclass, asdict
 
 
@@ -21,6 +21,7 @@ class CLSSConfig:
     random_stretch_min_size: int = 10
     use_global_loss: bool = False
     should_load_esm3: bool = False
+    attn_implementation: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         """Return configuration as dictionary."""

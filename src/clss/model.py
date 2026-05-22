@@ -6,7 +6,7 @@ protein sequences and structures using a contrastive learning approach. It utili
 pre-trained ESM-2 for sequence encoding and ESM-3 for structure encoding.
 """
 
-from typing import List, Tuple, Any
+from typing import List, Tuple, Any, Optional
 
 import pytorch_lightning as pl
 import torch
@@ -33,6 +33,7 @@ class CLSSModel(pl.LightningModule):
         random_stretch_min_size: int = 10,
         use_global_loss: bool = False,
         should_load_esm3: bool = False,
+        attn_implementation: Optional[str] = None,
     ):
         """
         Initialize the CLSS model.
@@ -46,6 +47,9 @@ class CLSSModel(pl.LightningModule):
             random_stretch_min_size (int): Minimum size for random stretches.
             use_global_loss (bool): Use global loss across all GPUs.
             should_load_esm3 (bool): Whether to load ESM3 structure encoder.
+            attn_implementation (str, optional): Attention implementation for the ESM2 encoder.
+                Passed directly to HuggingFace EsmModel (e.g. "eager", "sdpa", "flash_attention_2").
+                Defaults to None (HuggingFace default).
         """
         super(CLSSModel, self).__init__()
         self.save_hyperparameters()
@@ -54,7 +58,7 @@ class CLSSModel(pl.LightningModule):
         self.hidden_dim = hidden_dim
 
         # Load the pre-trained ESM2 model
-        self.load_esm2(esm2_checkpoint)
+        self.load_esm2(esm2_checkpoint, attn_implementation=attn_implementation)
 
         # Create ESM2 (sequence) adapter
         self.sequence_adapter = nn.Sequential(
@@ -86,6 +90,7 @@ class CLSSModel(pl.LightningModule):
         self.random_stretch_min_size = random_stretch_min_size
         self.use_global_loss = use_global_loss
         self.should_load_esm3 = should_load_esm3
+        self.attn_implementation = attn_implementation
 
     @classmethod
     def from_config(
@@ -117,6 +122,7 @@ class CLSSModel(pl.LightningModule):
             "random_stretch_min_size": config_dict["random_stretch_min_size"],
             "use_global_loss": config_dict["use_global_loss"],
             "should_load_esm3": config_dict["should_load_esm3"],
+            "attn_implementation": config_dict["attn_implementation"],
         }
 
         return cls(**model_kwargs)
@@ -127,6 +133,7 @@ class CLSSModel(pl.LightningModule):
         repo_id: str = "guyyanai/CLSS",
         model_name: str = "CLSS-sub.lckpt",
         device: str = "cuda",
+        attn_implementation: Optional[str] = None,
     ) -> "CLSSModel":
         """
         Load a pretrained CLSS model.
@@ -134,6 +141,9 @@ class CLSSModel(pl.LightningModule):
         Args:
             model_name: Name of the model file to download
             repo_id: Hugging Face repository ID
+            attn_implementation: Attention implementation for the ESM2 encoder
+                (e.g. "eager", "sdpa", "flash_attention_2"). Overrides the value
+                stored in the checkpoint. Defaults to None (HuggingFace default).
 
         Returns:
             CLSSModel
@@ -142,34 +152,51 @@ class CLSSModel(pl.LightningModule):
         model_path = download_pretrained_model(repo_id=repo_id, model_name=model_name)
 
         # Load model
-        return cls.load_from_checkpoint(checkpoint_path=model_path, map_location=device, strict=False)
+        return cls.load_from_checkpoint(
+            checkpoint_path=model_path,
+            map_location=device,
+            strict=False,
+            attn_implementation=attn_implementation,
+        )
 
     @classmethod
-    def from_checkpoint(cls, checkpoint_path: str, device: str = "cuda") -> "CLSSModel":
+    def from_checkpoint(
+        cls,
+        checkpoint_path: str,
+        device: str = "cuda",
+        attn_implementation: Optional[str] = None,
+    ) -> "CLSSModel":
         """
         Load CLSS model from local checkpoint.
 
         Args:
             checkpoint_path: Path to model checkpoint
             device: Device to map the model to
+            attn_implementation: Attention implementation for the ESM2 encoder
+                (e.g. "eager", "sdpa", "flash_attention_2"). Overrides the value
+                stored in the checkpoint. Defaults to None (HuggingFace default).
 
         Returns:
             CLSSModel
         """
-        return cls.load_from_checkpoint(checkpoint_path=checkpoint_path, map_location=device, strict=False)
+        return cls.load_from_checkpoint(
+            checkpoint_path=checkpoint_path,
+            map_location=device,
+            strict=False,
+            attn_implementation=attn_implementation,
+        )
 
-    def load_esm2(self, checkpoint: str) -> None:
-        # Load the pre-trained ESM2 tokenizer & model
+    def load_esm2(self, checkpoint: str, attn_implementation: Optional[str] = None) -> None:
         """
         Load the pre-trained ESM2 tokenizer and model.
         Disables training for LM and contact heads.
         Args:
             checkpoint (str): Path or name of the ESM2 checkpoint.
-        Returns:
-            Tuple[EsmModel, EsmTokenizer]: Loaded model and tokenizer.
+            attn_implementation (str, optional): Attention implementation forwarded to
+                EsmModel.from_pretrained (e.g. "eager", "sdpa", "flash_attention_2").
         """
         tokenizer = EsmTokenizer.from_pretrained(checkpoint)
-        model: EsmModel = EsmModel.from_pretrained(checkpoint)
+        model: EsmModel = EsmModel.from_pretrained(checkpoint, attn_implementation=attn_implementation)
 
         # Disable training for both LM and contact heads
         for parameter_name, parameter in list(model.named_parameters()):
