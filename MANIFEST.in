@@ -3,5 +3,10 @@ include LICENSE
 include INSTALL.md
 include pyproject.toml
 recursive-include src *.py
+prune datasets
+prune examples
+prune figures
+prune interactive-plots
+prune tests
 global-exclude __pycache__
 global-exclude *.py[co]
