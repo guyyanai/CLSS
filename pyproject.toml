@@ -71,7 +71,7 @@ Homepage = "https://github.com/guyyanai/CLSS"
 Repository = "https://github.com/guyyanai/CLSS"
 "Bug Tracker" = "https://github.com/guyyanai/CLSS/issues"
 Documentation = "https://github.com/guyyanai/CLSS"
-"Paper" = "https://www.biorxiv.org/content/10.1101/2025.09.05.674454.full.pdf"
+"Paper" = "https://www.pnas.org/doi/10.1073/pnas.2532702123"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
