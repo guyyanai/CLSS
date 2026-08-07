@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clss-model"
-version = "0.4.1"
+version = "0.4.2"
 description = "Contrastive Learning for Sequence and Structure - co-embeds protein sequences and structures"
 readme = "README.md"
 license = {text = "MIT"}
@@ -71,7 +71,7 @@ Homepage = "https://github.com/guyyanai/CLSS"
 Repository = "https://github.com/guyyanai/CLSS"
 "Bug Tracker" = "https://github.com/guyyanai/CLSS/issues"
 Documentation = "https://github.com/guyyanai/CLSS"
-"Paper" = "https://www.biorxiv.org/content/10.1101/2025.09.05.674454.full.pdf"
+"Paper" = "https://www.pnas.org/doi/10.1073/pnas.2532702123"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
